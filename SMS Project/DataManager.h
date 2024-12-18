@@ -5,7 +5,7 @@ using namespace System::ComponentModel;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-
+//d
 ref class DataManager
 {
 private:
