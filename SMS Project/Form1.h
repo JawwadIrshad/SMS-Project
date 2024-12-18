@@ -98,6 +98,8 @@ namespace CppCLRWinFormsProject {
 			   this->signupTextboxConfirmPassword = (gcnew System::Windows::Forms::TextBox());
 			   this->signupButton = (gcnew System::Windows::Forms::Button());
 			   this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			   this->studDisplayNameLabel = (gcnew System::Windows::Forms::Label());
+			   this->namelabel = (gcnew System::Windows::Forms::Label());
 			   this->logoutBtn = (gcnew System::Windows::Forms::Button());
 			   this->InfoLabel = (gcnew System::Windows::Forms::Label());
 			   this->gpa = (gcnew System::Windows::Forms::Label());
@@ -105,8 +107,6 @@ namespace CppCLRWinFormsProject {
 			   this->courseslabel = (gcnew System::Windows::Forms::Label());
 			   this->label1 = (gcnew System::Windows::Forms::Label());
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			   this->namelabel = (gcnew System::Windows::Forms::Label());
-			   this->studDisplayNameLabel = (gcnew System::Windows::Forms::Label());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   this->signupTab->SuspendLayout();
@@ -289,6 +289,7 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // tabPage1
 			   // 
+			   this->tabPage1->Controls->Add(this->label1);
 			   this->tabPage1->Controls->Add(this->studDisplayNameLabel);
 			   this->tabPage1->Controls->Add(this->namelabel);
 			   this->tabPage1->Controls->Add(this->logoutBtn);
@@ -296,7 +297,6 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage1->Controls->Add(this->gpa);
 			   this->tabPage1->Controls->Add(this->gpaLabel);
 			   this->tabPage1->Controls->Add(this->courseslabel);
-			   this->tabPage1->Controls->Add(this->label1);
 			   this->tabPage1->Controls->Add(this->tableLayoutPanel1);
 			   this->tabPage1->Location = System::Drawing::Point(4, 22);
 			   this->tabPage1->Name = L"tabPage1";
@@ -305,6 +305,28 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage1->TabIndex = 2;
 			   this->tabPage1->Text = L"Student Dashboard";
 			   this->tabPage1->UseVisualStyleBackColor = true;
+			   // 
+			   // studDisplayNameLabel
+			   // 
+			   this->studDisplayNameLabel->AutoSize = true;
+			   this->studDisplayNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->studDisplayNameLabel->Location = System::Drawing::Point(10, 51);
+			   this->studDisplayNameLabel->Name = L"studDisplayNameLabel";
+			   this->studDisplayNameLabel->Size = System::Drawing::Size(33, 19);
+			   this->studDisplayNameLabel->TabIndex = 9;
+			   this->studDisplayNameLabel->Text = L"----";
+			   // 
+			   // namelabel
+			   // 
+			   this->namelabel->AutoSize = true;
+			   this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
+			   this->namelabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			   this->namelabel->Location = System::Drawing::Point(6, 34);
+			   this->namelabel->Name = L"namelabel";
+			   this->namelabel->Size = System::Drawing::Size(39, 16);
+			   this->namelabel->TabIndex = 8;
+			   this->namelabel->Text = L"Name";
 			   // 
 			   // logoutBtn
 			   // 
@@ -355,7 +377,7 @@ namespace CppCLRWinFormsProject {
 			   this->courseslabel->AutoSize = true;
 			   this->courseslabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->courseslabel->Location = System::Drawing::Point(153, 90);
+			   this->courseslabel->Location = System::Drawing::Point(5, 74);
 			   this->courseslabel->Name = L"courseslabel";
 			   this->courseslabel->Size = System::Drawing::Size(61, 19);
 			   this->courseslabel->TabIndex = 3;
@@ -367,7 +389,7 @@ namespace CppCLRWinFormsProject {
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label1->ForeColor = System::Drawing::Color::Red;
-			   this->label1->Location = System::Drawing::Point(90, 109);
+			   this->label1->Location = System::Drawing::Point(110, 78);
 			   this->label1->Name = L"label1";
 			   this->label1->Size = System::Drawing::Size(159, 19);
 			   this->label1->TabIndex = 2;
@@ -381,12 +403,14 @@ namespace CppCLRWinFormsProject {
 				   | System::Windows::Forms::AnchorStyles::Right));
 			   this->tableLayoutPanel1->BackColor = System::Drawing::Color::WhiteSmoke;
 			   this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-			   this->tableLayoutPanel1->ColumnCount = 2;
+			   this->tableLayoutPanel1->ColumnCount = 3;
 			   this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				   50)));
+				   33.33333F)));
 			   this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				   50)));
-			   this->tableLayoutPanel1->Location = System::Drawing::Point(157, 114);
+				   33.33334F)));
+			   this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				   33.33334F)));
+			   this->tableLayoutPanel1->Location = System::Drawing::Point(6, 101);
 			   this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			   this->tableLayoutPanel1->RowCount = 5;
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25.2768F)));
@@ -394,30 +418,8 @@ namespace CppCLRWinFormsProject {
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
-			   this->tableLayoutPanel1->Size = System::Drawing::Size(203, 110);
+			   this->tableLayoutPanel1->Size = System::Drawing::Size(354, 123);
 			   this->tableLayoutPanel1->TabIndex = 0;
-			   // 
-			   // namelabel
-			   // 
-			   this->namelabel->AutoSize = true;
-			   this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->namelabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			   this->namelabel->Location = System::Drawing::Point(6, 34);
-			   this->namelabel->Name = L"namelabel";
-			   this->namelabel->Size = System::Drawing::Size(39, 16);
-			   this->namelabel->TabIndex = 8;
-			   this->namelabel->Text = L"Name";
-			   // 
-			   // studDisplayNameLabel
-			   // 
-			   this->studDisplayNameLabel->AutoSize = true;
-			   this->studDisplayNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->studDisplayNameLabel->Location = System::Drawing::Point(10, 51);
-			   this->studDisplayNameLabel->Name = L"studDisplayNameLabel";
-			   this->studDisplayNameLabel->Size = System::Drawing::Size(33, 19);
-			   this->studDisplayNameLabel->TabIndex = 9;
-			   this->studDisplayNameLabel->Text = L"----";
 			   // 
 			   // Form1
 			   // 
@@ -494,6 +496,9 @@ namespace CppCLRWinFormsProject {
 		//creating data manager object 
 		DataManager dmanager;
 		dmanager.DisplayCourses(tableLayoutPanel1);
+		//set marks for student TESTING PURPOSES 
+		
+
 		if (user.login()) {
 			MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			tabControl->SelectedTab = tabControl->TabPages[2];
@@ -531,6 +536,13 @@ namespace CppCLRWinFormsProject {
 	}
 
 	private: System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		//assing null to poitner
+		currentUser = NULL;
+		tabControl->SelectedTab = tabControl->TabPages[0];
+		tableLayoutPanel1->Controls->Clear();
+		ItemsOnStudentDashBoard(false);
+		label1->Visible = true;
+
 	}
 
 

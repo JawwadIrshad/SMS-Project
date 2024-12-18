@@ -34,13 +34,13 @@ public:
 };
 
 // User class with encapsulated data and methods
-class User {
+public class User {
 protected:
     std::string username;
     std::string password;
     std::string gpa;
     std::vector<std::string> courses = {"Discrete Structures", "OOP", "Calculus", "Oral Communication", "Applied Physics"};
-
+    std::vector<std::string> marksOfCourses;
 public:
     // Default constructor
     User() {}
@@ -60,6 +60,14 @@ public:
     // Setter for password
     void setPassword(const std::string& newPassword) { password = newPassword; }
 
+    //Get marks of courses
+     std::vector<std::string> getMarksOfCourses() const {
+        return marksOfCourses;
+    }
+    //Set marks of courses
+    void setMarksOfCourses(const std::vector<std::string>& marksOfCourses) {
+        this->marksOfCourses = marksOfCourses;
+    }
     // Method to save user data to file
     void saveToFile() {
         FileManager::saveUserToFile(username, password);
