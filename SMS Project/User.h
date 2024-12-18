@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 // FileManager class to handle file operations
 class FileManager {
@@ -37,6 +38,8 @@ class User {
 protected:
     std::string username;
     std::string password;
+    std::string gpa;
+    std::vector<std::string> courses = {"Discrete Structures", "OOP", "Calculus", "Oral Communication", "Applied Physics"};
 
 public:
     // Default constructor

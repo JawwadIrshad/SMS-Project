@@ -1,5 +1,6 @@
 #pragma once
 #include "AuthUser.h"
+#include "DataManager.h"
 
 #include<string>
 
@@ -67,6 +68,9 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ InfoLabel;
 	private: System::Windows::Forms::Label^ gpa;
 	private: System::Windows::Forms::Button^ logoutBtn;
+	private: System::Windows::Forms::Label^ studDisplayNameLabel;
+
+	private: System::Windows::Forms::Label^ namelabel;
 
 
 
@@ -101,6 +105,8 @@ namespace CppCLRWinFormsProject {
 			   this->courseslabel = (gcnew System::Windows::Forms::Label());
 			   this->label1 = (gcnew System::Windows::Forms::Label());
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			   this->namelabel = (gcnew System::Windows::Forms::Label());
+			   this->studDisplayNameLabel = (gcnew System::Windows::Forms::Label());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   this->signupTab->SuspendLayout();
@@ -283,6 +289,8 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // tabPage1
 			   // 
+			   this->tabPage1->Controls->Add(this->studDisplayNameLabel);
+			   this->tabPage1->Controls->Add(this->namelabel);
 			   this->tabPage1->Controls->Add(this->logoutBtn);
 			   this->tabPage1->Controls->Add(this->InfoLabel);
 			   this->tabPage1->Controls->Add(this->gpa);
@@ -329,7 +337,7 @@ namespace CppCLRWinFormsProject {
 			   this->gpa->Name = L"gpa";
 			   this->gpa->Size = System::Drawing::Size(57, 28);
 			   this->gpa->TabIndex = 5;
-			   this->gpa->Text = L"4.00";
+			   this->gpa->Text = L"0.00";
 			   // 
 			   // gpaLabel
 			   // 
@@ -356,7 +364,6 @@ namespace CppCLRWinFormsProject {
 			   // label1
 			   // 
 			   this->label1->AutoSize = true;
-			   this->label1->Enabled = false;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label1->ForeColor = System::Drawing::Color::Red;
@@ -389,6 +396,28 @@ namespace CppCLRWinFormsProject {
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->Size = System::Drawing::Size(203, 110);
 			   this->tableLayoutPanel1->TabIndex = 0;
+			   // 
+			   // namelabel
+			   // 
+			   this->namelabel->AutoSize = true;
+			   this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
+			   this->namelabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			   this->namelabel->Location = System::Drawing::Point(6, 34);
+			   this->namelabel->Name = L"namelabel";
+			   this->namelabel->Size = System::Drawing::Size(39, 16);
+			   this->namelabel->TabIndex = 8;
+			   this->namelabel->Text = L"Name";
+			   // 
+			   // studDisplayNameLabel
+			   // 
+			   this->studDisplayNameLabel->AutoSize = true;
+			   this->studDisplayNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->studDisplayNameLabel->Location = System::Drawing::Point(10, 51);
+			   this->studDisplayNameLabel->Name = L"studDisplayNameLabel";
+			   this->studDisplayNameLabel->Size = System::Drawing::Size(33, 19);
+			   this->studDisplayNameLabel->TabIndex = 9;
+			   this->studDisplayNameLabel->Text = L"----";
 			   // 
 			   // Form1
 			   // 
@@ -433,33 +462,51 @@ namespace CppCLRWinFormsProject {
 			MessageBox::Show("User already exists.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
+
+	//function to disable and enable the things of dashboard
+	void ItemsOnStudentDashBoard(bool a) {
+		InfoLabel->Visible = a;
+		namelabel->Visible = a;
+		studDisplayNameLabel->Visible = a;
+		gpaLabel->Visible = a;
+		gpa->Visible = a;
+		courseslabel->Visible = a;
+		tableLayoutPanel1->Visible = a;
+		logoutBtn->Visible = a;
+	}
+	
+	//Creating a global user pointer instance or whatever this is 
+	AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
+	
+	
+	
 		   
 	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Convert System::String^ to std::string in the same way
 		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
 		std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
-
 		AuthUser user(username, password);
+		//using overloaded operator assining unmanaged to managed
+		currentUser = new  AuthUser(user);
+		//now setting the student name feild info in student dashboard
+		//converted to currentUser->getUsername to managed string then assinged
+		studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
+		//creating data manager object 
+		DataManager dmanager;
+		dmanager.DisplayCourses(tableLayoutPanel1);
 		if (user.login()) {
 			MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			tabControl->SelectedTab = tabControl->TabPages[2];
 			label1->Visible = false;
 			//Enable all things in student dashboard
-			InfoLabel->Visible = true;
-			gpaLabel->Visible = true;
-			gpa->Visible = true;
-			courseslabel->Visible = true;
-			tableLayoutPanel1->Visible = true;
+			ItemsOnStudentDashBoard(true);
+			
 		}
 		else {
 			MessageBox::Show("Invalid username or password.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			label1->Visible = true;
 			//disable all things on student dashboard
-			InfoLabel->Visible = false;
-			gpaLabel->Visible = false;
-			gpa->Visible = false;
-			courseslabel->Visible = false;
-			tableLayoutPanel1->Visible = false;
+			ItemsOnStudentDashBoard(false);
 		}
 	}
 
@@ -479,17 +526,15 @@ namespace CppCLRWinFormsProject {
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 		// Hide all components on the Student Dashboard tab if the user is not logged in
 		label1->Visible = true;  // Show the "Login or Signup first" placeholder
-		InfoLabel->Visible = false;
-		gpaLabel->Visible = false;
-		gpa->Visible = false;
-		courseslabel->Visible = false;
-		tableLayoutPanel1->Visible = false;
-		
-	
-	
+		//disable all items on student dashboard ON FORM LOAD
+		ItemsOnStudentDashBoard(false);
 	}
 
 	private: System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
+
+
 };
 }

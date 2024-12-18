@@ -19,4 +19,13 @@ public:
         }
         return false;
     }
+    //ovverloading = operator to store values of AuthUser user into currentUser to logout later on
+    AuthUser& operator=(const AuthUser& a) {
+        if (this != &a) { // Prevent self-assignment
+            username = a.username;
+            password = a.password;
+            IsLoggedIn = a.IsLoggedIn;
+        }
+        return *this;
+    }
 };
