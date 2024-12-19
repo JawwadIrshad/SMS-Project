@@ -488,15 +488,19 @@ namespace CppCLRWinFormsProject {
 		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
 		std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
 		AuthUser user(username, password);
+		//clear the input boxeses
+		loginTextboxUsername->Clear();
+		loginTextboxPassword->Clear();
 		//using overloaded operator assining unmanaged to managed
 		currentUser = new  AuthUser(user);
 		//now setting the student name feild info in student dashboard
 		//converted to currentUser->getUsername to managed string then assinged
 		studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
-		//creating data manager object 
-		DataManager dmanager;
+		//creating data manager object and setting marks for student TESTING PURPOSES Teacher will set this later ON
+		array<String^>^ MarksOFCourses = {"45", "23", "21" , "99", "55", "56"};
+		DataManager dmanager(MarksOFCourses);
 		dmanager.DisplayCourses(tableLayoutPanel1);
-		//set marks for student TESTING PURPOSES 
+		gpa->Text = dmanager.CalculateGPA(MarksOFCourses).ToString("F2");
 		
 
 		if (user.login()) {
