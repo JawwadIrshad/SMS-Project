@@ -94,9 +94,9 @@ public:
         }
     }
 
-    double CalculateGPA(array<String^>^ marksOFCourses)
+    float CalculateGPA(array<String^>^ marksOFCourses)
     {
-        double totalWeightedPoints = 0.0;
+        float totalWeightedPoints = 0.0;
         int totalCreditHours = 0;
 
         for (int i = 0; i < courses->Length; ++i)
@@ -108,7 +108,7 @@ public:
                 int credits = Convert::ToInt32(creditHours[i]);
 
                 // Assuming marks are converted to grade points out of 4.0 scale
-                double gradePoints = CalculateGradePoints(marks);
+                float gradePoints = CalculateGradePoints(marks);
 
                 // Multiply grade points by credit hours
                 totalWeightedPoints += gradePoints * credits;
@@ -124,7 +124,8 @@ public:
         }
 
         // Calculate GPA: weighted points divided by total credit hours
-        return (totalCreditHours > 0) ? (totalWeightedPoints / totalCreditHours) : 0.0;
+        return (totalCreditHours > 0) ? (totalWeightedPoints / totalCreditHours) : 0.0 ;
+
     }
 
     // Helper method to convert marks to grade points
@@ -197,4 +198,11 @@ public:
 
         return marks;
     }
+
+
+    float roundToTwoDecimalPlaces(float value) {
+        return std::round(value * 100) / 100;
+    }
+
+
 };

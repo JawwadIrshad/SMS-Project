@@ -2,6 +2,7 @@
 #include "AuthUser.h"
 #include "DataManager.h"
 
+
 #include<string>
 
 namespace CppCLRWinFormsProject {
@@ -611,6 +612,7 @@ namespace CppCLRWinFormsProject {
 			   this->assignMarksButton->TabIndex = 5;
 			   this->assignMarksButton->Text = L"Assing Marks";
 			   this->assignMarksButton->UseVisualStyleBackColor = false;
+			   this->assignMarksButton->Click += gcnew System::EventHandler(this, &Form1::saveMarksBtn_Click);
 			   // 
 			   // dataGridView1
 			   // 
@@ -738,7 +740,8 @@ namespace CppCLRWinFormsProject {
 			  DataManager^ dm = gcnew DataManager(marks);
 
 			  dm->DisplayCourses(tableLayoutPanel1);
-			  dm->CalculateGPA(marks);
+			  gpa->Text = dm->roundToTwoDecimalPlaces(dm->CalculateGPA(marks)).ToString();
+			  
 
 
 		  }
@@ -863,26 +866,20 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 	}
 	
 
-		   private: System::Void assignMarksButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		   private: System::Void saveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 			   // Get the selected student (you may use a DataGridView or ListView)
 			   std::string selectedStudent = currentUser->getUsername();  // Example, get the student from the UI
 
-			   // Example marks input (could come from TextBoxes, DataGridView, etc.)
-			   std::vector<std::string> marks = { "90", "85", "80", "75", "88" };
-
-			   // Find the student from the users and set their marks
-			     // Example: You would use the correct student username
-			   currentUser->setMarksOfCourses(marks);
-
-			   // Save the marks to the file
-			   currentUser->saveToFile();
-
-			   MessageBox::Show("Marks assigned successfully!");
+			   //Teacher teach(selectedStudent);
 		   }
 
 			private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			}
 
 
+
 };
 }
+
+
+
