@@ -7,23 +7,47 @@
 // FileManager class to handle file operations
 class FileManager {
 public:
-    static void saveUserToFile(const std::string& username, const std::string& password) {
+    static void saveUserToFile(const std::string& username, const std::string& password, const std::string& role) {
         std::ofstream file("users.csv", std::ios::app);
         if (file.is_open()) {
-            file << username << "," << password << "\n";
+            file << username << "," << password << "," << role << "\n";
             file.close();
         }
     }
 
-    static bool userExistsInFile(const std::string& username, const std::string& password) {
+    static bool userExistsInFile(const std::string& username, const std::string& password, const std::string& role) {
         std::ifstream file("users.csv");
-        std::string line, fileUsername, filePassword;
+        std::string line, fileUsername, filePassword, fileRole;
         if (file.is_open()) {
             while (std::getline(file, line)) {
-                size_t commaPos = line.find(',');
-                fileUsername = line.substr(0, commaPos);
-                filePassword = line.substr(commaPos + 1);
-                if (fileUsername == username && filePassword == password) {
+                size_t firstComma = line.find(',');
+                size_t secondComma = line.find(',', firstComma + 1);
+
+                fileUsername = line.substr(0, firstComma);
+                filePassword = line.substr(firstComma + 1, secondComma - firstComma - 1);
+                fileRole = line.substr(secondComma + 1);
+
+                if (fileUsername == username && filePassword == password && fileRole == role) {
+                    return true;
+                }
+            }
+            file.close();
+        }
+        return false;
+    }
+
+    static bool isRoleValid(const std::string& username, const std::string& role) {
+        std::ifstream file("users.csv");
+        std::string line, fileUsername, fileRole;
+        if (file.is_open()) {
+            while (std::getline(file, line)) {
+                size_t firstComma = line.find(',');
+                size_t secondComma = line.find(',', firstComma + 1);
+
+                fileUsername = line.substr(0, firstComma);
+                fileRole = line.substr(secondComma + 1);
+
+                if (fileUsername == username && fileRole == role) {
                     return true;
                 }
             }
@@ -33,57 +57,94 @@ public:
     }
 };
 
+
 // User class with encapsulated data and methods
-public class User {
+class User {
 protected:
     std::string username;
     std::string password;
+    std::string roll = "1";
     std::string role;
-    std::string gpa;
-    std::vector<std::string> courses = {"Discrete Structures", "OOP", "Calculus", "Oral Communication", "Applied Physics"};
+    std::vector<std::string> courses = { "Discrete Structures", "OOP", "Calculus", "Oral Communication", "Applied Physics" };
     std::vector<std::string> marksOfCourses;
+
 public:
-    bool IsStudent;
     // Default constructor
     User() {}
 
-    // Parameterized constructor to initialize username and password
-    User(std::string username, std::string password) : username(username), password(password) {}
+    // Parameterized constructor to initialize username, password, and role
+    User(std::string username, std::string password, std::string role = "Student")
+        : username(username), password(password), role(role) {
+    }
 
-    // Getter for username
+    // Getter and Setter for username
     std::string getUsername() const { return username; }
-
-    // Setter for username
     void setUsername(const std::string& newUsername) { username = newUsername; }
 
-    // Getter for password
+    // Getter and Setter for password
     std::string getPassword() const { return password; }
-
-    // Setter for password
     void setPassword(const std::string& newPassword) { password = newPassword; }
-    //get role
-    std::string getRole() {
-        return role;
+
+    // Getter and Setter for role
+    std::string getRole() const { return role; }
+    void setRole(const std::string& newRole) { role = newRole; }
+
+    ////Get roll number
+    std::string getRoll() {
+        return roll;
     }
-    //setter for role
-    void setRole(std::string role) {
-        this->role = role;
-    }
-    //Get marks of courses
-     std::vector<std::string> getMarksOfCourses() const {
-        return marksOfCourses;
-    }
-    //Set marks of courses
-    void setMarksOfCourses(const std::vector<std::string>& marksOfCourses) {
-        this->marksOfCourses = marksOfCourses;
-    }
-    // Method to save user data to file
+    // Getter and Setter for marks
+    std::vector<std::string> getMarksOfCourses() const { return marksOfCourses; }
+    void setMarksOfCourses(const std::vector<std::string>& marks) { marksOfCourses = marks; }
+
+    // Save user data (including marks) to file
     void saveToFile() {
-        FileManager::saveUserToFile(username, password);
+        FileManager::saveUserToFile(username, password, role);
+
+        // Save marks to a separate file for each student
+        std::ofstream marksFile("marks.csv", std::ios::app);
+        if (marksFile.is_open()) {
+            marksFile << username;  // Start by saving the student's username
+            for (const auto& mark : marksOfCourses) {
+                marksFile << "," << mark;  // Add each mark for the courses
+            }
+            marksFile << "\n";
+            marksFile.close();
+        }
     }
 
-    // Static method to check if user exists in file
-    static bool userExists(const std::string& username, const std::string& password) {
-        return FileManager::userExistsInFile(username, password);
+    // Load marks from file
+    void loadMarksFromFile() {
+        std::ifstream marksFile("marks.csv");
+        std::string line, fileUsername, mark;
+        if (marksFile.is_open()) {
+            while (std::getline(marksFile, line)) {
+                size_t firstComma = line.find(',');
+                fileUsername = line.substr(0, firstComma);
+
+                if (fileUsername == username) {
+                    marksOfCourses.clear();  // Clear existing marks before adding new ones
+                    size_t startPos = firstComma + 1;
+                    while ((firstComma = line.find(',', startPos)) != std::string::npos) {
+                        mark = line.substr(startPos, firstComma - startPos);
+                        marksOfCourses.push_back(mark);
+                        startPos = firstComma + 1;
+                    }
+                    marksOfCourses.push_back(line.substr(startPos));  // Last mark (after the last comma)
+                    break;
+                }
+            }
+            marksFile.close();
+        }
+    }
+
+    // Validate user existence with role
+    static bool userExists(const std::string& username, const std::string& password, const std::string& role) {
+        return FileManager::userExistsInFile(username, password, role);
+    }
+
+    // Validate if a role is valid for a username
+    static bool isRoleValid(const std::string& username, const std::string& role) {
+        return FileManager::isRoleValid(username, role);
     }
 };

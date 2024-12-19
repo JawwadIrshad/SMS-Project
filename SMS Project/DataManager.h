@@ -1,11 +1,15 @@
 #pragma once
 #include "User.h"
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
+
 
 ref class DataManager
 {
@@ -132,5 +136,65 @@ public:
         else if (marks >= 55) return 2.5; // C+
         else if (marks >= 45) return 2.0; // C
         else return 0.0; // F
+    }
+
+    // Function to retrieve marks for a specific user based on username or roll number
+    std::vector<int> getMarksFromCSV(const std::string& identifier, bool isUsername)
+    {
+        isUsername = true;
+        std::vector<int> marks;
+        std::ifstream file("marks.csv");  // Open the CSV file
+        std::string line;
+
+        // Read the CSV file line by line
+        while (getline(file, line))
+        {
+            std::stringstream ss(line);  // Use stringstream to split the line by commas
+            std::string userIdentifier;
+            std::string mark;
+            std::vector<std::string> row;
+
+            // Get the first column (username or roll_number)
+            getline(ss, userIdentifier, ',');
+
+            if (isUsername)
+            {
+                // If matching username, extract marks
+                if (userIdentifier == identifier)
+                {
+                    // Extract the marks (next columns in the row)
+                    while (getline(ss, mark, ','))
+                    {
+                        row.push_back(mark);
+                    }
+                    // Convert the marks to integers and store in the vector
+                    for (const  std::string& m : row)
+                    {
+                        marks.push_back(stoi(m));
+                    }
+                    break;  // Exit loop once we find the user
+                }
+            }
+            else
+            {
+                // If using roll number, compare with the second column (roll_number)
+                std::string rollNumber;
+                getline(ss, rollNumber, ',');  // Skip username column
+                if (rollNumber == identifier)  // Compare roll number
+                {
+                    while (getline(ss, mark, ','))
+                    {
+                        row.push_back(mark);
+                    }
+                    for (const  std::string& m : row)
+                    {
+                        marks.push_back(stoi(m));
+                    }
+                    break;  // Exit loop once we find the user
+                }
+            }
+        }
+
+        return marks;
     }
 };

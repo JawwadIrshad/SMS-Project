@@ -60,7 +60,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Label^ courseslabel;
 
 	private: System::Windows::Forms::Label^ gpaLabel;
@@ -77,8 +77,28 @@ namespace CppCLRWinFormsProject {
 
 
 
-	private: System::Windows::Forms::Label^ rolelabel;
+
 	private: System::Windows::Forms::RadioButton^ loginstudentradioButton1;
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^ roll;
+	private: System::Windows::Forms::Label^ rolllabel;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ TeacherLogoutBtn;
+	private: System::Windows::Forms::Button^ assignMarksButton;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::Label^ label1;
+
+
+
+
 
 
 
@@ -112,6 +132,8 @@ namespace CppCLRWinFormsProject {
 			   this->signupButton = (gcnew System::Windows::Forms::Button());
 			   this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			   this->label1 = (gcnew System::Windows::Forms::Label());
+			   this->roll = (gcnew System::Windows::Forms::Label());
+			   this->rolllabel = (gcnew System::Windows::Forms::Label());
 			   this->studDisplayNameLabel = (gcnew System::Windows::Forms::Label());
 			   this->namelabel = (gcnew System::Windows::Forms::Label());
 			   this->logoutBtn = (gcnew System::Windows::Forms::Button());
@@ -121,13 +143,21 @@ namespace CppCLRWinFormsProject {
 			   this->courseslabel = (gcnew System::Windows::Forms::Label());
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			   this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			   this->rolelabel = (gcnew System::Windows::Forms::Label());
+			   this->panel1 = (gcnew System::Windows::Forms::Panel());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
+			   this->assignMarksButton = (gcnew System::Windows::Forms::Button());
+			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   this->signupTab->SuspendLayout();
 			   this->tabPage1->SuspendLayout();
 			   this->tabPage2->SuspendLayout();
+			   this->panel1->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // headingLabel
@@ -181,7 +211,6 @@ namespace CppCLRWinFormsProject {
 			   this->loginstudentradioButton1->TabStop = true;
 			   this->loginstudentradioButton1->Text = L"Student";
 			   this->loginstudentradioButton1->UseVisualStyleBackColor = true;
-			   this->loginstudentradioButton1->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged_1);
 			   // 
 			   // isTeacher
 			   // 
@@ -370,6 +399,8 @@ namespace CppCLRWinFormsProject {
 			   // tabPage1
 			   // 
 			   this->tabPage1->Controls->Add(this->label1);
+			   this->tabPage1->Controls->Add(this->roll);
+			   this->tabPage1->Controls->Add(this->rolllabel);
 			   this->tabPage1->Controls->Add(this->studDisplayNameLabel);
 			   this->tabPage1->Controls->Add(this->namelabel);
 			   this->tabPage1->Controls->Add(this->logoutBtn);
@@ -392,12 +423,33 @@ namespace CppCLRWinFormsProject {
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label1->ForeColor = System::Drawing::Color::Red;
-			   this->label1->Location = System::Drawing::Point(110, 78);
+			   this->label1->Location = System::Drawing::Point(96, 79);
 			   this->label1->Name = L"label1";
 			   this->label1->Size = System::Drawing::Size(159, 19);
-			   this->label1->TabIndex = 2;
+			   this->label1->TabIndex = 12;
 			   this->label1->Text = L"Log In Or Sign Up First";
-			   this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
+			   // 
+			   // roll
+			   // 
+			   this->roll->AutoSize = true;
+			   this->roll->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->roll->Location = System::Drawing::Point(133, 51);
+			   this->roll->Name = L"roll";
+			   this->roll->Size = System::Drawing::Size(33, 19);
+			   this->roll->TabIndex = 11;
+			   this->roll->Text = L"----";
+			   // 
+			   // rolllabel
+			   // 
+			   this->rolllabel->AutoSize = true;
+			   this->rolllabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
+			   this->rolllabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
+			   this->rolllabel->Location = System::Drawing::Point(129, 34);
+			   this->rolllabel->Name = L"rolllabel";
+			   this->rolllabel->Size = System::Drawing::Size(28, 16);
+			   this->rolllabel->TabIndex = 10;
+			   this->rolllabel->Text = L"Roll";
 			   // 
 			   // studDisplayNameLabel
 			   // 
@@ -448,7 +500,7 @@ namespace CppCLRWinFormsProject {
 			   this->gpa->AutoSize = true;
 			   this->gpa->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 15.75F, System::Drawing::FontStyle::Bold));
 			   this->gpa->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->gpa->Location = System::Drawing::Point(172, 42);
+			   this->gpa->Location = System::Drawing::Point(212, 44);
 			   this->gpa->Name = L"gpa";
 			   this->gpa->Size = System::Drawing::Size(57, 28);
 			   this->gpa->TabIndex = 5;
@@ -459,7 +511,7 @@ namespace CppCLRWinFormsProject {
 			   this->gpaLabel->AutoSize = true;
 			   this->gpaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->gpaLabel->Location = System::Drawing::Point(153, 12);
+			   this->gpaLabel->Location = System::Drawing::Point(213, 14);
 			   this->gpaLabel->Name = L"gpaLabel";
 			   this->gpaLabel->Size = System::Drawing::Size(42, 19);
 			   this->gpaLabel->TabIndex = 4;
@@ -503,8 +555,7 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // tabPage2
 			   // 
-			   this->tabPage2->Controls->Add(this->rolelabel);
-			   this->tabPage2->Controls->Add(this->label2);
+			   this->tabPage2->Controls->Add(this->panel1);
 			   this->tabPage2->Location = System::Drawing::Point(4, 22);
 			   this->tabPage2->Name = L"tabPage2";
 			   this->tabPage2->Padding = System::Windows::Forms::Padding(3);
@@ -513,17 +564,17 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage2->Text = L"Teacher Dashboard";
 			   this->tabPage2->UseVisualStyleBackColor = true;
 			   // 
-			   // rolelabel
+			   // panel1
 			   // 
-			   this->rolelabel->AutoSize = true;
-			   this->rolelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->rolelabel->ForeColor = System::Drawing::Color::Red;
-			   this->rolelabel->Location = System::Drawing::Point(6, 14);
-			   this->rolelabel->Name = L"rolelabel";
-			   this->rolelabel->Size = System::Drawing::Size(43, 19);
-			   this->rolelabel->TabIndex = 4;
-			   this->rolelabel->Text = L"Role:";
+			   this->panel1->AutoScroll = true;
+			   this->panel1->Controls->Add(this->label2);
+			   this->panel1->Controls->Add(this->TeacherLogoutBtn);
+			   this->panel1->Controls->Add(this->assignMarksButton);
+			   this->panel1->Controls->Add(this->dataGridView1);
+			   this->panel1->Location = System::Drawing::Point(0, 3);
+			   this->panel1->Name = L"panel1";
+			   this->panel1->Size = System::Drawing::Size(366, 224);
+			   this->panel1->TabIndex = 5;
 			   // 
 			   // label2
 			   // 
@@ -531,11 +582,62 @@ namespace CppCLRWinFormsProject {
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label2->ForeColor = System::Drawing::Color::Red;
-			   this->label2->Location = System::Drawing::Point(98, 101);
+			   this->label2->Location = System::Drawing::Point(107, 68);
 			   this->label2->Name = L"label2";
 			   this->label2->Size = System::Drawing::Size(159, 19);
 			   this->label2->TabIndex = 3;
 			   this->label2->Text = L"Log In Or Sign Up First";
+			   // 
+			   // TeacherLogoutBtn
+			   // 
+			   this->TeacherLogoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
+			   this->TeacherLogoutBtn->Location = System::Drawing::Point(294, 6);
+			   this->TeacherLogoutBtn->Name = L"TeacherLogoutBtn";
+			   this->TeacherLogoutBtn->Size = System::Drawing::Size(66, 23);
+			   this->TeacherLogoutBtn->TabIndex = 8;
+			   this->TeacherLogoutBtn->Text = L"Log out";
+			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
+			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
+			   // 
+			   // assignMarksButton
+			   // 
+			   this->assignMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->assignMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->assignMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->assignMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->assignMarksButton->Location = System::Drawing::Point(7, 24);
+			   this->assignMarksButton->Name = L"assignMarksButton";
+			   this->assignMarksButton->Size = System::Drawing::Size(116, 30);
+			   this->assignMarksButton->TabIndex = 5;
+			   this->assignMarksButton->Text = L"Assing Marks";
+			   this->assignMarksButton->UseVisualStyleBackColor = false;
+			   // 
+			   // dataGridView1
+			   // 
+			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			   this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				   this->Column1,
+					   this->Column2, this->Column3
+			   });
+			   this->dataGridView1->Location = System::Drawing::Point(3, 68);
+			   this->dataGridView1->Name = L"dataGridView1";
+			   this->dataGridView1->Size = System::Drawing::Size(350, 150);
+			   this->dataGridView1->TabIndex = 0;
+			   // 
+			   // Column1
+			   // 
+			   this->Column1->HeaderText = L"Column1";
+			   this->Column1->Name = L"Column1";
+			   // 
+			   // Column2
+			   // 
+			   this->Column2->HeaderText = L"Column2";
+			   this->Column2->Name = L"Column2";
+			   // 
+			   // Column3
+			   // 
+			   this->Column3->HeaderText = L"Column3";
+			   this->Column3->Name = L"Column3";
 			   // 
 			   // Form1
 			   // 
@@ -556,7 +658,9 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage1->ResumeLayout(false);
 			   this->tabPage1->PerformLayout();
 			   this->tabPage2->ResumeLayout(false);
-			   this->tabPage2->PerformLayout();
+			   this->panel1->ResumeLayout(false);
+			   this->panel1->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
@@ -566,90 +670,125 @@ namespace CppCLRWinFormsProject {
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
 
-		   private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			   // Convert System::String^ to std::string in the same way
-			   std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
-			   std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
-			  // AuthUser user(username, password);
-			  // If the currentUser already exists, we update its values for login
-			   if (currentUser == nullptr) {
-				   currentUser = new AuthUser(username, password);
-			   }
-			   else {
-				   // You could update username and password if necessary, e.g., for login purposes
-				   currentUser->setUsername(username);
-				   currentUser->setPassword(password);
-			   }
+		  private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			  std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
+			  std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
+			  std::string role;
+			  
+			  if (currentUser != nullptr) {
+				  // If user is already logged in, show an error message and prevent further login attempts
+				  MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				  return;
+			  }
+
+			  // Determine role based on radio button selection
+			  if (isTeacher->Checked) {
+				  role = "Teacher";
+			  }
+			  else if (loginstudentradioButton1->Checked) {
+				  role = "Student";
+			  }
+			  else {
+				  MessageBox::Show("Please select a role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				  return;
+			  }
+			 
+			  // Validate user credentials and role
+			  if (AuthUser::userExists(username, password, role)) {
+				  if (currentUser == nullptr) {
+					  currentUser = new AuthUser(username, password);
+				  }
+				  else {
+					  currentUser->IsLoggedIn = true;
+				  }
+				  currentUser->setRole(role);
+
+				  // Show appropriate dashboard
+				  if (role == "Teacher") {
+					  tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
+					  ItemsOnTeacherDashBoard(true);
+					  label2->Visible = false;
+					  label1->Text = "Teacher's Can't Visit Student Portal";
+					  label1->Visible = true;
+				  }
+				  else {
+					  tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
+					  ItemsOnStudentDashBoard(true);
+					   //Set username to name label
+					    studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
+					   //Displaying the roll number
+					    roll->Text = gcnew String(currentUser->getRoll().c_str());
+						label2->Visible = true;
+						label2->Text = "Students Can't Visit Teachers Portal";
+						label1->Visible = false;
+
+				  }
+
+				  MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			  }
+			  else {
+				  MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			  }
+
+			  // Clear input fields
+			  loginTextboxUsername->Clear();
+			  loginTextboxPassword->Clear();
+
+			  array<String^>^ marks = { "71" , "81","88","90","99","100" };
+			  DataManager^ dm = gcnew DataManager(marks);
+
+			  dm->DisplayCourses(tableLayoutPanel1);
+			  dm->CalculateGPA(marks);
 
 
-			   //Check For Role At the time of login
-			   if (isTeacher->Checked) {
-				   currentUser->setRole("Teacher");
-				   ItemsOnStudentDashBoard(false);
-				   label1->Text = "You are Teacher Visit Teacher Dashboard";
-			   }
-			   else {
-				   currentUser->setRole("Student");
+		  }
+				 // In the signup button click handler
+private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Convert System::String^ to std::string
+	IntPtr usernamePtr = Marshal::StringToHGlobalAnsi(signupTextboxUsername->Text);
+	IntPtr passwordPtr = Marshal::StringToHGlobalAnsi(signupTextboxPassword->Text);
+	IntPtr confirmPasswordPtr = Marshal::StringToHGlobalAnsi(signupTextboxConfirmPassword->Text);
 
-			   }
-			   //clear the input boxeses
-			   loginTextboxUsername->Clear();
-			   loginTextboxPassword->Clear();
+	std::string username = static_cast<char*>(usernamePtr.ToPointer());
+	std::string password = static_cast<char*>(passwordPtr.ToPointer());
+	std::string confirmPassword = static_cast<char*>(confirmPasswordPtr.ToPointer());
 
-			   //now setting the student name feild info in student dashboard
-			   //converted to currentUser->getUsername to managed string then assinged
-			   studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
-			   //creating data manager object and setting marks for student TESTING PURPOSES Teacher will set this later ON
-			   array<String^>^ MarksOFCourses = { "45", "23", "21" , "99", "55", "56" };
-			   DataManager dmanager(MarksOFCourses);
-			   dmanager.DisplayCourses(tableLayoutPanel1);
-			   gpa->Text = dmanager.CalculateGPA(MarksOFCourses).ToString("F2");
+	// Free memory allocated by Marshal::StringToHGlobalAnsi
+	Marshal::FreeHGlobal(usernamePtr);
+	Marshal::FreeHGlobal(passwordPtr);
+	Marshal::FreeHGlobal(confirmPasswordPtr);
 
-
-			   if (currentUser->login()) {
-				   MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				   tabControl->SelectedTab = tabControl->TabPages[2];
-				   label1->Visible = false;
-				   //Enable all things in student dashboard
-				   ItemsOnStudentDashBoard(true);
-
-			   }
-			   else {
-				   MessageBox::Show("Invalid username or password.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				   label1->Visible = true;
-				   //disable all things on student dashboard
-				   ItemsOnStudentDashBoard(false);
-			   }
-		   }
-
-	private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		// Directly convert System::String^ to std::string
-		std::string username = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(signupTextboxUsername->Text).ToPointer());
-		std::string password = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(signupTextboxPassword->Text).ToPointer());
-		std::string confirmPassword = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(signupTextboxConfirmPassword->Text).ToPointer());
-		
-		
-		// Only create a new user if currentUser is null (i.e., no user is logged in)
-		if (currentUser == nullptr) {
-			currentUser = new AuthUser(username, password);
-		}
-		//Setting role to roleLabel by converting string into a managed string
-		rolelabel->Text = gcnew System::String(currentUser->getRole().c_str());
-		
-		if (password != confirmPassword) {
-			MessageBox::Show("Passwords do not match.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
-		}
-
-		if (currentUser->signup()) {
-			MessageBox::Show("Sign-up successful! Login Now", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else {
-			MessageBox::Show("User already exists.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-
-		tabControl->SelectedTab = tabControl->TabPages[0];
+	// Check if passwords match
+	if (password != confirmPassword) {
+		MessageBox::Show("Passwords do not match.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
 	}
+
+	// Check if username or password fields are empty
+	if (username.empty() || password.empty()) {
+		MessageBox::Show("Please fill in both the username and password fields.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	// Check if the user already exists
+	if (User::userExists(username, password, "Student")) {
+		MessageBox::Show("User already exists.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	// Create a new User object and set the username, password, and role
+	User newUser(username, password, "Student");
+
+	// Save the new user to the file
+	newUser.saveToFile();
+
+	MessageBox::Show("Sign-up successful! Please log in now.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+	// Redirect to the login tab
+	tabControl->SelectedTab = tabControl->TabPages[0];
+}
+
+
 
 	//function to disable and enable the things of dashboard
 	void ItemsOnStudentDashBoard(bool a) {
@@ -661,8 +800,29 @@ namespace CppCLRWinFormsProject {
 		courseslabel->Visible = a;
 		tableLayoutPanel1->Visible = a;
 		logoutBtn->Visible = a;
+		roll->Visible = a;
+		rolllabel->Visible = a;
 	}
 	
+	void ItemsOnTeacherDashBoard(bool a) {
+		assignMarksButton->Visible = a;
+		dataGridView1->Visible = a;
+		TeacherLogoutBtn->Visible = a;
+	}
+	void CheckUserType() {
+		if (currentUser->getRole() == "Teacher") {
+			tabControl->SelectedTab = tabControl->TabPages[3];
+			label2->Visible = false;
+
+		}
+		else {
+			tabControl->SelectedTab = tabControl->TabPages[2];
+			label1->Visible = false;
+			label2->Text = "You are not a Teacher";
+			//Enable all things in student dashboard
+			ItemsOnStudentDashBoard(true);
+		}
+	}
 
 
 	private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
@@ -679,28 +839,50 @@ namespace CppCLRWinFormsProject {
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 		// Hide all components on the Student Dashboard tab if the user is not logged in
 		label1->Visible = true;  // Show the "Login or Signup first" placeholder
-		//disable all items on student dashboard ON FORM LOAD
+		//disable all items on student and teacher dashboard ON FORM LOAD
 		ItemsOnStudentDashBoard(false);
+		ItemsOnTeacherDashBoard(false);
+
+
+
 	}
 
 	private: System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//assing null to poitner
+		delete currentUser;
 		currentUser = NULL;
 		tabControl->SelectedTab = tabControl->TabPages[0];
 		tableLayoutPanel1->Controls->Clear();
 		ItemsOnStudentDashBoard(false);
+		ItemsOnTeacherDashBoard(false);
 		label1->Visible = true;
+		label2->Visible = true;
+		label1->Text = "Log In Again To Visit Dashboards";
+		label2->Text = "Log In Again To Visit Dashboards";
 
 	}
+	
+
+		   private: System::Void assignMarksButton_Click(System::Object^ sender, System::EventArgs^ e) {
+			   // Get the selected student (you may use a DataGridView or ListView)
+			   std::string selectedStudent = currentUser->getUsername();  // Example, get the student from the UI
+
+			   // Example marks input (could come from TextBoxes, DataGridView, etc.)
+			   std::vector<std::string> marks = { "90", "85", "80", "75", "88" };
+
+			   // Find the student from the users and set their marks
+			     // Example: You would use the correct student username
+			   currentUser->setMarksOfCourses(marks);
+
+			   // Save the marks to the file
+			   currentUser->saveToFile();
+
+			   MessageBox::Show("Marks assigned successfully!");
+		   }
+
+			private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			}
 
 
-
-
-private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void radioButton1_CheckedChanged_1(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
