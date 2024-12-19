@@ -7,13 +7,14 @@ public:
     AuthUser(){}
     AuthUser(std::string username, std::string password) : User(username, password) {}
 
+
     bool login() {
-        return userExists(username, password);
+        return userExists(username, password );
         IsLoggedIn = true;
     }
 
     bool signup() {
-        if (!userExists(username, password)) {
+        if (!userExists(username, password )) {
             saveToFile();
             return true;
         }

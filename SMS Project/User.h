@@ -38,10 +38,12 @@ public class User {
 protected:
     std::string username;
     std::string password;
+    std::string role;
     std::string gpa;
     std::vector<std::string> courses = {"Discrete Structures", "OOP", "Calculus", "Oral Communication", "Applied Physics"};
     std::vector<std::string> marksOfCourses;
 public:
+    bool IsStudent;
     // Default constructor
     User() {}
 
@@ -59,7 +61,14 @@ public:
 
     // Setter for password
     void setPassword(const std::string& newPassword) { password = newPassword; }
-
+    //get role
+    std::string getRole() {
+        return role;
+    }
+    //setter for role
+    void setRole(std::string role) {
+        this->role = role;
+    }
     //Get marks of courses
      std::vector<std::string> getMarksOfCourses() const {
         return marksOfCourses;
