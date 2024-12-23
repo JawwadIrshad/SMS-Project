@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AuthUser.h" />
+    <ClInclude Include="CustomTextBox.h" />
     <ClInclude Include="DataManager.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
@@ -144,6 +145,7 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="AuthUser.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
+    <ClCompile Include="CustomTextBox.cpp" />
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="pch.cpp">

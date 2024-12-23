@@ -1,19 +1,25 @@
 #pragma once
 #include "AuthUser.h"
 #include "DataManager.h"
-
-
+#include "Teacher.h"
+#include "CustomTextBox.h"
 #include<string>
+#include<iostream>
+#include <fstream>
+
+
 
 namespace CppCLRWinFormsProject {
-
+	                                                          
 	using namespace System;
 	using namespace System::ComponentModel;
-	using namespace System::Collections;
+	using namespace System::Collections::Generic;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 	using namespace System::Runtime::InteropServices;
+	
 
 	/// <summary>
 	/// Summary for Form1
@@ -44,11 +50,11 @@ namespace CppCLRWinFormsProject {
 		System::Windows::Forms::TabPage^ signupTab;
 
 		// Controls for login form
-		System::Windows::Forms::Label^ loginLabelUsername;
-		System::Windows::Forms::TextBox^ loginTextboxUsername;
-		System::Windows::Forms::Label^ loginLabelPassword;
-		System::Windows::Forms::TextBox^ loginTextboxPassword;
-		System::Windows::Forms::Button^ loginButton;
+
+
+
+
+
 
 		// Controls for sign-up form
 		System::Windows::Forms::Label^ signupLabelUsername;
@@ -60,7 +66,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-	private: System::Windows::Forms::LinkLabel^ linkLabel2;
+
 
 	private: System::Windows::Forms::Label^ courseslabel;
 
@@ -72,14 +78,14 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ studDisplayNameLabel;
 
 	private: System::Windows::Forms::Label^ namelabel;
-	private: System::Windows::Forms::RadioButton^ isTeacher;
+
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Label^ label2;
 
 
 
 
-	private: System::Windows::Forms::RadioButton^ loginstudentradioButton1;
+
 
 
 
@@ -90,12 +96,32 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ rolllabel;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ TeacherLogoutBtn;
-	private: System::Windows::Forms::Button^ assignMarksButton;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+
+
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::RadioButton^ loginstudentradioButton1;
+	private: System::Windows::Forms::RadioButton^ isTeacher;
+	private: System::Windows::Forms::LinkLabel^ linkLabel2;
+	private: System::Windows::Forms::Label^ loginLabelUsername;
+	private: System::Windows::Forms::TextBox^ loginTextboxUsername;
+	private: System::Windows::Forms::Label^ loginLabelPassword;
+	private: System::Windows::Forms::TextBox^ loginTextboxPassword;
+	private: System::Windows::Forms::Button^ loginButton;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ teacherSaveMarksBtn;
+
+	private: System::Windows::Forms::Button^ assignMarksButton;
+
 
 
 
@@ -114,6 +140,10 @@ namespace CppCLRWinFormsProject {
 			   this->headingLabel = (gcnew System::Windows::Forms::Label());
 			   this->tabControl = (gcnew System::Windows::Forms::TabControl());
 			   this->loginTab = (gcnew System::Windows::Forms::TabPage());
+			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			   this->label5 = (gcnew System::Windows::Forms::Label());
+			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->loginstudentradioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			   this->isTeacher = (gcnew System::Windows::Forms::RadioButton());
 			   this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
@@ -122,6 +152,7 @@ namespace CppCLRWinFormsProject {
 			   this->loginLabelPassword = (gcnew System::Windows::Forms::Label());
 			   this->loginTextboxPassword = (gcnew System::Windows::Forms::TextBox());
 			   this->loginButton = (gcnew System::Windows::Forms::Button());
+			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->signupTab = (gcnew System::Windows::Forms::TabPage());
 			   this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			   this->signupLabelUsername = (gcnew System::Windows::Forms::Label());
@@ -147,13 +178,15 @@ namespace CppCLRWinFormsProject {
 			   this->panel1 = (gcnew System::Windows::Forms::Panel());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
-			   this->assignMarksButton = (gcnew System::Windows::Forms::Button());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->assignMarksButton = (gcnew System::Windows::Forms::Button());
+			   this->teacherSaveMarksBtn = (gcnew System::Windows::Forms::Button());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->signupTab->SuspendLayout();
 			   this->tabPage1->SuspendLayout();
 			   this->tabPage2->SuspendLayout();
@@ -166,7 +199,7 @@ namespace CppCLRWinFormsProject {
 			   this->headingLabel->AutoSize = true;
 			   this->headingLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->headingLabel->Location = System::Drawing::Point(23, 23);
+			   this->headingLabel->Location = System::Drawing::Point(12, 9);
 			   this->headingLabel->Name = L"headingLabel";
 			   this->headingLabel->Size = System::Drawing::Size(274, 25);
 			   this->headingLabel->TabIndex = 0;
@@ -174,18 +207,24 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // tabControl
 			   // 
+			   this->tabControl->Appearance = System::Windows::Forms::TabAppearance::FlatButtons;
 			   this->tabControl->Controls->Add(this->loginTab);
 			   this->tabControl->Controls->Add(this->signupTab);
 			   this->tabControl->Controls->Add(this->tabPage1);
 			   this->tabControl->Controls->Add(this->tabPage2);
-			   this->tabControl->Location = System::Drawing::Point(27, 59);
+			   this->tabControl->Location = System::Drawing::Point(2, 51);
 			   this->tabControl->Name = L"tabControl";
 			   this->tabControl->SelectedIndex = 0;
-			   this->tabControl->Size = System::Drawing::Size(374, 256);
+			   this->tabControl->Size = System::Drawing::Size(902, 563);
 			   this->tabControl->TabIndex = 1;
 			   // 
 			   // loginTab
 			   // 
+			   this->loginTab->BackColor = System::Drawing::Color::White;
+			   this->loginTab->Controls->Add(this->comboBox1);
+			   this->loginTab->Controls->Add(this->pictureBox1);
+			   this->loginTab->Controls->Add(this->label5);
+			   this->loginTab->Controls->Add(this->label4);
 			   this->loginTab->Controls->Add(this->loginstudentradioButton1);
 			   this->loginTab->Controls->Add(this->isTeacher);
 			   this->loginTab->Controls->Add(this->linkLabel2);
@@ -194,21 +233,68 @@ namespace CppCLRWinFormsProject {
 			   this->loginTab->Controls->Add(this->loginLabelPassword);
 			   this->loginTab->Controls->Add(this->loginTextboxPassword);
 			   this->loginTab->Controls->Add(this->loginButton);
-			   this->loginTab->Location = System::Drawing::Point(4, 22);
+			   this->loginTab->Controls->Add(this->label3);
+			   this->loginTab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
+			   this->loginTab->Location = System::Drawing::Point(4, 25);
 			   this->loginTab->Name = L"loginTab";
-			   this->loginTab->Size = System::Drawing::Size(366, 230);
+			   this->loginTab->Size = System::Drawing::Size(894, 534);
 			   this->loginTab->TabIndex = 0;
 			   this->loginTab->Text = L"Login";
-			   this->loginTab->UseVisualStyleBackColor = true;
+			   this->loginTab->Click += gcnew System::EventHandler(this, &Form1::loginTab_Click);
+			   // 
+			   // comboBox1
+			   // 
+			   this->comboBox1->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->comboBox1->ForeColor = System::Drawing::SystemColors::WindowText;
+			   this->comboBox1->FormattingEnabled = true;
+			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"OC", L"OOP", L"OOP-LAB", L"Discrete", L"Calculus" });
+			   this->comboBox1->Location = System::Drawing::Point(32, 339);
+			   this->comboBox1->Name = L"comboBox1";
+			   this->comboBox1->Size = System::Drawing::Size(248, 28);
+			   this->comboBox1->TabIndex = 23;
+			   // 
+			   // pictureBox1
+			   // 
+			   this->pictureBox1->Location = System::Drawing::Point(401, 122);
+			   this->pictureBox1->Name = L"pictureBox1";
+			   this->pictureBox1->Padding = System::Windows::Forms::Padding(100);
+			   this->pictureBox1->Size = System::Drawing::Size(382, 264);
+			   this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			   this->pictureBox1->TabIndex = 22;
+			   this->pictureBox1->TabStop = false;
+			   // 
+			   // label5
+			   // 
+			   this->label5->AutoSize = true;
+			   this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label5->ForeColor = System::Drawing::SystemColors::InfoText;
+			   this->label5->Location = System::Drawing::Point(28, 65);
+			   this->label5->Name = L"label5";
+			   this->label5->Size = System::Drawing::Size(105, 19);
+			   this->label5->TabIndex = 21;
+			   this->label5->Text = L"Welcome back!";
+			   // 
+			   // label4
+			   // 
+			   this->label4->AutoSize = true;
+			   this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
+			   this->label4->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->label4->Location = System::Drawing::Point(26, 40);
+			   this->label4->Name = L"label4";
+			   this->label4->Size = System::Drawing::Size(125, 23);
+			   this->label4->TabIndex = 20;
+			   this->label4->Text = L"HJ Developers";
+			   this->label4->Click += gcnew System::EventHandler(this, &Form1::label4_Click);
 			   // 
 			   // loginstudentradioButton1
 			   // 
 			   this->loginstudentradioButton1->AutoSize = true;
+			   this->loginstudentradioButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->loginstudentradioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold));
-			   this->loginstudentradioButton1->Location = System::Drawing::Point(91, 138);
+			   this->loginstudentradioButton1->Location = System::Drawing::Point(187, 373);
 			   this->loginstudentradioButton1->Name = L"loginstudentradioButton1";
 			   this->loginstudentradioButton1->Size = System::Drawing::Size(69, 17);
-			   this->loginstudentradioButton1->TabIndex = 10;
+			   this->loginstudentradioButton1->TabIndex = 19;
 			   this->loginstudentradioButton1->TabStop = true;
 			   this->loginstudentradioButton1->Text = L"Student";
 			   this->loginstudentradioButton1->UseVisualStyleBackColor = true;
@@ -216,11 +302,12 @@ namespace CppCLRWinFormsProject {
 			   // isTeacher
 			   // 
 			   this->isTeacher->AutoSize = true;
+			   this->isTeacher->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->isTeacher->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold));
-			   this->isTeacher->Location = System::Drawing::Point(13, 138);
+			   this->isTeacher->Location = System::Drawing::Point(37, 373);
 			   this->isTeacher->Name = L"isTeacher";
 			   this->isTeacher->Size = System::Drawing::Size(72, 17);
-			   this->isTeacher->TabIndex = 9;
+			   this->isTeacher->TabIndex = 18;
 			   this->isTeacher->TabStop = true;
 			   this->isTeacher->Text = L"Teacher";
 			   this->isTeacher->UseVisualStyleBackColor = true;
@@ -230,68 +317,84 @@ namespace CppCLRWinFormsProject {
 			   this->linkLabel2->AutoSize = true;
 			   this->linkLabel2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->linkLabel2->Location = System::Drawing::Point(237, 207);
+			   this->linkLabel2->Location = System::Drawing::Point(89, 490);
 			   this->linkLabel2->Name = L"linkLabel2";
 			   this->linkLabel2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			   this->linkLabel2->Size = System::Drawing::Size(108, 13);
-			   this->linkLabel2->TabIndex = 8;
+			   this->linkLabel2->TabIndex = 17;
 			   this->linkLabel2->TabStop = true;
 			   this->linkLabel2->Text = L"Don\'t have Account";
-			   this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Form1::linkLabel2_LinkClicked);
 			   // 
 			   // loginLabelUsername
 			   // 
 			   this->loginLabelUsername->AutoSize = true;
-			   this->loginLabelUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->loginLabelUsername->Location = System::Drawing::Point(8, 20);
+			   this->loginLabelUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->loginLabelUsername->Location = System::Drawing::Point(29, 171);
 			   this->loginLabelUsername->Name = L"loginLabelUsername";
-			   this->loginLabelUsername->Size = System::Drawing::Size(73, 17);
-			   this->loginLabelUsername->TabIndex = 0;
+			   this->loginLabelUsername->Size = System::Drawing::Size(80, 19);
+			   this->loginLabelUsername->TabIndex = 12;
 			   this->loginLabelUsername->Text = L"Username:";
 			   // 
 			   // loginTextboxUsername
 			   // 
-			   this->loginTextboxUsername->BackColor = System::Drawing::SystemColors::Menu;
-			   this->loginTextboxUsername->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->loginTextboxUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			   this->loginTextboxUsername->Location = System::Drawing::Point(13, 46);
+			   this->loginTextboxUsername->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->loginTextboxUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->loginTextboxUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->loginTextboxUsername->HideSelection = false;
+			   this->loginTextboxUsername->Location = System::Drawing::Point(32, 202);
+			   this->loginTextboxUsername->MinimumSize = System::Drawing::Size(0, 30);
 			   this->loginTextboxUsername->Name = L"loginTextboxUsername";
-			   this->loginTextboxUsername->Size = System::Drawing::Size(132, 26);
-			   this->loginTextboxUsername->TabIndex = 1;
+			   this->loginTextboxUsername->Size = System::Drawing::Size(248, 28);
+			   this->loginTextboxUsername->TabIndex = 13;
 			   // 
 			   // loginLabelPassword
 			   // 
 			   this->loginLabelPassword->AutoSize = true;
-			   this->loginLabelPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->loginLabelPassword->Location = System::Drawing::Point(10, 83);
+			   this->loginLabelPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->loginLabelPassword->Location = System::Drawing::Point(28, 244);
 			   this->loginLabelPassword->Name = L"loginLabelPassword";
-			   this->loginLabelPassword->Size = System::Drawing::Size(70, 17);
-			   this->loginLabelPassword->TabIndex = 2;
+			   this->loginLabelPassword->Size = System::Drawing::Size(77, 19);
+			   this->loginLabelPassword->TabIndex = 14;
 			   this->loginLabelPassword->Text = L"Password:";
 			   // 
 			   // loginTextboxPassword
 			   // 
-			   this->loginTextboxPassword->BackColor = System::Drawing::SystemColors::Menu;
-			   this->loginTextboxPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->loginTextboxPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			   this->loginTextboxPassword->Location = System::Drawing::Point(13, 106);
+			   this->loginTextboxPassword->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->loginTextboxPassword->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->loginTextboxPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->loginTextboxPassword->Location = System::Drawing::Point(32, 276);
+			   this->loginTextboxPassword->MinimumSize = System::Drawing::Size(0, 30);
 			   this->loginTextboxPassword->Name = L"loginTextboxPassword";
-			   this->loginTextboxPassword->Size = System::Drawing::Size(132, 26);
-			   this->loginTextboxPassword->TabIndex = 3;
+			   this->loginTextboxPassword->PasswordChar = '•';
+			   this->loginTextboxPassword->Size = System::Drawing::Size(248, 28);
+			   this->loginTextboxPassword->TabIndex = 15;
+			   this->loginTextboxPassword->UseSystemPasswordChar = true;
+			   this->loginTextboxPassword->TextChanged += gcnew System::EventHandler(this, &Form1::loginTextboxPassword_TextChanged);
 			   // 
 			   // loginButton
 			   // 
 			   this->loginButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->loginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
 			   this->loginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->loginButton->Location = System::Drawing::Point(13, 172);
+			   this->loginButton->Location = System::Drawing::Point(37, 417);
 			   this->loginButton->Name = L"loginButton";
 			   this->loginButton->Size = System::Drawing::Size(79, 30);
-			   this->loginButton->TabIndex = 4;
+			   this->loginButton->TabIndex = 16;
 			   this->loginButton->Text = L"Login";
-			   this->loginButton->UseVisualStyleBackColor = false;
+			   this->loginButton->UseVisualStyleBackColor = true;
 			   this->loginButton->Click += gcnew System::EventHandler(this, &Form1::loginButton_Click);
+			   // 
+			   // label3
+			   // 
+			   this->label3->AutoSize = true;
+			   this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label3->Location = System::Drawing::Point(24, 96);
+			   this->label3->Name = L"label3";
+			   this->label3->Size = System::Drawing::Size(123, 47);
+			   this->label3->TabIndex = 11;
+			   this->label3->Text = L"Log In";
 			   // 
 			   // signupTab
 			   // 
@@ -303,9 +406,9 @@ namespace CppCLRWinFormsProject {
 			   this->signupTab->Controls->Add(this->signupLabelConfirmPassword);
 			   this->signupTab->Controls->Add(this->signupTextboxConfirmPassword);
 			   this->signupTab->Controls->Add(this->signupButton);
-			   this->signupTab->Location = System::Drawing::Point(4, 22);
+			   this->signupTab->Location = System::Drawing::Point(4, 25);
 			   this->signupTab->Name = L"signupTab";
-			   this->signupTab->Size = System::Drawing::Size(366, 230);
+			   this->signupTab->Size = System::Drawing::Size(894, 534);
 			   this->signupTab->TabIndex = 1;
 			   this->signupTab->Text = L"Sign Up";
 			   this->signupTab->UseVisualStyleBackColor = true;
@@ -410,10 +513,10 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage1->Controls->Add(this->gpaLabel);
 			   this->tabPage1->Controls->Add(this->courseslabel);
 			   this->tabPage1->Controls->Add(this->tableLayoutPanel1);
-			   this->tabPage1->Location = System::Drawing::Point(4, 22);
+			   this->tabPage1->Location = System::Drawing::Point(4, 25);
 			   this->tabPage1->Name = L"tabPage1";
 			   this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			   this->tabPage1->Size = System::Drawing::Size(366, 230);
+			   this->tabPage1->Size = System::Drawing::Size(894, 534);
 			   this->tabPage1->TabIndex = 2;
 			   this->tabPage1->Text = L"Student Dashboard";
 			   this->tabPage1->UseVisualStyleBackColor = true;
@@ -551,16 +654,16 @@ namespace CppCLRWinFormsProject {
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
-			   this->tableLayoutPanel1->Size = System::Drawing::Size(354, 123);
+			   this->tableLayoutPanel1->Size = System::Drawing::Size(354, 120);
 			   this->tableLayoutPanel1->TabIndex = 0;
 			   // 
 			   // tabPage2
 			   // 
 			   this->tabPage2->Controls->Add(this->panel1);
-			   this->tabPage2->Location = System::Drawing::Point(4, 22);
+			   this->tabPage2->Location = System::Drawing::Point(4, 25);
 			   this->tabPage2->Name = L"tabPage2";
 			   this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			   this->tabPage2->Size = System::Drawing::Size(366, 230);
+			   this->tabPage2->Size = System::Drawing::Size(894, 534);
 			   this->tabPage2->TabIndex = 3;
 			   this->tabPage2->Text = L"Teacher Dashboard";
 			   this->tabPage2->UseVisualStyleBackColor = true;
@@ -568,6 +671,7 @@ namespace CppCLRWinFormsProject {
 			   // panel1
 			   // 
 			   this->panel1->AutoScroll = true;
+			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
 			   this->panel1->Controls->Add(this->label2);
 			   this->panel1->Controls->Add(this->TeacherLogoutBtn);
 			   this->panel1->Controls->Add(this->assignMarksButton);
@@ -600,20 +704,6 @@ namespace CppCLRWinFormsProject {
 			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
 			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
 			   // 
-			   // assignMarksButton
-			   // 
-			   this->assignMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->assignMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			   this->assignMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->assignMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->assignMarksButton->Location = System::Drawing::Point(7, 24);
-			   this->assignMarksButton->Name = L"assignMarksButton";
-			   this->assignMarksButton->Size = System::Drawing::Size(116, 30);
-			   this->assignMarksButton->TabIndex = 5;
-			   this->assignMarksButton->Text = L"Assing Marks";
-			   this->assignMarksButton->UseVisualStyleBackColor = false;
-			   this->assignMarksButton->Click += gcnew System::EventHandler(this, &Form1::saveMarksBtn_Click);
-			   // 
 			   // dataGridView1
 			   // 
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -628,6 +718,7 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // Column1
 			   // 
+			   this->Column1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			   this->Column1->HeaderText = L"Column1";
 			   this->Column1->Name = L"Column1";
 			   // 
@@ -641,20 +732,50 @@ namespace CppCLRWinFormsProject {
 			   this->Column3->HeaderText = L"Column3";
 			   this->Column3->Name = L"Column3";
 			   // 
+			   // assignMarksButton
+			   // 
+			   this->assignMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->assignMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->assignMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->assignMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->assignMarksButton->Location = System::Drawing::Point(7, 24);
+			   this->assignMarksButton->Name = L"assignMarksButton";
+			   this->assignMarksButton->Size = System::Drawing::Size(116, 30);
+			   this->assignMarksButton->TabIndex = 5;
+			   this->assignMarksButton->Text = L"Load Marks";
+			   this->assignMarksButton->UseVisualStyleBackColor = false;
+			   this->assignMarksButton->Click += gcnew System::EventHandler(this, &Form1::saveMarksBtn_Click);
+			   // 
+			   // teacherSaveMarksBtn
+			   // 
+			   this->teacherSaveMarksBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->teacherSaveMarksBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->teacherSaveMarksBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->teacherSaveMarksBtn->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->teacherSaveMarksBtn->Location = System::Drawing::Point(150, 23);
+			   this->teacherSaveMarksBtn->Name = L"teacherSaveMarksBtn";
+			   this->teacherSaveMarksBtn->Size = System::Drawing::Size(116, 30);
+			   this->teacherSaveMarksBtn->TabIndex = 9;
+			   this->teacherSaveMarksBtn->Text = L"Save Marks";
+			   this->teacherSaveMarksBtn->UseVisualStyleBackColor = false;
+			   this->teacherSaveMarksBtn->Click += gcnew System::EventHandler(this, &Form1::teacherSaveMarksBtn_Click);
+			   // 
 			   // Form1
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->ClientSize = System::Drawing::Size(413, 327);
+			   this->ClientSize = System::Drawing::Size(904, 614);
 			   this->Controls->Add(this->headingLabel);
 			   this->Controls->Add(this->tabControl);
 			   this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			   this->MaximizeBox = false;
 			   this->Name = L"Form1";
 			   this->Text = L"Student Management System";
 			   this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			   this->tabControl->ResumeLayout(false);
 			   this->loginTab->ResumeLayout(false);
 			   this->loginTab->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			   this->signupTab->ResumeLayout(false);
 			   this->signupTab->PerformLayout();
 			   this->tabPage1->ResumeLayout(false);
@@ -666,12 +787,13 @@ namespace CppCLRWinFormsProject {
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
+			  
 		   }
 #pragma endregion
 
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
-
+		 
 		  private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 			  std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
 			  std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
@@ -712,6 +834,8 @@ namespace CppCLRWinFormsProject {
 					  label2->Visible = false;
 					  label1->Text = "Teacher's Can't Visit Student Portal";
 					  label1->Visible = true;
+					  comboBox1->Visible = true;
+					
 				  }
 				  else {
 					  tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
@@ -723,6 +847,8 @@ namespace CppCLRWinFormsProject {
 						label2->Visible = true;
 						label2->Text = "Students Can't Visit Teachers Portal";
 						label1->Visible = false;
+						comboBox1->Visible = false;
+
 
 				  }
 
@@ -741,6 +867,8 @@ namespace CppCLRWinFormsProject {
 
 			  dm->DisplayCourses(tableLayoutPanel1);
 			  gpa->Text = dm->roundToTwoDecimalPlaces(dm->CalculateGPA(marks)).ToString();
+
+			 
 			  
 
 
@@ -845,8 +973,9 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		//disable all items on student and teacher dashboard ON FORM LOAD
 		ItemsOnStudentDashBoard(false);
 		ItemsOnTeacherDashBoard(false);
+		pictureBox1->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Downloads\\login_page_image.jpg");
 
-
+		
 
 	}
 
@@ -866,18 +995,162 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 	}
 	
 
+				
 		   private: System::Void saveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-			   // Get the selected student (you may use a DataGridView or ListView)
-			   std::string selectedStudent = currentUser->getUsername();  // Example, get the student from the UI
+				   String^ subjectName = comboBox1->Text;
+				   String^ fileName = "marks.csv"; // The path to your CSV file
 
-			   //Teacher teach(selectedStudent);
-		   }
+				   if (!File::Exists(fileName)) {
+					   MessageBox::Show("File not found: " + fileName, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					   return;
+				   }
+
+				   try {
+					   StreamReader^ reader = gcnew StreamReader(fileName);
+					   String^ headerLine = reader->ReadLine(); // Read the header line
+					   if (headerLine == nullptr) {
+						   MessageBox::Show("The file is empty.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						   return;
+					   }
+
+					   // Split the header line into columns
+					   array<String^>^ subjects = headerLine->Split(',');
+
+					   // Check if the subject exists in the header, if not return
+					   int subjectIndex = Array::IndexOf(subjects, subjectName);
+					   if (subjectIndex == -1) {
+						   MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						   reader->Close();
+						   return;
+					   }
+
+					   // Prepare the DataGridView
+					   dataGridView1->Columns->Clear(); // Clear any previous columns
+					   dataGridView1->Columns->Add("StudentName", "Student Name"); // Always add student name column
+					   dataGridView1->Columns->Add(subjectName, subjectName); // Add the relevant subject column
+
+					   // Read rows and add them to the DataGridView
+					   String^ line;
+					   while ((line = reader->ReadLine()) != nullptr) {
+						   array<String^>^ rowArray = line->Split(',');
+
+						   // Ensure that the row has enough columns
+						   if (rowArray->Length > subjectIndex) {
+							   dataGridView1->Rows->Add(rowArray[0], rowArray[subjectIndex]); // Add student name and mark for the subject
+						   }
+						   else {
+							  // MessageBox::Show("Row has missing columns: " + line, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						   }
+					   }
+
+					   reader->Close();
+				   }
+				   catch (Exception^ ex) {
+					   MessageBox::Show("Error reading the file: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				   }
+			}
+
+
 
 			private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			}
 
 
 
+
+private: System::Void loginTab_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void loginTextboxPassword_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+
+private: System::Void teacherSaveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ subjectName = comboBox1->Text;  // Selected subject from ComboBox
+	String^ fileName = "marks.csv";        // Path to the CSV file
+
+	if (String::IsNullOrEmpty(subjectName)) {
+		MessageBox::Show("Please select a subject before saving.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	try {
+		// Read the CSV file content
+		StreamReader^ reader = gcnew StreamReader(fileName);
+		List<String^>^ lines = gcnew List<String^>();
+
+		// Read the header row
+		String^ headerLine = reader->ReadLine();
+		if (String::IsNullOrEmpty(headerLine)) {
+			MessageBox::Show("The CSV file is empty or invalid.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			reader->Close();
+			return;
+		}
+		lines->Add(headerLine); // Add header line to the updated content
+
+		// Split header to get column names
+		array<String^>^ subjects = headerLine->Split(',');
+
+		// Find the index of the selected subject in the header row
+		int subjectIndex = Array::IndexOf(subjects, subjectName);
+		if (subjectIndex == -1) {
+			MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			reader->Close();
+			return;
+		}
+
+		// Process the remaining rows in the CSV
+		String^ line;
+		int rowIndex = 0; // To keep track of DataGridView rows
+		while ((line = reader->ReadLine()) != nullptr) {
+			array<String^>^ rowArray = line->Split(',');
+
+			// Check if the row has fewer columns than the header
+			if (rowArray->Length < subjects->Length) {
+				// Fill the missing columns with default values
+				array<String^>^ updatedRowArray = gcnew array<String^>(subjects->Length);
+				for (int i = 0; i < updatedRowArray->Length; i++) {
+					if (i < rowArray->Length) {
+						updatedRowArray[i] = rowArray[i];
+					}
+					else {
+						updatedRowArray[i] = ""; // Default value for missing columns
+					}
+				}
+				rowArray = updatedRowArray;
+
+				// Optional: Warn the user about the inconsistency
+				MessageBox::Show("Row has missing columns: " + line, "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+
+			// Check if we still have corresponding rows in the DataGridView
+			if (rowIndex < dataGridView1->Rows->Count - 1) { // Skip the "new row" in DataGridView
+				// Update the relevant column for the subject with the value from the DataGridView
+				if (dataGridView1->Rows[rowIndex]->Cells[subjectIndex]->Value != nullptr) {
+					rowArray[subjectIndex] = dataGridView1->Rows[rowIndex]->Cells[subjectIndex]->Value->ToString();
+				}
+			}
+
+			lines->Add(String::Join(",", rowArray)); // Add the updated row to the list
+			rowIndex++;
+		}
+
+		reader->Close();
+
+		// Write the updated content back to the file
+		StreamWriter^ writer = gcnew StreamWriter(fileName);
+		for each (String ^ updatedLine in lines) {
+			writer->WriteLine(updatedLine);
+		}
+		writer->Close();
+
+		MessageBox::Show("Marks saved successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Error saving marks: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
 };
 }
 
