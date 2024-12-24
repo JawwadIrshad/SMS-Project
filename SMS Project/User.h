@@ -108,7 +108,7 @@ public:
         if (marksFile.is_open()) {
             marksFile << username;  // Start by saving the student's username
             for (const auto& mark : marksOfCourses) {
-                marksFile << "," << mark;  // Add each mark for the courses
+                marksFile << "," << 0;  // Add each mark for the courses
             }
             marksFile << "\n";
             marksFile.close();

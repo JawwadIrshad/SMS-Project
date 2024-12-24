@@ -1,8 +1,7 @@
 #pragma once
 #include "AuthUser.h"
 #include "DataManager.h"
-#include "Teacher.h"
-#include "CustomTextBox.h"
+#include "Admin.h"
 #include<string>
 #include<iostream>
 #include <fstream>
@@ -119,8 +118,38 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
 	private: System::Windows::Forms::Button^ teacherSaveMarksBtn;
+	private: System::Windows::Forms::Button^ loadMarksButton;
 
-	private: System::Windows::Forms::Button^ assignMarksButton;
+
+	private: System::Windows::Forms::Label^ attendanceLabel;
+	private: System::Windows::Forms::DataGridView^ attendanceDataGridView;
+
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+private: System::Windows::Forms::Label^ assignMarksLabel;
+private: System::Windows::Forms::TabPage^ adminDashBoard;
+private: System::Windows::Forms::Panel^ panel2;
+private: System::Windows::Forms::PictureBox^ pictureBox2;
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::Label^ label7;
+private: System::Windows::Forms::Label^ adminNameLabel;
+
+private: System::Windows::Forms::TextBox^ adminNameTextBox;
+
+
+private: System::Windows::Forms::Label^ label9;
+private: System::Windows::Forms::TextBox^ adminPasswordTextBox;
+private: System::Windows::Forms::Button^ adminLoginButton;
+private: System::Windows::Forms::Label^ adminLoginLabel;
+
+
+
+
+
+
+
 
 
 
@@ -175,23 +204,44 @@ namespace CppCLRWinFormsProject {
 			   this->courseslabel = (gcnew System::Windows::Forms::Label());
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			   this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			   this->panel1 = (gcnew System::Windows::Forms::Panel());
+			   this->assignMarksLabel = (gcnew System::Windows::Forms::Label());
+			   this->attendanceDataGridView = (gcnew System::Windows::Forms::DataGridView());
+			   this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->attendanceLabel = (gcnew System::Windows::Forms::Label());
+			   this->panel1 = (gcnew System::Windows::Forms::Panel());
+			   this->teacherSaveMarksBtn = (gcnew System::Windows::Forms::Button());
 			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
+			   this->loadMarksButton = (gcnew System::Windows::Forms::Button());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->assignMarksButton = (gcnew System::Windows::Forms::Button());
-			   this->teacherSaveMarksBtn = (gcnew System::Windows::Forms::Button());
+			   this->adminDashBoard = (gcnew System::Windows::Forms::TabPage());
+			   this->panel2 = (gcnew System::Windows::Forms::Panel());
+			   this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			   this->label6 = (gcnew System::Windows::Forms::Label());
+			   this->label7 = (gcnew System::Windows::Forms::Label());
+			   this->adminNameLabel = (gcnew System::Windows::Forms::Label());
+			   this->adminNameTextBox = (gcnew System::Windows::Forms::TextBox());
+			   this->label9 = (gcnew System::Windows::Forms::Label());
+			   this->adminPasswordTextBox = (gcnew System::Windows::Forms::TextBox());
+			   this->adminLoginButton = (gcnew System::Windows::Forms::Button());
+			   this->adminLoginLabel = (gcnew System::Windows::Forms::Label());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->signupTab->SuspendLayout();
 			   this->tabPage1->SuspendLayout();
 			   this->tabPage2->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->attendanceDataGridView))->BeginInit();
 			   this->panel1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			   this->adminDashBoard->SuspendLayout();
+			   this->panel2->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // headingLabel
@@ -212,6 +262,7 @@ namespace CppCLRWinFormsProject {
 			   this->tabControl->Controls->Add(this->signupTab);
 			   this->tabControl->Controls->Add(this->tabPage1);
 			   this->tabControl->Controls->Add(this->tabPage2);
+			   this->tabControl->Controls->Add(this->adminDashBoard);
 			   this->tabControl->Location = System::Drawing::Point(2, 51);
 			   this->tabControl->Name = L"tabControl";
 			   this->tabControl->SelectedIndex = 0;
@@ -240,7 +291,6 @@ namespace CppCLRWinFormsProject {
 			   this->loginTab->Size = System::Drawing::Size(894, 534);
 			   this->loginTab->TabIndex = 0;
 			   this->loginTab->Text = L"Login";
-			   this->loginTab->Click += gcnew System::EventHandler(this, &Form1::loginTab_Click);
 			   // 
 			   // comboBox1
 			   // 
@@ -284,7 +334,6 @@ namespace CppCLRWinFormsProject {
 			   this->label4->Size = System::Drawing::Size(125, 23);
 			   this->label4->TabIndex = 20;
 			   this->label4->Text = L"HJ Developers";
-			   this->label4->Click += gcnew System::EventHandler(this, &Form1::label4_Click);
 			   // 
 			   // loginstudentradioButton1
 			   // 
@@ -317,13 +366,14 @@ namespace CppCLRWinFormsProject {
 			   this->linkLabel2->AutoSize = true;
 			   this->linkLabel2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->linkLabel2->Location = System::Drawing::Point(89, 490);
+			   this->linkLabel2->Location = System::Drawing::Point(32, 481);
 			   this->linkLabel2->Name = L"linkLabel2";
 			   this->linkLabel2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			   this->linkLabel2->Size = System::Drawing::Size(108, 13);
 			   this->linkLabel2->TabIndex = 17;
 			   this->linkLabel2->TabStop = true;
 			   this->linkLabel2->Text = L"Don\'t have Account";
+			   this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Form1::linkLabel2_LinkClicked);
 			   // 
 			   // loginLabelUsername
 			   // 
@@ -369,7 +419,6 @@ namespace CppCLRWinFormsProject {
 			   this->loginTextboxPassword->Size = System::Drawing::Size(248, 28);
 			   this->loginTextboxPassword->TabIndex = 15;
 			   this->loginTextboxPassword->UseSystemPasswordChar = true;
-			   this->loginTextboxPassword->TextChanged += gcnew System::EventHandler(this, &Form1::loginTextboxPassword_TextChanged);
 			   // 
 			   // loginButton
 			   // 
@@ -659,6 +708,10 @@ namespace CppCLRWinFormsProject {
 			   // 
 			   // tabPage2
 			   // 
+			   this->tabPage2->Controls->Add(this->assignMarksLabel);
+			   this->tabPage2->Controls->Add(this->attendanceDataGridView);
+			   this->tabPage2->Controls->Add(this->label2);
+			   this->tabPage2->Controls->Add(this->attendanceLabel);
 			   this->tabPage2->Controls->Add(this->panel1);
 			   this->tabPage2->Location = System::Drawing::Point(4, 25);
 			   this->tabPage2->Name = L"tabPage2";
@@ -668,18 +721,45 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage2->Text = L"Teacher Dashboard";
 			   this->tabPage2->UseVisualStyleBackColor = true;
 			   // 
-			   // panel1
+			   // assignMarksLabel
 			   // 
-			   this->panel1->AutoScroll = true;
-			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
-			   this->panel1->Controls->Add(this->label2);
-			   this->panel1->Controls->Add(this->TeacherLogoutBtn);
-			   this->panel1->Controls->Add(this->assignMarksButton);
-			   this->panel1->Controls->Add(this->dataGridView1);
-			   this->panel1->Location = System::Drawing::Point(0, 3);
-			   this->panel1->Name = L"panel1";
-			   this->panel1->Size = System::Drawing::Size(366, 224);
-			   this->panel1->TabIndex = 5;
+			   this->assignMarksLabel->AutoSize = true;
+			   this->assignMarksLabel->BackColor = System::Drawing::Color::Transparent;
+			   this->assignMarksLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->assignMarksLabel->Location = System::Drawing::Point(6, 14);
+			   this->assignMarksLabel->Name = L"assignMarksLabel";
+			   this->assignMarksLabel->Size = System::Drawing::Size(144, 30);
+			   this->assignMarksLabel->TabIndex = 11;
+			   this->assignMarksLabel->Text = L"Assign Marks";
+			   // 
+			   // attendanceDataGridView
+			   // 
+			   this->attendanceDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			   this->attendanceDataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				   this->dataGridViewTextBoxColumn1,
+					   this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3
+			   });
+			   this->attendanceDataGridView->Location = System::Drawing::Point(536, 58);
+			   this->attendanceDataGridView->Name = L"attendanceDataGridView";
+			   this->attendanceDataGridView->Size = System::Drawing::Size(350, 220);
+			   this->attendanceDataGridView->TabIndex = 10;
+			   // 
+			   // dataGridViewTextBoxColumn1
+			   // 
+			   this->dataGridViewTextBoxColumn1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			   this->dataGridViewTextBoxColumn1->HeaderText = L"Column1";
+			   this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			   // 
+			   // dataGridViewTextBoxColumn2
+			   // 
+			   this->dataGridViewTextBoxColumn2->HeaderText = L"Column2";
+			   this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			   // 
+			   // dataGridViewTextBoxColumn3
+			   // 
+			   this->dataGridViewTextBoxColumn3->HeaderText = L"Column3";
+			   this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			   // 
 			   // label2
 			   // 
@@ -687,11 +767,48 @@ namespace CppCLRWinFormsProject {
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label2->ForeColor = System::Drawing::Color::Red;
-			   this->label2->Location = System::Drawing::Point(107, 68);
+			   this->label2->Location = System::Drawing::Point(377, 249);
 			   this->label2->Name = L"label2";
 			   this->label2->Size = System::Drawing::Size(159, 19);
 			   this->label2->TabIndex = 3;
 			   this->label2->Text = L"Log In Or Sign Up First";
+			   // 
+			   // attendanceLabel
+			   // 
+			   this->attendanceLabel->AutoSize = true;
+			   this->attendanceLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->attendanceLabel->Location = System::Drawing::Point(536, 14);
+			   this->attendanceLabel->Name = L"attendanceLabel";
+			   this->attendanceLabel->Size = System::Drawing::Size(132, 30);
+			   this->attendanceLabel->TabIndex = 6;
+			   this->attendanceLabel->Text = L"Attendance ";
+			   // 
+			   // panel1
+			   // 
+			   this->panel1->AutoScroll = true;
+			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
+			   this->panel1->Controls->Add(this->TeacherLogoutBtn);
+			   this->panel1->Controls->Add(this->loadMarksButton);
+			   this->panel1->Controls->Add(this->dataGridView1);
+			   this->panel1->Location = System::Drawing::Point(0, 55);
+			   this->panel1->Name = L"panel1";
+			   this->panel1->Size = System::Drawing::Size(366, 224);
+			   this->panel1->TabIndex = 5;
+			   // 
+			   // teacherSaveMarksBtn
+			   // 
+			   this->teacherSaveMarksBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->teacherSaveMarksBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->teacherSaveMarksBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->teacherSaveMarksBtn->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->teacherSaveMarksBtn->Location = System::Drawing::Point(150, 23);
+			   this->teacherSaveMarksBtn->Name = L"teacherSaveMarksBtn";
+			   this->teacherSaveMarksBtn->Size = System::Drawing::Size(116, 30);
+			   this->teacherSaveMarksBtn->TabIndex = 9;
+			   this->teacherSaveMarksBtn->Text = L"Save Marks";
+			   this->teacherSaveMarksBtn->UseVisualStyleBackColor = false;
+			   this->teacherSaveMarksBtn->Click += gcnew System::EventHandler(this, &Form1::teacherSaveMarksBtn_Click);
 			   // 
 			   // TeacherLogoutBtn
 			   // 
@@ -704,8 +821,24 @@ namespace CppCLRWinFormsProject {
 			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
 			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
 			   // 
+			   // loadMarksButton
+			   // 
+			   this->loadMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->loadMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->loadMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->loadMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->loadMarksButton->Location = System::Drawing::Point(7, 24);
+			   this->loadMarksButton->Name = L"loadMarksButton";
+			   this->loadMarksButton->Size = System::Drawing::Size(116, 30);
+			   this->loadMarksButton->TabIndex = 5;
+			   this->loadMarksButton->Text = L"Load Marks";
+			   this->loadMarksButton->UseVisualStyleBackColor = false;
+			   this->loadMarksButton->Click += gcnew System::EventHandler(this, &Form1::teacherLoadMarksBtn_Click);
+			   // 
 			   // dataGridView1
 			   // 
+			   this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleVertical;
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			   this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				   this->Column1,
@@ -732,33 +865,135 @@ namespace CppCLRWinFormsProject {
 			   this->Column3->HeaderText = L"Column3";
 			   this->Column3->Name = L"Column3";
 			   // 
-			   // assignMarksButton
+			   // adminDashBoard
 			   // 
-			   this->assignMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->assignMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			   this->assignMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->assignMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->assignMarksButton->Location = System::Drawing::Point(7, 24);
-			   this->assignMarksButton->Name = L"assignMarksButton";
-			   this->assignMarksButton->Size = System::Drawing::Size(116, 30);
-			   this->assignMarksButton->TabIndex = 5;
-			   this->assignMarksButton->Text = L"Load Marks";
-			   this->assignMarksButton->UseVisualStyleBackColor = false;
-			   this->assignMarksButton->Click += gcnew System::EventHandler(this, &Form1::saveMarksBtn_Click);
+			   this->adminDashBoard->Controls->Add(this->panel2);
+			   this->adminDashBoard->Location = System::Drawing::Point(4, 25);
+			   this->adminDashBoard->Name = L"adminDashBoard";
+			   this->adminDashBoard->Padding = System::Windows::Forms::Padding(3);
+			   this->adminDashBoard->Size = System::Drawing::Size(894, 534);
+			   this->adminDashBoard->TabIndex = 4;
+			   this->adminDashBoard->Text = L"Admin Dashboard";
+			   this->adminDashBoard->UseVisualStyleBackColor = true;
 			   // 
-			   // teacherSaveMarksBtn
+			   // panel2
 			   // 
-			   this->teacherSaveMarksBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->teacherSaveMarksBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			   this->teacherSaveMarksBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->teacherSaveMarksBtn->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->teacherSaveMarksBtn->Location = System::Drawing::Point(150, 23);
-			   this->teacherSaveMarksBtn->Name = L"teacherSaveMarksBtn";
-			   this->teacherSaveMarksBtn->Size = System::Drawing::Size(116, 30);
-			   this->teacherSaveMarksBtn->TabIndex = 9;
-			   this->teacherSaveMarksBtn->Text = L"Save Marks";
-			   this->teacherSaveMarksBtn->UseVisualStyleBackColor = false;
-			   this->teacherSaveMarksBtn->Click += gcnew System::EventHandler(this, &Form1::teacherSaveMarksBtn_Click);
+			   this->panel2->BackColor = System::Drawing::Color::White;
+			   this->panel2->Controls->Add(this->pictureBox2);
+			   this->panel2->Controls->Add(this->label6);
+			   this->panel2->Controls->Add(this->label7);
+			   this->panel2->Controls->Add(this->adminNameLabel);
+			   this->panel2->Controls->Add(this->adminNameTextBox);
+			   this->panel2->Controls->Add(this->label9);
+			   this->panel2->Controls->Add(this->adminPasswordTextBox);
+			   this->panel2->Controls->Add(this->adminLoginButton);
+			   this->panel2->Controls->Add(this->adminLoginLabel);
+			   this->panel2->Location = System::Drawing::Point(11, 16);
+			   this->panel2->Name = L"panel2";
+			   this->panel2->Size = System::Drawing::Size(862, 489);
+			   this->panel2->TabIndex = 0;
+			   // 
+			   // pictureBox2
+			   // 
+			   this->pictureBox2->Location = System::Drawing::Point(429, 123);
+			   this->pictureBox2->Name = L"pictureBox2";
+			   this->pictureBox2->Padding = System::Windows::Forms::Padding(100);
+			   this->pictureBox2->Size = System::Drawing::Size(382, 264);
+			   this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			   this->pictureBox2->TabIndex = 31;
+			   this->pictureBox2->TabStop = false;
+			   // 
+			   // label6
+			   // 
+			   this->label6->AutoSize = true;
+			   this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label6->ForeColor = System::Drawing::SystemColors::InfoText;
+			   this->label6->Location = System::Drawing::Point(56, 66);
+			   this->label6->Name = L"label6";
+			   this->label6->Size = System::Drawing::Size(105, 19);
+			   this->label6->TabIndex = 30;
+			   this->label6->Text = L"Welcome back!";
+			   // 
+			   // label7
+			   // 
+			   this->label7->AutoSize = true;
+			   this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
+			   this->label7->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->label7->Location = System::Drawing::Point(54, 41);
+			   this->label7->Name = L"label7";
+			   this->label7->Size = System::Drawing::Size(125, 23);
+			   this->label7->TabIndex = 29;
+			   this->label7->Text = L"HJ Developers";
+			   // 
+			   // adminNameLabel
+			   // 
+			   this->adminNameLabel->AutoSize = true;
+			   this->adminNameLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->adminNameLabel->Location = System::Drawing::Point(57, 172);
+			   this->adminNameLabel->Name = L"adminNameLabel";
+			   this->adminNameLabel->Size = System::Drawing::Size(101, 19);
+			   this->adminNameLabel->TabIndex = 24;
+			   this->adminNameLabel->Text = L"Admin Name:";
+			   // 
+			   // adminNameTextBox
+			   // 
+			   this->adminNameTextBox->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->adminNameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->adminNameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->adminNameTextBox->HideSelection = false;
+			   this->adminNameTextBox->Location = System::Drawing::Point(60, 203);
+			   this->adminNameTextBox->MinimumSize = System::Drawing::Size(0, 30);
+			   this->adminNameTextBox->Name = L"adminNameTextBox";
+			   this->adminNameTextBox->Size = System::Drawing::Size(248, 28);
+			   this->adminNameTextBox->TabIndex = 25;
+			   // 
+			   // label9
+			   // 
+			   this->label9->AutoSize = true;
+			   this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label9->Location = System::Drawing::Point(56, 245);
+			   this->label9->Name = L"label9";
+			   this->label9->Size = System::Drawing::Size(77, 19);
+			   this->label9->TabIndex = 26;
+			   this->label9->Text = L"Password:";
+			   // 
+			   // adminPasswordTextBox
+			   // 
+			   this->adminPasswordTextBox->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->adminPasswordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->adminPasswordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->adminPasswordTextBox->Location = System::Drawing::Point(60, 277);
+			   this->adminPasswordTextBox->MinimumSize = System::Drawing::Size(0, 30);
+			   this->adminPasswordTextBox->Name = L"adminPasswordTextBox";
+			   this->adminPasswordTextBox->PasswordChar = '•';
+			   this->adminPasswordTextBox->Size = System::Drawing::Size(248, 28);
+			   this->adminPasswordTextBox->TabIndex = 27;
+			   this->adminPasswordTextBox->UseSystemPasswordChar = true;
+			   // 
+			   // adminLoginButton
+			   // 
+			   this->adminLoginButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->adminLoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->adminLoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->adminLoginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
+			   this->adminLoginButton->Location = System::Drawing::Point(61, 338);
+			   this->adminLoginButton->Name = L"adminLoginButton";
+			   this->adminLoginButton->Size = System::Drawing::Size(79, 30);
+			   this->adminLoginButton->TabIndex = 28;
+			   this->adminLoginButton->Text = L"Login";
+			   this->adminLoginButton->UseVisualStyleBackColor = true;
+			   this->adminLoginButton->Click += gcnew System::EventHandler(this, &Form1::adminLoginButton_Click);
+			   // 
+			   // adminLoginLabel
+			   // 
+			   this->adminLoginLabel->AutoSize = true;
+			   this->adminLoginLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->adminLoginLabel->Location = System::Drawing::Point(52, 97);
+			   this->adminLoginLabel->Name = L"adminLoginLabel";
+			   this->adminLoginLabel->Size = System::Drawing::Size(243, 47);
+			   this->adminLoginLabel->TabIndex = 23;
+			   this->adminLoginLabel->Text = L"Admin Log In";
 			   // 
 			   // Form1
 			   // 
@@ -781,99 +1016,98 @@ namespace CppCLRWinFormsProject {
 			   this->tabPage1->ResumeLayout(false);
 			   this->tabPage1->PerformLayout();
 			   this->tabPage2->ResumeLayout(false);
+			   this->tabPage2->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->attendanceDataGridView))->EndInit();
 			   this->panel1->ResumeLayout(false);
-			   this->panel1->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			   this->adminDashBoard->ResumeLayout(false);
+			   this->panel2->ResumeLayout(false);
+			   this->panel2->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
-			  
 		   }
 #pragma endregion
 
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
 		 
-		  private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-			  std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
-			  std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
-			  std::string role;
-			  
-			  if (currentUser != nullptr) {
-				  // If user is already logged in, show an error message and prevent further login attempts
-				  MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				  return;
-			  }
+			private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+				std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
+				std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
+				std::string role;
 
-			  // Determine role based on radio button selection
-			  if (isTeacher->Checked) {
-				  role = "Teacher";
-			  }
-			  else if (loginstudentradioButton1->Checked) {
-				  role = "Student";
-			  }
-			  else {
-				  MessageBox::Show("Please select a role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				  return;
-			  }
-			 
-			  // Validate user credentials and role
-			  if (AuthUser::userExists(username, password, role)) {
-				  if (currentUser == nullptr) {
-					  currentUser = new AuthUser(username, password);
-				  }
-				  else {
-					  currentUser->IsLoggedIn = true;
-				  }
-				  currentUser->setRole(role);
+				if (currentUser != nullptr) {
+					// If user is already logged in, show an error message and prevent further login attempts
+					MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
 
-				  // Show appropriate dashboard
-				  if (role == "Teacher") {
-					  tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
-					  ItemsOnTeacherDashBoard(true);
-					  label2->Visible = false;
-					  label1->Text = "Teacher's Can't Visit Student Portal";
-					  label1->Visible = true;
-					  comboBox1->Visible = true;
-					
-				  }
-				  else {
-					  tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
-					  ItemsOnStudentDashBoard(true);
-					   //Set username to name label
-					    studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
-					   //Displaying the roll number
-					    roll->Text = gcnew String(currentUser->getRoll().c_str());
+				// Determine role based on radio button selection
+				if (isTeacher->Checked) {
+					role = "Teacher";
+				}
+				else if (loginstudentradioButton1->Checked) {
+					role = "Student";
+				}
+				else {
+					MessageBox::Show("Please select a role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+
+				// Validate ComboBox selection if the user is a Teacher
+				if (role == "Teacher" && String::IsNullOrEmpty(comboBox1->Text)) {
+					MessageBox::Show("Please select a subject from the dropdown.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+
+				// Validate user credentials and role
+				if (AuthUser::userExists(username, password, role)) {
+					if (currentUser == nullptr) {
+						currentUser = new AuthUser(username, password);
+					}
+					else {
+						currentUser->IsLoggedIn = true;
+					}
+					currentUser->setRole(role);
+
+					// Show appropriate dashboard
+					if (role == "Teacher") {
+						tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
+						ItemsOnTeacherDashBoard(true);
+						label2->Visible = false;
+						label1->Text = "Teachers Can't Visit Student Portal";
+						label1->Visible = true;
+						comboBox1->Visible = true;
+					}
+					else {
+						tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
+						ItemsOnStudentDashBoard(true);
+						// Set username to name label
+						studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
+						// Displaying the roll number
+						roll->Text = gcnew String(currentUser->getRoll().c_str());
 						label2->Visible = true;
 						label2->Text = "Students Can't Visit Teachers Portal";
 						label1->Visible = false;
-						comboBox1->Visible = false;
+						
+					}
 
+					MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				}
+				else {
+					MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				}
 
-				  }
+				// Clear input fields
+				loginTextboxUsername->Clear();
+				loginTextboxPassword->Clear();
+			}
 
-				  MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			  }
-			  else {
-				  MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			  }
+						
 
-			  // Clear input fields
-			  loginTextboxUsername->Clear();
-			  loginTextboxPassword->Clear();
-
-			  array<String^>^ marks = { "71" , "81","88","90","99","100" };
-			  DataManager^ dm = gcnew DataManager(marks);
-
-			  dm->DisplayCourses(tableLayoutPanel1);
-			  gpa->Text = dm->roundToTwoDecimalPlaces(dm->CalculateGPA(marks)).ToString();
-
-			 
-			  
-
-
-		  }
-				 // In the signup button click handler
+				   // In the signup button click handler
 private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	// Convert System::String^ to std::string
 	IntPtr usernamePtr = Marshal::StringToHGlobalAnsi(signupTextboxUsername->Text);
@@ -934,39 +1168,34 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		roll->Visible = a;
 		rolllabel->Visible = a;
 	}
-	
+	//function to disable and enable the things of dashboard
 	void ItemsOnTeacherDashBoard(bool a) {
-		assignMarksButton->Visible = a;
+		loadMarksButton->Visible = a;
 		dataGridView1->Visible = a;
 		TeacherLogoutBtn->Visible = a;
+		teacherSaveMarksBtn->Visible = a;
+		attendanceDataGridView->Visible = a;
+		attendanceLabel->Visible = a;
+		assignMarksLabel->Visible = a;
 	}
-	void CheckUserType() {
-		if (currentUser->getRole() == "Teacher") {
-			tabControl->SelectedTab = tabControl->TabPages[3];
-			label2->Visible = false;
+	//function to disable and enable the things of admin dashboard
+	void DisplayAdminLoginPanelDashBoard(bool a) {
+		panel2->Visible = a;
+		adminLoginLabel->Visible = a;
+		adminNameLabel->Visible = a;
 
-		}
-		else {
-			tabControl->SelectedTab = tabControl->TabPages[2];
-			label1->Visible = false;
-			label2->Text = "You are not a Teacher";
-			//Enable all things in student dashboard
-			ItemsOnStudentDashBoard(true);
-		}
 	}
-
-
+	//Link label2 to goto from login to sign up page
 	private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		tabControl->SelectedTab = tabControl->TabPages[1];
 	}
+	//Link label1 to goto from sign up to login
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		tabControl->SelectedTab = tabControl->TabPages[0];
 
 	}
-
-		private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		}
-
+	
+	//On FOrm load 
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 		// Hide all components on the Student Dashboard tab if the user is not logged in
 		label1->Visible = true;  // Show the "Login or Signup first" placeholder
@@ -974,11 +1203,13 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		ItemsOnStudentDashBoard(false);
 		ItemsOnTeacherDashBoard(false);
 		pictureBox1->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Downloads\\login_page_image.jpg");
-
-		
+		pictureBox2->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Downloads\\login_page_image.jpg");
+		//Enable the admin panel 
+		Admin::DisplayPannel(panel2, true);
 
 	}
-
+	
+	//Logout button for teacher and student dashboards
 	private: System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//assing null to poitner
 		delete currentUser;
@@ -991,166 +1222,167 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		label2->Visible = true;
 		label1->Text = "Log In Again To Visit Dashboards";
 		label2->Text = "Log In Again To Visit Dashboards";
-
 	}
 	
+	//Teacher load Marks Button in the data grid view for marks
+	private: System::Void teacherLoadMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ subjectName = comboBox1->Text;
+		String^ fileName = "marks.csv"; // The path to your CSV file
 
-				
-		   private: System::Void saveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-				   String^ subjectName = comboBox1->Text;
-				   String^ fileName = "marks.csv"; // The path to your CSV file
-
-				   if (!File::Exists(fileName)) {
-					   MessageBox::Show("File not found: " + fileName, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					   return;
-				   }
-
-				   try {
-					   StreamReader^ reader = gcnew StreamReader(fileName);
-					   String^ headerLine = reader->ReadLine(); // Read the header line
-					   if (headerLine == nullptr) {
-						   MessageBox::Show("The file is empty.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						   return;
-					   }
-
-					   // Split the header line into columns
-					   array<String^>^ subjects = headerLine->Split(',');
-
-					   // Check if the subject exists in the header, if not return
-					   int subjectIndex = Array::IndexOf(subjects, subjectName);
-					   if (subjectIndex == -1) {
-						   MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						   reader->Close();
-						   return;
-					   }
-
-					   // Prepare the DataGridView
-					   dataGridView1->Columns->Clear(); // Clear any previous columns
-					   dataGridView1->Columns->Add("StudentName", "Student Name"); // Always add student name column
-					   dataGridView1->Columns->Add(subjectName, subjectName); // Add the relevant subject column
-
-					   // Read rows and add them to the DataGridView
-					   String^ line;
-					   while ((line = reader->ReadLine()) != nullptr) {
-						   array<String^>^ rowArray = line->Split(',');
-
-						   // Ensure that the row has enough columns
-						   if (rowArray->Length > subjectIndex) {
-							   dataGridView1->Rows->Add(rowArray[0], rowArray[subjectIndex]); // Add student name and mark for the subject
-						   }
-						   else {
-							  // MessageBox::Show("Row has missing columns: " + line, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						   }
-					   }
-
-					   reader->Close();
-				   }
-				   catch (Exception^ ex) {
-					   MessageBox::Show("Error reading the file: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				   }
-			}
-
-
-
-			private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-			}
-
-
-
-
-private: System::Void loginTab_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void loginTextboxPassword_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-
-private: System::Void teacherSaveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ subjectName = comboBox1->Text;  // Selected subject from ComboBox
-	String^ fileName = "marks.csv";        // Path to the CSV file
-
-	if (String::IsNullOrEmpty(subjectName)) {
-		MessageBox::Show("Please select a subject before saving.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return;
-	}
-
-	try {
-		// Read the CSV file content
-		StreamReader^ reader = gcnew StreamReader(fileName);
-		List<String^>^ lines = gcnew List<String^>();
-
-		// Read the header row
-		String^ headerLine = reader->ReadLine();
-		if (String::IsNullOrEmpty(headerLine)) {
-			MessageBox::Show("The CSV file is empty or invalid.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			reader->Close();
-			return;
-		}
-		lines->Add(headerLine); // Add header line to the updated content
-
-		// Split header to get column names
-		array<String^>^ subjects = headerLine->Split(',');
-
-		// Find the index of the selected subject in the header row
-		int subjectIndex = Array::IndexOf(subjects, subjectName);
-		if (subjectIndex == -1) {
-			MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			reader->Close();
+		if (!File::Exists(fileName)) {
+			MessageBox::Show("File not found: " + fileName, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
-		// Process the remaining rows in the CSV
-		String^ line;
-		int rowIndex = 0; // To keep track of DataGridView rows
-		while ((line = reader->ReadLine()) != nullptr) {
-			array<String^>^ rowArray = line->Split(',');
-
-			// Check if the row has fewer columns than the header
-			if (rowArray->Length < subjects->Length) {
-				// Fill the missing columns with default values
-				array<String^>^ updatedRowArray = gcnew array<String^>(subjects->Length);
-				for (int i = 0; i < updatedRowArray->Length; i++) {
-					if (i < rowArray->Length) {
-						updatedRowArray[i] = rowArray[i];
-					}
-					else {
-						updatedRowArray[i] = ""; // Default value for missing columns
-					}
-				}
-				rowArray = updatedRowArray;
-
-				// Optional: Warn the user about the inconsistency
-				MessageBox::Show("Row has missing columns: " + line, "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		try {
+			StreamReader^ reader = gcnew StreamReader(fileName);
+			String^ headerLine = reader->ReadLine(); // Read the header line
+			if (headerLine == nullptr) {
+				MessageBox::Show("The file is empty.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
 			}
 
-			// Check if we still have corresponding rows in the DataGridView
-			if (rowIndex < dataGridView1->Rows->Count - 1) { // Skip the "new row" in DataGridView
-				// Update the relevant column for the subject with the value from the DataGridView
-				if (dataGridView1->Rows[rowIndex]->Cells[subjectIndex]->Value != nullptr) {
-					rowArray[subjectIndex] = dataGridView1->Rows[rowIndex]->Cells[subjectIndex]->Value->ToString();
+			// Split the header line into columns
+			array<String^>^ subjects = headerLine->Split(',');
+
+			// Check if the subject exists in the header, if not return
+			int subjectIndex = Array::IndexOf(subjects, subjectName);
+			if (subjectIndex == -1) {
+				MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				reader->Close();
+				return;
+			}
+
+			// Prepare the DataGridView
+			dataGridView1->Columns->Clear(); // Clear any previous columns
+			dataGridView1->Columns->Add("StudentName", "Student Name"); // Always add student name column
+			dataGridView1->Columns->Add(subjectName, subjectName); // Add the relevant subject column
+
+			// Read rows and add them to the DataGridView
+			String^ line;
+			while ((line = reader->ReadLine()) != nullptr) {
+				array<String^>^ rowArray = line->Split(',');
+
+				// Ensure that the row has at least the student name
+				if (rowArray->Length > 0) {
+					String^ studentName = rowArray[0];
+					String^ marks = "0"; // Default marks value if no marks are provided
+
+					// If the subject column exists in the row, use its value; otherwise, use 0
+					if (rowArray->Length > subjectIndex) {
+						marks = rowArray[subjectIndex];
+					}
+
+					// Add student name and marks (0 if not provided) to the DataGridView
+					dataGridView1->Rows->Add(studentName, marks);
 				}
 			}
 
-			lines->Add(String::Join(",", rowArray)); // Add the updated row to the list
-			rowIndex++;
+			reader->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Error reading the file: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+
+		private: System::Void teacherSaveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+			String^ subjectName = comboBox1->Text;  // Selected subject from ComboBox
+			String^ fileName = "marks.csv";        // Path to the CSV file
+
+			if (String::IsNullOrEmpty(subjectName)) {
+				MessageBox::Show("Please select a subject before saving.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+
+			try {
+				// Read the CSV file content
+				StreamReader^ reader = gcnew StreamReader(fileName);
+				List<String^>^ lines = gcnew List<String^>();
+
+				// Read the header row
+				String^ headerLine = reader->ReadLine();
+				if (String::IsNullOrEmpty(headerLine)) {
+					MessageBox::Show("The CSV file is empty or invalid.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					reader->Close();
+					return;
+				}
+				lines->Add(headerLine); // Add header line to the updated content
+
+				// Split header to get column names
+				array<String^>^ subjects = headerLine->Split(',');
+
+				// Find the index of the selected subject in the header row
+				int subjectIndex = Array::IndexOf(subjects, subjectName);
+				if (subjectIndex == -1) {
+					MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					reader->Close();
+					return;
+				}
+
+				// Process the remaining rows in the CSV
+				String^ line;
+				int rowIndex = 0; // To keep track of DataGridView rows
+				while ((line = reader->ReadLine()) != nullptr) {
+					array<String^>^ rowArray = line->Split(',');
+
+					// Ensure the row has enough columns to match the header
+					if (rowArray->Length < subjects->Length) {
+						array<String^>^ updatedRowArray = gcnew array<String^>(subjects->Length);
+						for (int i = 0; i < updatedRowArray->Length; i++) {
+							if (i < rowArray->Length) {
+								updatedRowArray[i] = rowArray[i];
+							}
+							else {
+								updatedRowArray[i] = ""; // Default value for missing columns
+							}
+						}
+						rowArray = updatedRowArray;
+					}
+
+					// Check if we still have corresponding rows in the DataGridView
+					if (rowIndex < dataGridView1->Rows->Count - 1) { // Skip the "new row" in DataGridView
+						// Update the relevant column for the subject with the value from the DataGridView
+						DataGridViewRow^ gridRow = dataGridView1->Rows[rowIndex];
+						if (gridRow->Cells[1]->Value != nullptr) { // Assuming column 1 holds the marks
+							rowArray[subjectIndex] = gridRow->Cells[1]->Value->ToString();
+						}
+					}
+
+					lines->Add(String::Join(",", rowArray)); // Add the updated row to the list
+					rowIndex++;
+				}
+
+				reader->Close();
+
+				// Write the updated content back to the file
+				StreamWriter^ writer = gcnew StreamWriter(fileName);
+				for each (String ^ updatedLine in lines) {
+					writer->WriteLine(updatedLine);
+				}
+				writer->Close();
+
+				MessageBox::Show("Marks saved successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show("Error saving marks: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 		}
 
-		reader->Close();
+	private: System::Void adminLoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Admin admin("hayyan", "123");
+		
+		if (admin.ValidateAdminLogin(adminNameTextBox, adminPasswordTextBox)) {
+			//Disable Login For Admin Login Panel After Login
+			DisplayAdminLoginPanelDashBoard(false);
+			//Enabel Admin Dashboard
+			MessageBox::Show("Admin Logged In", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
-		// Write the updated content back to the file
-		StreamWriter^ writer = gcnew StreamWriter(fileName);
-		for each (String ^ updatedLine in lines) {
-			writer->WriteLine(updatedLine);
 		}
-		writer->Close();
+		else {
+			MessageBox::Show("Invalid Password or Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
-		MessageBox::Show("Marks saved successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 	}
-	catch (Exception^ ex) {
-		MessageBox::Show("Error saving marks: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-}
 };
 }
 

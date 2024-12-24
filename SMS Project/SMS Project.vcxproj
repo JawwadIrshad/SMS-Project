@@ -130,6 +130,7 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="AuthUser.h" />
     <ClInclude Include="CustomTextBox.h" />
     <ClInclude Include="DataManager.h" />
@@ -138,10 +139,10 @@
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Teacher.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="AuthUser.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
