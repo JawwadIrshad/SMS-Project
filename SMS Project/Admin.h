@@ -5,8 +5,8 @@ using namespace System;
 ref class Admin
 {
 private:
-    String^ adminUsername = "admin";  
-    String^ adminPassword = "password123";
+    String^ adminUsername;  
+    String^ adminPassword ;
 
 public:
     Admin(String^ adminUsername, String^ adminPassword){

@@ -101,7 +101,7 @@ namespace CppCLRWinFormsProject {
 
 
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::RadioButton^ loginstudentradioButton1;
 	private: System::Windows::Forms::RadioButton^ isTeacher;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
@@ -144,6 +144,35 @@ private: System::Windows::Forms::TextBox^ adminPasswordTextBox;
 private: System::Windows::Forms::Button^ adminLoginButton;
 private: System::Windows::Forms::Label^ adminLoginLabel;
 
+private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::PictureBox^ pictureBox3;
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::Panel^ panel3;
+private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Button^ button1;
+private: System::Windows::Forms::Panel^ panel4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,13 +195,15 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 #pragma region Windows Form Designer generated code
 		   void InitializeComponent(void)
 		   {
+			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			   this->headingLabel = (gcnew System::Windows::Forms::Label());
 			   this->tabControl = (gcnew System::Windows::Forms::TabControl());
 			   this->loginTab = (gcnew System::Windows::Forms::TabPage());
+			   this->label4 = (gcnew System::Windows::Forms::Label());
+			   this->label10 = (gcnew System::Windows::Forms::Label());
 			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			   this->label5 = (gcnew System::Windows::Forms::Label());
-			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->loginstudentradioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			   this->isTeacher = (gcnew System::Windows::Forms::RadioButton());
 			   this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
@@ -183,6 +214,10 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->loginButton = (gcnew System::Windows::Forms::Button());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->signupTab = (gcnew System::Windows::Forms::TabPage());
+			   this->label11 = (gcnew System::Windows::Forms::Label());
+			   this->label12 = (gcnew System::Windows::Forms::Label());
+			   this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			   this->label8 = (gcnew System::Windows::Forms::Label());
 			   this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			   this->signupLabelUsername = (gcnew System::Windows::Forms::Label());
 			   this->signupTextboxUsername = (gcnew System::Windows::Forms::TextBox());
@@ -205,6 +240,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			   this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			   this->assignMarksLabel = (gcnew System::Windows::Forms::Label());
+			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
 			   this->attendanceDataGridView = (gcnew System::Windows::Forms::DataGridView());
 			   this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -213,13 +249,17 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->attendanceLabel = (gcnew System::Windows::Forms::Label());
 			   this->panel1 = (gcnew System::Windows::Forms::Panel());
 			   this->teacherSaveMarksBtn = (gcnew System::Windows::Forms::Button());
-			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
 			   this->loadMarksButton = (gcnew System::Windows::Forms::Button());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			   this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->adminDashBoard = (gcnew System::Windows::Forms::TabPage());
+			   this->panel4 = (gcnew System::Windows::Forms::Panel());
+			   this->panel3 = (gcnew System::Windows::Forms::Panel());
+			   this->button3 = (gcnew System::Windows::Forms::Button());
+			   this->button2 = (gcnew System::Windows::Forms::Button());
+			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->panel2 = (gcnew System::Windows::Forms::Panel());
 			   this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			   this->label6 = (gcnew System::Windows::Forms::Label());
@@ -234,12 +274,14 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->signupTab->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			   this->tabPage1->SuspendLayout();
 			   this->tabPage2->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->attendanceDataGridView))->BeginInit();
 			   this->panel1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			   this->adminDashBoard->SuspendLayout();
+			   this->panel3->SuspendLayout();
 			   this->panel2->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   this->SuspendLayout();
@@ -271,11 +313,12 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   // loginTab
 			   // 
-			   this->loginTab->BackColor = System::Drawing::Color::White;
+			   this->loginTab->BackColor = System::Drawing::Color::Transparent;
+			   this->loginTab->Controls->Add(this->label4);
+			   this->loginTab->Controls->Add(this->label10);
 			   this->loginTab->Controls->Add(this->comboBox1);
 			   this->loginTab->Controls->Add(this->pictureBox1);
 			   this->loginTab->Controls->Add(this->label5);
-			   this->loginTab->Controls->Add(this->label4);
 			   this->loginTab->Controls->Add(this->loginstudentradioButton1);
 			   this->loginTab->Controls->Add(this->isTeacher);
 			   this->loginTab->Controls->Add(this->linkLabel2);
@@ -292,13 +335,36 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->loginTab->TabIndex = 0;
 			   this->loginTab->Text = L"Login";
 			   // 
+			   // label4
+			   // 
+			   this->label4->AutoSize = true;
+			   this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
+			   this->label4->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->label4->Location = System::Drawing::Point(752, 495);
+			   this->label4->Name = L"label4";
+			   this->label4->Size = System::Drawing::Size(125, 23);
+			   this->label4->TabIndex = 24;
+			   this->label4->Text = L"HJ Developers";
+			   // 
+			   // label10
+			   // 
+			   this->label10->AutoSize = true;
+			   this->label10->BackColor = System::Drawing::Color::Transparent;
+			   this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->label10->ForeColor = System::Drawing::Color::Black;
+			   this->label10->Location = System::Drawing::Point(597, 498);
+			   this->label10->Name = L"label10";
+			   this->label10->Size = System::Drawing::Size(164, 17);
+			   this->label10->TabIndex = 25;
+			   this->label10->Text = L"created and managed by ";
+			   // 
 			   // comboBox1
 			   // 
 			   this->comboBox1->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
 			   this->comboBox1->ForeColor = System::Drawing::SystemColors::WindowText;
 			   this->comboBox1->FormattingEnabled = true;
 			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"OC", L"OOP", L"OOP-LAB", L"Discrete", L"Calculus" });
-			   this->comboBox1->Location = System::Drawing::Point(32, 339);
+			   this->comboBox1->Location = System::Drawing::Point(49, 274);
 			   this->comboBox1->Name = L"comboBox1";
 			   this->comboBox1->Size = System::Drawing::Size(248, 28);
 			   this->comboBox1->TabIndex = 23;
@@ -318,29 +384,18 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->label5->AutoSize = true;
 			   this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.25F, System::Drawing::FontStyle::Bold));
 			   this->label5->ForeColor = System::Drawing::SystemColors::InfoText;
-			   this->label5->Location = System::Drawing::Point(28, 65);
+			   this->label5->Location = System::Drawing::Point(45, 33);
 			   this->label5->Name = L"label5";
 			   this->label5->Size = System::Drawing::Size(105, 19);
 			   this->label5->TabIndex = 21;
 			   this->label5->Text = L"Welcome back!";
-			   // 
-			   // label4
-			   // 
-			   this->label4->AutoSize = true;
-			   this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
-			   this->label4->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->label4->Location = System::Drawing::Point(26, 40);
-			   this->label4->Name = L"label4";
-			   this->label4->Size = System::Drawing::Size(125, 23);
-			   this->label4->TabIndex = 20;
-			   this->label4->Text = L"HJ Developers";
 			   // 
 			   // loginstudentradioButton1
 			   // 
 			   this->loginstudentradioButton1->AutoSize = true;
 			   this->loginstudentradioButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->loginstudentradioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold));
-			   this->loginstudentradioButton1->Location = System::Drawing::Point(187, 373);
+			   this->loginstudentradioButton1->Location = System::Drawing::Point(204, 308);
 			   this->loginstudentradioButton1->Name = L"loginstudentradioButton1";
 			   this->loginstudentradioButton1->Size = System::Drawing::Size(69, 17);
 			   this->loginstudentradioButton1->TabIndex = 19;
@@ -353,7 +408,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->isTeacher->AutoSize = true;
 			   this->isTeacher->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->isTeacher->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold));
-			   this->isTeacher->Location = System::Drawing::Point(37, 373);
+			   this->isTeacher->Location = System::Drawing::Point(54, 308);
 			   this->isTeacher->Name = L"isTeacher";
 			   this->isTeacher->Size = System::Drawing::Size(72, 17);
 			   this->isTeacher->TabIndex = 18;
@@ -366,20 +421,21 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->linkLabel2->AutoSize = true;
 			   this->linkLabel2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->linkLabel2->Location = System::Drawing::Point(32, 481);
+			   this->linkLabel2->LinkColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->linkLabel2->Location = System::Drawing::Point(103, 412);
 			   this->linkLabel2->Name = L"linkLabel2";
 			   this->linkLabel2->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			   this->linkLabel2->Size = System::Drawing::Size(108, 13);
 			   this->linkLabel2->TabIndex = 17;
 			   this->linkLabel2->TabStop = true;
 			   this->linkLabel2->Text = L"Don\'t have Account";
-			   this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Form1::linkLabel2_LinkClicked);
+			   this->linkLabel2->VisitedLinkColor = System::Drawing::SystemColors::MenuHighlight;
 			   // 
 			   // loginLabelUsername
 			   // 
 			   this->loginLabelUsername->AutoSize = true;
 			   this->loginLabelUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
-			   this->loginLabelUsername->Location = System::Drawing::Point(29, 171);
+			   this->loginLabelUsername->Location = System::Drawing::Point(46, 106);
 			   this->loginLabelUsername->Name = L"loginLabelUsername";
 			   this->loginLabelUsername->Size = System::Drawing::Size(80, 19);
 			   this->loginLabelUsername->TabIndex = 12;
@@ -391,7 +447,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->loginTextboxUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->loginTextboxUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
 			   this->loginTextboxUsername->HideSelection = false;
-			   this->loginTextboxUsername->Location = System::Drawing::Point(32, 202);
+			   this->loginTextboxUsername->Location = System::Drawing::Point(49, 137);
 			   this->loginTextboxUsername->MinimumSize = System::Drawing::Size(0, 30);
 			   this->loginTextboxUsername->Name = L"loginTextboxUsername";
 			   this->loginTextboxUsername->Size = System::Drawing::Size(248, 28);
@@ -401,7 +457,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   this->loginLabelPassword->AutoSize = true;
 			   this->loginLabelPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
-			   this->loginLabelPassword->Location = System::Drawing::Point(28, 244);
+			   this->loginLabelPassword->Location = System::Drawing::Point(45, 179);
 			   this->loginLabelPassword->Name = L"loginLabelPassword";
 			   this->loginLabelPassword->Size = System::Drawing::Size(77, 19);
 			   this->loginLabelPassword->TabIndex = 14;
@@ -412,7 +468,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->loginTextboxPassword->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
 			   this->loginTextboxPassword->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->loginTextboxPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
-			   this->loginTextboxPassword->Location = System::Drawing::Point(32, 276);
+			   this->loginTextboxPassword->Location = System::Drawing::Point(49, 211);
 			   this->loginTextboxPassword->MinimumSize = System::Drawing::Size(0, 30);
 			   this->loginTextboxPassword->Name = L"loginTextboxPassword";
 			   this->loginTextboxPassword->PasswordChar = '•';
@@ -422,16 +478,19 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   // loginButton
 			   // 
-			   this->loginButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->loginButton->BackColor = System::Drawing::Color::Transparent;
+			   this->loginButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			   this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->loginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->loginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
 			   this->loginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->loginButton->Location = System::Drawing::Point(37, 417);
+			   this->loginButton->Location = System::Drawing::Point(82, 348);
 			   this->loginButton->Name = L"loginButton";
-			   this->loginButton->Size = System::Drawing::Size(79, 30);
+			   this->loginButton->Padding = System::Windows::Forms::Padding(10);
+			   this->loginButton->Size = System::Drawing::Size(164, 52);
 			   this->loginButton->TabIndex = 16;
 			   this->loginButton->Text = L"Login";
-			   this->loginButton->UseVisualStyleBackColor = true;
+			   this->loginButton->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			   this->loginButton->UseVisualStyleBackColor = false;
 			   this->loginButton->Click += gcnew System::EventHandler(this, &Form1::loginButton_Click);
 			   // 
 			   // label3
@@ -439,7 +498,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->label3->AutoSize = true;
 			   this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label3->Location = System::Drawing::Point(24, 96);
+			   this->label3->Location = System::Drawing::Point(41, 50);
 			   this->label3->Name = L"label3";
 			   this->label3->Size = System::Drawing::Size(123, 47);
 			   this->label3->TabIndex = 11;
@@ -447,6 +506,10 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   // signupTab
 			   // 
+			   this->signupTab->Controls->Add(this->label11);
+			   this->signupTab->Controls->Add(this->label12);
+			   this->signupTab->Controls->Add(this->pictureBox3);
+			   this->signupTab->Controls->Add(this->label8);
 			   this->signupTab->Controls->Add(this->linkLabel1);
 			   this->signupTab->Controls->Add(this->signupLabelUsername);
 			   this->signupTab->Controls->Add(this->signupTextboxUsername);
@@ -463,10 +526,54 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->signupTab->UseVisualStyleBackColor = true;
 			   this->signupTab->Click += gcnew System::EventHandler(this, &Form1::signupButton_Click);
 			   // 
+			   // label11
+			   // 
+			   this->label11->AutoSize = true;
+			   this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
+			   this->label11->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->label11->Location = System::Drawing::Point(753, 497);
+			   this->label11->Name = L"label11";
+			   this->label11->Size = System::Drawing::Size(125, 23);
+			   this->label11->TabIndex = 26;
+			   this->label11->Text = L"HJ Developers";
+			   // 
+			   // label12
+			   // 
+			   this->label12->AutoSize = true;
+			   this->label12->BackColor = System::Drawing::Color::Transparent;
+			   this->label12->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
+			   this->label12->ForeColor = System::Drawing::Color::Black;
+			   this->label12->Location = System::Drawing::Point(598, 500);
+			   this->label12->Name = L"label12";
+			   this->label12->Size = System::Drawing::Size(164, 17);
+			   this->label12->TabIndex = 27;
+			   this->label12->Text = L"created and managed by ";
+			   // 
+			   // pictureBox3
+			   // 
+			   this->pictureBox3->Location = System::Drawing::Point(352, 46);
+			   this->pictureBox3->Name = L"pictureBox3";
+			   this->pictureBox3->Padding = System::Windows::Forms::Padding(100);
+			   this->pictureBox3->Size = System::Drawing::Size(516, 389);
+			   this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			   this->pictureBox3->TabIndex = 23;
+			   this->pictureBox3->TabStop = false;
+			   // 
+			   // label8
+			   // 
+			   this->label8->AutoSize = true;
+			   this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label8->Location = System::Drawing::Point(45, 36);
+			   this->label8->Name = L"label8";
+			   this->label8->Size = System::Drawing::Size(150, 47);
+			   this->label8->TabIndex = 12;
+			   this->label8->Text = L"Sign Up";
+			   // 
 			   // linkLabel1
 			   // 
 			   this->linkLabel1->AutoSize = true;
-			   this->linkLabel1->Location = System::Drawing::Point(240, 206);
+			   this->linkLabel1->Location = System::Drawing::Point(106, 362);
 			   this->linkLabel1->Name = L"linkLabel1";
 			   this->linkLabel1->Size = System::Drawing::Size(112, 13);
 			   this->linkLabel1->TabIndex = 7;
@@ -477,73 +584,73 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // signupLabelUsername
 			   // 
 			   this->signupLabelUsername->AutoSize = true;
-			   this->signupLabelUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->signupLabelUsername->Location = System::Drawing::Point(10, 20);
+			   this->signupLabelUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->signupLabelUsername->Location = System::Drawing::Point(49, 99);
 			   this->signupLabelUsername->Name = L"signupLabelUsername";
-			   this->signupLabelUsername->Size = System::Drawing::Size(67, 15);
+			   this->signupLabelUsername->Size = System::Drawing::Size(80, 19);
 			   this->signupLabelUsername->TabIndex = 0;
 			   this->signupLabelUsername->Text = L"Username:";
 			   // 
 			   // signupTextboxUsername
 			   // 
-			   this->signupTextboxUsername->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->signupTextboxUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			   this->signupTextboxUsername->Location = System::Drawing::Point(13, 36);
+			   this->signupTextboxUsername->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->signupTextboxUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->signupTextboxUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->signupTextboxUsername->Location = System::Drawing::Point(52, 123);
 			   this->signupTextboxUsername->Name = L"signupTextboxUsername";
-			   this->signupTextboxUsername->Size = System::Drawing::Size(162, 26);
+			   this->signupTextboxUsername->Size = System::Drawing::Size(226, 28);
 			   this->signupTextboxUsername->TabIndex = 1;
 			   // 
 			   // signupLabelPassword
 			   // 
 			   this->signupLabelPassword->AutoSize = true;
-			   this->signupLabelPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->signupLabelPassword->Location = System::Drawing::Point(10, 66);
+			   this->signupLabelPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->signupLabelPassword->Location = System::Drawing::Point(49, 163);
 			   this->signupLabelPassword->Name = L"signupLabelPassword";
-			   this->signupLabelPassword->Size = System::Drawing::Size(62, 15);
+			   this->signupLabelPassword->Size = System::Drawing::Size(77, 19);
 			   this->signupLabelPassword->TabIndex = 2;
 			   this->signupLabelPassword->Text = L"Password:";
 			   // 
 			   // signupTextboxPassword
 			   // 
-			   this->signupTextboxPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->signupTextboxPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			   this->signupTextboxPassword->Location = System::Drawing::Point(13, 82);
+			   this->signupTextboxPassword->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->signupTextboxPassword->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->signupTextboxPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->signupTextboxPassword->Location = System::Drawing::Point(52, 188);
 			   this->signupTextboxPassword->Name = L"signupTextboxPassword";
-			   this->signupTextboxPassword->Size = System::Drawing::Size(162, 26);
+			   this->signupTextboxPassword->Size = System::Drawing::Size(226, 28);
 			   this->signupTextboxPassword->TabIndex = 3;
 			   // 
 			   // signupLabelConfirmPassword
 			   // 
 			   this->signupLabelConfirmPassword->AutoSize = true;
-			   this->signupLabelConfirmPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->signupLabelConfirmPassword->Location = System::Drawing::Point(10, 112);
+			   this->signupLabelConfirmPassword->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->signupLabelConfirmPassword->Location = System::Drawing::Point(49, 232);
 			   this->signupLabelConfirmPassword->Name = L"signupLabelConfirmPassword";
-			   this->signupLabelConfirmPassword->Size = System::Drawing::Size(110, 15);
+			   this->signupLabelConfirmPassword->Size = System::Drawing::Size(135, 19);
 			   this->signupLabelConfirmPassword->TabIndex = 4;
 			   this->signupLabelConfirmPassword->Text = L"Confirm Password:";
 			   // 
 			   // signupTextboxConfirmPassword
 			   // 
-			   this->signupTextboxConfirmPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->signupTextboxConfirmPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			   this->signupTextboxConfirmPassword->Location = System::Drawing::Point(13, 128);
+			   this->signupTextboxConfirmPassword->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->signupTextboxConfirmPassword->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->signupTextboxConfirmPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->signupTextboxConfirmPassword->Location = System::Drawing::Point(52, 257);
 			   this->signupTextboxConfirmPassword->Name = L"signupTextboxConfirmPassword";
-			   this->signupTextboxConfirmPassword->Size = System::Drawing::Size(162, 26);
+			   this->signupTextboxConfirmPassword->Size = System::Drawing::Size(226, 28);
 			   this->signupTextboxConfirmPassword->TabIndex = 5;
 			   // 
 			   // signupButton
 			   // 
-			   this->signupButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->signupButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->signupButton->BackColor = System::Drawing::Color::Transparent;
+			   this->signupButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->signupButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->signupButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->signupButton->Location = System::Drawing::Point(13, 163);
+			   this->signupButton->Location = System::Drawing::Point(85, 298);
 			   this->signupButton->Name = L"signupButton";
-			   this->signupButton->Size = System::Drawing::Size(88, 33);
+			   this->signupButton->Size = System::Drawing::Size(157, 52);
 			   this->signupButton->TabIndex = 6;
 			   this->signupButton->Text = L"Sign Up";
 			   this->signupButton->UseVisualStyleBackColor = false;
@@ -576,7 +683,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label1->ForeColor = System::Drawing::Color::Red;
-			   this->label1->Location = System::Drawing::Point(96, 79);
+			   this->label1->Location = System::Drawing::Point(380, 240);
 			   this->label1->Name = L"label1";
 			   this->label1->Size = System::Drawing::Size(159, 19);
 			   this->label1->TabIndex = 12;
@@ -631,7 +738,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->logoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
 			   this->logoutBtn->Location = System::Drawing::Point(294, 6);
 			   this->logoutBtn->Name = L"logoutBtn";
-			   this->logoutBtn->Size = System::Drawing::Size(66, 23);
+			   this->logoutBtn->Size = System::Drawing::Size(84, 27);
 			   this->logoutBtn->TabIndex = 7;
 			   this->logoutBtn->Text = L"Log out";
 			   this->logoutBtn->UseVisualStyleBackColor = true;
@@ -709,6 +816,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // tabPage2
 			   // 
 			   this->tabPage2->Controls->Add(this->assignMarksLabel);
+			   this->tabPage2->Controls->Add(this->TeacherLogoutBtn);
 			   this->tabPage2->Controls->Add(this->attendanceDataGridView);
 			   this->tabPage2->Controls->Add(this->label2);
 			   this->tabPage2->Controls->Add(this->attendanceLabel);
@@ -732,6 +840,17 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->assignMarksLabel->Size = System::Drawing::Size(144, 30);
 			   this->assignMarksLabel->TabIndex = 11;
 			   this->assignMarksLabel->Text = L"Assign Marks";
+			   // 
+			   // TeacherLogoutBtn
+			   // 
+			   this->TeacherLogoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
+			   this->TeacherLogoutBtn->Location = System::Drawing::Point(277, 11);
+			   this->TeacherLogoutBtn->Name = L"TeacherLogoutBtn";
+			   this->TeacherLogoutBtn->Size = System::Drawing::Size(89, 33);
+			   this->TeacherLogoutBtn->TabIndex = 8;
+			   this->TeacherLogoutBtn->Text = L"Log out";
+			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
+			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
 			   // 
 			   // attendanceDataGridView
 			   // 
@@ -767,7 +886,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label2->ForeColor = System::Drawing::Color::Red;
-			   this->label2->Location = System::Drawing::Point(377, 249);
+			   this->label2->Location = System::Drawing::Point(368, 249);
 			   this->label2->Name = L"label2";
 			   this->label2->Size = System::Drawing::Size(159, 19);
 			   this->label2->TabIndex = 3;
@@ -788,7 +907,6 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   this->panel1->AutoScroll = true;
 			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
-			   this->panel1->Controls->Add(this->TeacherLogoutBtn);
 			   this->panel1->Controls->Add(this->loadMarksButton);
 			   this->panel1->Controls->Add(this->dataGridView1);
 			   this->panel1->Location = System::Drawing::Point(0, 55);
@@ -810,17 +928,6 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->teacherSaveMarksBtn->UseVisualStyleBackColor = false;
 			   this->teacherSaveMarksBtn->Click += gcnew System::EventHandler(this, &Form1::teacherSaveMarksBtn_Click);
 			   // 
-			   // TeacherLogoutBtn
-			   // 
-			   this->TeacherLogoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->TeacherLogoutBtn->Location = System::Drawing::Point(294, 6);
-			   this->TeacherLogoutBtn->Name = L"TeacherLogoutBtn";
-			   this->TeacherLogoutBtn->Size = System::Drawing::Size(66, 23);
-			   this->TeacherLogoutBtn->TabIndex = 8;
-			   this->TeacherLogoutBtn->Text = L"Log out";
-			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
-			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
-			   // 
 			   // loadMarksButton
 			   // 
 			   this->loadMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
@@ -838,7 +945,6 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // dataGridView1
 			   // 
 			   this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleVertical;
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			   this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				   this->Column1,
@@ -867,6 +973,8 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   // 
 			   // adminDashBoard
 			   // 
+			   this->adminDashBoard->Controls->Add(this->panel4);
+			   this->adminDashBoard->Controls->Add(this->panel3);
 			   this->adminDashBoard->Controls->Add(this->panel2);
 			   this->adminDashBoard->Location = System::Drawing::Point(4, 25);
 			   this->adminDashBoard->Name = L"adminDashBoard";
@@ -875,6 +983,69 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->adminDashBoard->TabIndex = 4;
 			   this->adminDashBoard->Text = L"Admin Dashboard";
 			   this->adminDashBoard->UseVisualStyleBackColor = true;
+			   this->adminDashBoard->Click += gcnew System::EventHandler(this, &Form1::adminDashBoard_Click);
+			   // 
+			   // panel4
+			   // 
+			   this->panel4->BackColor = System::Drawing::SystemColors::MenuBar;
+			   this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			   this->panel4->Location = System::Drawing::Point(163, 21);
+			   this->panel4->Name = L"panel4";
+			   this->panel4->Size = System::Drawing::Size(712, 504);
+			   this->panel4->TabIndex = 35;
+			   // 
+			   // panel3
+			   // 
+			   this->panel3->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->panel3->Controls->Add(this->button3);
+			   this->panel3->Controls->Add(this->button2);
+			   this->panel3->Controls->Add(this->button1);
+			   this->panel3->Location = System::Drawing::Point(13, 22);
+			   this->panel3->Name = L"panel3";
+			   this->panel3->Size = System::Drawing::Size(150, 504);
+			   this->panel3->TabIndex = 33;
+			   // 
+			   // button3
+			   // 
+			   this->button3->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button3->Location = System::Drawing::Point(6, 152);
+			   this->button3->Name = L"button3";
+			   this->button3->Size = System::Drawing::Size(136, 38);
+			   this->button3->TabIndex = 2;
+			   this->button3->Text = L"Home";
+			   this->button3->UseVisualStyleBackColor = false;
+			   // 
+			   // button2
+			   // 
+			   this->button2->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button2->Location = System::Drawing::Point(6, 107);
+			   this->button2->Name = L"button2";
+			   this->button2->Size = System::Drawing::Size(136, 38);
+			   this->button2->TabIndex = 1;
+			   this->button2->Text = L"View Students";
+			   this->button2->UseVisualStyleBackColor = false;
+			   // 
+			   // button1
+			   // 
+			   this->button1->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button1->Location = System::Drawing::Point(6, 62);
+			   this->button1->Name = L"button1";
+			   this->button1->Size = System::Drawing::Size(136, 38);
+			   this->button1->TabIndex = 0;
+			   this->button1->Text = L"View Teachers";
+			   this->button1->UseVisualStyleBackColor = false;
 			   // 
 			   // panel2
 			   // 
@@ -888,9 +1059,9 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->panel2->Controls->Add(this->adminPasswordTextBox);
 			   this->panel2->Controls->Add(this->adminLoginButton);
 			   this->panel2->Controls->Add(this->adminLoginLabel);
-			   this->panel2->Location = System::Drawing::Point(11, 16);
+			   this->panel2->Location = System::Drawing::Point(11, 20);
 			   this->panel2->Name = L"panel2";
-			   this->panel2->Size = System::Drawing::Size(862, 489);
+			   this->panel2->Size = System::Drawing::Size(875, 506);
 			   this->panel2->TabIndex = 0;
 			   // 
 			   // pictureBox2
@@ -1013,6 +1184,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			   this->signupTab->ResumeLayout(false);
 			   this->signupTab->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			   this->tabPage1->ResumeLayout(false);
 			   this->tabPage1->PerformLayout();
 			   this->tabPage2->ResumeLayout(false);
@@ -1021,6 +1193,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 			   this->panel1->ResumeLayout(false);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			   this->adminDashBoard->ResumeLayout(false);
+			   this->panel3->ResumeLayout(false);
 			   this->panel2->ResumeLayout(false);
 			   this->panel2->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -1091,7 +1264,7 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 						label2->Visible = true;
 						label2->Text = "Students Can't Visit Teachers Portal";
 						label1->Visible = false;
-						
+						comboBox1->Text = "";
 					}
 
 					MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
@@ -1100,9 +1273,14 @@ private: System::Windows::Forms::Label^ adminLoginLabel;
 					MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				}
 
+
 				// Clear input fields
 				loginTextboxUsername->Clear();
 				loginTextboxPassword->Clear();
+				DataManager dm(currentUser->getUsername());
+				dm.DisplayCourses(tableLayoutPanel1);
+				gpa->Text = dm.CalculateGPA().ToString();
+				
 			}
 
 						
@@ -1184,6 +1362,7 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		adminLoginLabel->Visible = a;
 		adminNameLabel->Visible = a;
 
+
 	}
 	//Link label2 to goto from login to sign up page
 	private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
@@ -1202,10 +1381,27 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		//disable all items on student and teacher dashboard ON FORM LOAD
 		ItemsOnStudentDashBoard(false);
 		ItemsOnTeacherDashBoard(false);
-		pictureBox1->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Downloads\\login_page_image.jpg");
-		pictureBox2->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Downloads\\login_page_image.jpg");
+		
+		try {
+			pictureBox1->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\bg.png");
+			pictureBox2->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\admin.png");
+			pictureBox3->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\signUp.png");
+		}
+		catch (System::IO::FileNotFoundException^ e) {
+			MessageBox::Show("File Not Found." + e, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+		}
+
 		//Enable the admin panel 
 		Admin::DisplayPannel(panel2, true);
+		//ON load hide dashboard
+		panel3->Visible = false;
+		panel4->Visible = false;
+
+
+		//styling buttons
+		loginButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
+		signupButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
 
 	}
 	
@@ -1372,17 +1568,24 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		Admin admin("hayyan", "123");
 		
 		if (admin.ValidateAdminLogin(adminNameTextBox, adminPasswordTextBox)) {
+			panel3->Visible = true;
+			panel4->Visible = true;
 			//Disable Login For Admin Login Panel After Login
 			DisplayAdminLoginPanelDashBoard(false);
 			//Enabel Admin Dashboard
 			MessageBox::Show("Admin Logged In", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-
 		}
 		else {
 			MessageBox::Show("Invalid Password or Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 		}
 	}
+private: System::Void adminDashBoard_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+
+
+
 };
 }
 

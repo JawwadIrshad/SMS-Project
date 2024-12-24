@@ -1,15 +1,13 @@
 #pragma once
-#include "User.h"
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <stdexcept>
+//#include <msclr/marshal_cppstd.h>
 using namespace System;
-using namespace System::ComponentModel;
 using namespace System::Windows::Forms;
-using namespace System::Data;
-using namespace System::Drawing;
-
+using namespace System::Runtime::InteropServices;
 
 ref class DataManager
 {
@@ -19,32 +17,83 @@ private:
     array<String^>^ marksOFCourses;
 
 public:
-    DataManager(array<String^>^ marks)
+    // Constructor that loads data for a specific user
+    DataManager(std::string username)
     {
-        // Initialize course data using array assignment
-        courses = gcnew array<String^>(6);
-        courses[0] = "Oral Communication";
-        courses[1] = "Applied Physics";
-        courses[2] = "OOP - CPP";
-        courses[3] = "Calculus";
-        courses[4] = "OOP - LAB";
-        courses[5] = "Discrete Math";
-
-        creditHours = gcnew array<String^>(6);
-        creditHours[0] = "3";
-        creditHours[1] = "3";
-        creditHours[2] = "3";
-        creditHours[3] = "3";
-        creditHours[4] = "1";
-        creditHours[5] = "3";
-
-        marksOFCourses = marks; // Assign the passed marks array
+        LoadDataFromCSV(username);
     }
 
-    // Method to display courses, credit hours, and marks
+    // Load data from CSV file for a specific user
+    void LoadDataFromCSV(std::string username)
+    {
+        std::ifstream file("marks.csv");
+        if (!file.is_open())
+        {
+            throw std::runtime_error("Could not open marks.csv file.");
+        }
+
+        std::string line;
+        std::vector<std::string> headers;
+        std::vector<std::string> marksVector;
+
+        // Read the header row (course names)
+        if (getline(file, line))
+        {
+            std::stringstream ss(line);
+            std::string column;
+            while (getline(ss, column, ','))
+            {
+                headers.push_back(column);
+            }
+        }
+
+        // Hardcoded credit hours for each course
+        std::vector<std::string> creditHoursVector = { "3", "3", "3", "3", "3", "1" };
+
+        // Find the user's row and extract marks
+        while (getline(file, line))
+        {
+            std::stringstream ss(line);
+            std::string userIdentifier;
+            getline(ss, userIdentifier, ','); // Read the username/identifier
+
+            if (userIdentifier == username)
+            {
+                std::string mark;
+                while (getline(ss, mark, ','))
+                {
+                    marksVector.push_back(mark);
+                }
+                break; // Exit the loop after finding the user
+            }
+        }
+
+        file.close();
+
+        // Convert data to managed arrays
+        courses = gcnew array<String^>(headers.size() - 1); // Exclude the username column
+        creditHours = gcnew array<String^>(creditHoursVector.size());
+        marksOFCourses = gcnew array<String^>(marksVector.size());
+
+        for (size_t i = 1; i < headers.size(); ++i) // Skip the username column
+        {
+            courses[i - 1] = gcnew String(headers[i].c_str());
+        }
+
+        for (size_t i = 0; i < creditHoursVector.size(); ++i)
+        {
+            creditHours[i] = gcnew String(creditHoursVector[i].c_str());
+        }
+
+        for (size_t i = 0; i < marksVector.size(); ++i)
+        {
+            marksOFCourses[i] = gcnew String(marksVector[i].c_str());
+        }
+    }
+
+    // Display courses, credit hours, and marks in a TableLayoutPanel
     void DisplayCourses(TableLayoutPanel^ tableLayoutPanel)
     {
-        // Clear existing controls
         tableLayoutPanel->Controls->Clear();
         tableLayoutPanel->RowCount = 0;
         tableLayoutPanel->ColumnCount = 3;
@@ -82,127 +131,50 @@ public:
             creditLabel->AutoSize = true;
             tableLayoutPanel->Controls->Add(creditLabel, 1, tableLayoutPanel->RowCount);
 
-            // Add marks (if provided)
+            // Add marks
             String^ marks = (i < marksOFCourses->Length) ? marksOFCourses[i] : "N/A";
             Label^ marksLabel = gcnew Label();
             marksLabel->Text = marks;
             marksLabel->AutoSize = true;
             tableLayoutPanel->Controls->Add(marksLabel, 2, tableLayoutPanel->RowCount);
 
-            // Increment row count
             tableLayoutPanel->RowCount++;
         }
     }
 
-    float CalculateGPA(array<String^>^ marksOFCourses)
+    // Calculate GPA based on marks and credit hours
+    float CalculateGPA()
     {
-        float totalWeightedPoints = 0.0;
+        float totalWeightedPoints = 0.0f;
         int totalCreditHours = 0;
 
         for (int i = 0; i < courses->Length; ++i)
         {
             try
             {
-                // Convert marks and credit hours to integers
-                int marks = (i < marksOFCourses->Length) ? Convert::ToInt32(marksOFCourses[i]) : 0;
+                int marks = Convert::ToInt32(marksOFCourses[i]);
                 int credits = Convert::ToInt32(creditHours[i]);
-
-                // Assuming marks are converted to grade points out of 4.0 scale
                 float gradePoints = CalculateGradePoints(marks);
-
-                // Multiply grade points by credit hours
                 totalWeightedPoints += gradePoints * credits;
-
-                // Sum up credit hours
                 totalCreditHours += credits;
             }
-            catch (FormatException^)
+            catch (Exception^)
             {
-                // Handle cases where the marks or credit hours are invalid
                 MessageBox::Show("Invalid data detected. Skipping...");
             }
         }
 
-        // Calculate GPA: weighted points divided by total credit hours
-        return (totalCreditHours > 0) ? (totalWeightedPoints / totalCreditHours) : 0.0 ;
-
+        return (totalCreditHours > 0) ? totalWeightedPoints / totalCreditHours : 0.0f;
     }
 
-    // Helper method to convert marks to grade points
-    double CalculateGradePoints(int marks)
+    // Convert marks to grade points
+    float CalculateGradePoints(int marks)
     {
-        if (marks >= 85) return 4.0; // A
-        else if (marks >= 75) return 3.5; // B+
-        else if (marks >= 65) return 3.0; // B
-        else if (marks >= 55) return 2.5; // C+
-        else if (marks >= 45) return 2.0; // C
-        else return 0.0; // F
+        if (marks >= 85) return 4.0f; // A
+        if (marks >= 75) return 3.5f; // B+
+        if (marks >= 65) return 3.0f; // B
+        if (marks >= 55) return 2.5f; // C+
+        if (marks >= 45) return 2.0f; // C
+        return 0.0f; // F
     }
-
-    // Function to retrieve marks for a specific user based on username or roll number
-    std::vector<int> getMarksFromCSV(const std::string& identifier, bool isUsername)
-    {
-        isUsername = true;
-        std::vector<int> marks;
-        std::ifstream file("marks.csv");  // Open the CSV file
-        std::string line;
-
-        // Read the CSV file line by line
-        while (getline(file, line))
-        {
-            std::stringstream ss(line);  // Use stringstream to split the line by commas
-            std::string userIdentifier;
-            std::string mark;
-            std::vector<std::string> row;
-
-            // Get the first column (username or roll_number)
-            getline(ss, userIdentifier, ',');
-
-            if (isUsername)
-            {
-                // If matching username, extract marks
-                if (userIdentifier == identifier)
-                {
-                    // Extract the marks (next columns in the row)
-                    while (getline(ss, mark, ','))
-                    {
-                        row.push_back(mark);
-                    }
-                    // Convert the marks to integers and store in the vector
-                    for (const  std::string& m : row)
-                    {
-                        marks.push_back(stoi(m));
-                    }
-                    break;  // Exit loop once we find the user
-                }
-            }
-            else
-            {
-                // If using roll number, compare with the second column (roll_number)
-                std::string rollNumber;
-                getline(ss, rollNumber, ',');  // Skip username column
-                if (rollNumber == identifier)  // Compare roll number
-                {
-                    while (getline(ss, mark, ','))
-                    {
-                        row.push_back(mark);
-                    }
-                    for (const  std::string& m : row)
-                    {
-                        marks.push_back(stoi(m));
-                    }
-                    break;  // Exit loop once we find the user
-                }
-            }
-        }
-
-        return marks;
-    }
-
-
-    float roundToTwoDecimalPlaces(float value) {
-        return std::round(value * 100) / 100;
-    }
-
-
 };
