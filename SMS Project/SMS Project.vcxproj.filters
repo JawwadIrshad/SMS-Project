@@ -38,9 +38,6 @@
     <ClInclude Include="DataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CustomTextBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Admin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -74,6 +71,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddTeacherPopUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
