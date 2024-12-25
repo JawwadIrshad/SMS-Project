@@ -143,7 +143,7 @@ private: System::Windows::Forms::TextBox^ adminNameTextBox;
 
 private: System::Windows::Forms::Label^ label9;
 private: System::Windows::Forms::TextBox^ adminPasswordTextBox;
-private: System::Windows::Forms::Button^ adminLoginButton;
+
 private: System::Windows::Forms::Label^ adminLoginLabel;
 
 private: System::Windows::Forms::Label^ label8;
@@ -177,6 +177,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
 private: System::Windows::Forms::Button^ addTeacher;
+private: System::Windows::Forms::Button^ adminLoginButton;
+private: System::Windows::Forms::TabPage^ Annoucements;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::PictureBox^ pictureBox4;
+
+
 
 
 
@@ -299,6 +305,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->button2 = (gcnew System::Windows::Forms::Button());
 			   this->adminViewTeacherBtn = (gcnew System::Windows::Forms::Button());
 			   this->panel2 = (gcnew System::Windows::Forms::Panel());
+			   this->adminLoginButton = (gcnew System::Windows::Forms::Button());
 			   this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			   this->label6 = (gcnew System::Windows::Forms::Label());
 			   this->label7 = (gcnew System::Windows::Forms::Label());
@@ -306,8 +313,10 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->adminNameTextBox = (gcnew System::Windows::Forms::TextBox());
 			   this->label9 = (gcnew System::Windows::Forms::Label());
 			   this->adminPasswordTextBox = (gcnew System::Windows::Forms::TextBox());
-			   this->adminLoginButton = (gcnew System::Windows::Forms::Button());
 			   this->adminLoginLabel = (gcnew System::Windows::Forms::Label());
+			   this->Annoucements = (gcnew System::Windows::Forms::TabPage());
+			   this->label15 = (gcnew System::Windows::Forms::Label());
+			   this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -327,6 +336,8 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->panel3->SuspendLayout();
 			   this->panel2->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			   this->Annoucements->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // headingLabel
@@ -348,6 +359,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->tabControl->Controls->Add(this->tabPage1);
 			   this->tabControl->Controls->Add(this->tabPage2);
 			   this->tabControl->Controls->Add(this->adminDashBoard);
+			   this->tabControl->Controls->Add(this->Annoucements);
 			   this->tabControl->Location = System::Drawing::Point(2, 51);
 			   this->tabControl->Name = L"tabControl";
 			   this->tabControl->SelectedIndex = 0;
@@ -663,6 +675,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->signupTextboxPassword->Name = L"signupTextboxPassword";
 			   this->signupTextboxPassword->Size = System::Drawing::Size(226, 28);
 			   this->signupTextboxPassword->TabIndex = 3;
+			   this->signupTextboxPassword->UseSystemPasswordChar = true;
 			   // 
 			   // signupLabelConfirmPassword
 			   // 
@@ -1034,7 +1047,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			   this->panel4->Controls->Add(this->adminStudentGridView);
 			   this->panel4->Controls->Add(this->adminViewTeacherPanel);
-			   this->panel4->Location = System::Drawing::Point(150, 3);
+			   this->panel4->Location = System::Drawing::Point(152, 3);
 			   this->panel4->Name = L"panel4";
 			   this->panel4->Size = System::Drawing::Size(733, 531);
 			   this->panel4->TabIndex = 35;
@@ -1171,7 +1184,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->panel3->Controls->Add(this->button3);
 			   this->panel3->Controls->Add(this->button2);
 			   this->panel3->Controls->Add(this->adminViewTeacherBtn);
-			   this->panel3->Location = System::Drawing::Point(1, 4);
+			   this->panel3->Location = System::Drawing::Point(3, 4);
 			   this->panel3->Name = L"panel3";
 			   this->panel3->Size = System::Drawing::Size(150, 530);
 			   this->panel3->TabIndex = 33;
@@ -1250,6 +1263,7 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   // panel2
 			   // 
 			   this->panel2->BackColor = System::Drawing::Color::White;
+			   this->panel2->Controls->Add(this->adminLoginButton);
 			   this->panel2->Controls->Add(this->pictureBox2);
 			   this->panel2->Controls->Add(this->label6);
 			   this->panel2->Controls->Add(this->label7);
@@ -1257,12 +1271,27 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->panel2->Controls->Add(this->adminNameTextBox);
 			   this->panel2->Controls->Add(this->label9);
 			   this->panel2->Controls->Add(this->adminPasswordTextBox);
-			   this->panel2->Controls->Add(this->adminLoginButton);
 			   this->panel2->Controls->Add(this->adminLoginLabel);
 			   this->panel2->Location = System::Drawing::Point(11, 20);
 			   this->panel2->Name = L"panel2";
 			   this->panel2->Size = System::Drawing::Size(875, 506);
 			   this->panel2->TabIndex = 0;
+			   // 
+			   // adminLoginButton
+			   // 
+			   this->adminLoginButton->BackColor = System::Drawing::Color::Transparent;
+			   this->adminLoginButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->adminLoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->adminLoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->adminLoginButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->adminLoginButton->Location = System::Drawing::Point(61, 326);
+			   this->adminLoginButton->Name = L"adminLoginButton";
+			   this->adminLoginButton->Size = System::Drawing::Size(157, 52);
+			   this->adminLoginButton->TabIndex = 32;
+			   this->adminLoginButton->Text = L"Log In";
+			   this->adminLoginButton->UseVisualStyleBackColor = false;
+			   this->adminLoginButton->Click += gcnew System::EventHandler(this, &Form1::adminLoginButton_Click);
 			   // 
 			   // pictureBox2
 			   // 
@@ -1341,20 +1370,6 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->adminPasswordTextBox->TabIndex = 27;
 			   this->adminPasswordTextBox->UseSystemPasswordChar = true;
 			   // 
-			   // adminLoginButton
-			   // 
-			   this->adminLoginButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->adminLoginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->adminLoginButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
-			   this->adminLoginButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->adminLoginButton->Location = System::Drawing::Point(61, 338);
-			   this->adminLoginButton->Name = L"adminLoginButton";
-			   this->adminLoginButton->Size = System::Drawing::Size(79, 30);
-			   this->adminLoginButton->TabIndex = 28;
-			   this->adminLoginButton->Text = L"Login";
-			   this->adminLoginButton->UseVisualStyleBackColor = true;
-			   this->adminLoginButton->Click += gcnew System::EventHandler(this, &Form1::adminLoginButton_Click);
-			   // 
 			   // adminLoginLabel
 			   // 
 			   this->adminLoginLabel->AutoSize = true;
@@ -1365,6 +1380,37 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->adminLoginLabel->Size = System::Drawing::Size(243, 47);
 			   this->adminLoginLabel->TabIndex = 23;
 			   this->adminLoginLabel->Text = L"Admin Log In";
+			   // 
+			   // Annoucements
+			   // 
+			   this->Annoucements->Controls->Add(this->pictureBox4);
+			   this->Annoucements->Controls->Add(this->label15);
+			   this->Annoucements->Location = System::Drawing::Point(4, 25);
+			   this->Annoucements->Name = L"Annoucements";
+			   this->Annoucements->Padding = System::Windows::Forms::Padding(3);
+			   this->Annoucements->Size = System::Drawing::Size(894, 534);
+			   this->Annoucements->TabIndex = 5;
+			   this->Annoucements->Text = L"Annoucements";
+			   this->Annoucements->UseVisualStyleBackColor = true;
+			   // 
+			   // label15
+			   // 
+			   this->label15->AutoSize = true;
+			   this->label15->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label15->Location = System::Drawing::Point(21, 37);
+			   this->label15->Name = L"label15";
+			   this->label15->Size = System::Drawing::Size(287, 47);
+			   this->label15->TabIndex = 12;
+			   this->label15->Text = L"Announcements";
+			   // 
+			   // pictureBox4
+			   // 
+			   this->pictureBox4->Location = System::Drawing::Point(305, 27);
+			   this->pictureBox4->Name = L"pictureBox4";
+			   this->pictureBox4->Size = System::Drawing::Size(127, 81);
+			   this->pictureBox4->TabIndex = 13;
+			   this->pictureBox4->TabStop = false;
 			   // 
 			   // Form1
 			   // 
@@ -1405,6 +1451,9 @@ private: System::Windows::Forms::Button^ addTeacher;
 			   this->panel2->ResumeLayout(false);
 			   this->panel2->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			   this->Annoucements->ResumeLayout(false);
+			   this->Annoucements->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
@@ -1414,82 +1463,115 @@ private: System::Windows::Forms::Button^ addTeacher;
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
 		 
-			private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
-				std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
-				std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
-				std::string role;
+	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
+		std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
+		std::string role;
+		std::string subject = (const char*)Marshal::StringToHGlobalAnsi(comboBox1->Text).ToPointer();
 
-				if (currentUser != nullptr) {
-					// If user is already logged in, show an error message and prevent further login attempts
-					MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		if (currentUser != nullptr) {
+			// If user is already logged in, show an error message and prevent further login attempts
+			MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Determine role based on radio button selection
+		if (isTeacher->Checked) {
+			role = "Teacher";
+		}
+		else if (loginstudentradioButton1->Checked) {
+			role = "Student";
+		}
+		else {
+			MessageBox::Show("Please select a role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Validate ComboBox selection if the user is a Teacher
+		if (role == "Teacher" && String::IsNullOrEmpty(comboBox1->Text)) {
+			MessageBox::Show("Please select a subject from the dropdown.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Validate user credentials and role
+		if (AuthUser::userExists(username, password, role)) {
+			// For Teacher role, validate subject match
+			if (role == "Teacher") {
+				std::ifstream inFile("users.csv");
+				std::string line;
+				bool subjectMatch = false;
+
+				// Check if the teacher's subject matches the selected one in the ComboBox
+				while (std::getline(inFile, line)) {
+					std::stringstream ss(line);
+					std::string savedName, savedPassword, savedRole, savedSubject;
+					std::getline(ss, savedName, ',');
+					std::getline(ss, savedPassword, ',');
+					std::getline(ss, savedRole, ',');
+					std::getline(ss, savedSubject, ',');
+
+					try {
+						if (savedRole == "Teacher" && savedName == username && savedSubject == subject) {
+							subjectMatch = true;
+							break;
+						}
+					}
+					catch (const std::exception& ex) {
+						// Handle specific exception (e.g., memory allocation failure)
+						MessageBox::Show("Error during subject validation: " + gcnew String(ex.what()), "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						return;
+					}
+				}
+
+				if (!subjectMatch) {
+					MessageBox::Show("Incorrect subject selection. Please select the correct subject.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 					return;
 				}
-
-				// Determine role based on radio button selection
-				if (isTeacher->Checked) {
-					role = "Teacher";
-				}
-				else if (loginstudentradioButton1->Checked) {
-					role = "Student";
-				}
-				else {
-					MessageBox::Show("Please select a role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				}
-
-				// Validate ComboBox selection if the user is a Teacher
-				if (role == "Teacher" && String::IsNullOrEmpty(comboBox1->Text)) {
-					MessageBox::Show("Please select a subject from the dropdown.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				}
-
-				// Validate user credentials and role
-				if (AuthUser::userExists(username, password, role)) {
-					if (currentUser == nullptr) {
-						currentUser = new AuthUser(username, password);
-					}
-					else {
-						currentUser->IsLoggedIn = true;
-					}
-					currentUser->setRole(role);
-
-					// Show appropriate dashboard
-					if (role == "Teacher") {
-						tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
-						ItemsOnTeacherDashBoard(true);
-						label2->Visible = false;
-						label1->Text = "Teachers Can't Visit Student Portal";
-						label1->Visible = true;
-						comboBox1->Visible = true;
-					}
-					else {
-						tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
-						ItemsOnStudentDashBoard(true);
-						// Set username to name label
-						studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
-						// Displaying the roll number
-						roll->Text = gcnew String(currentUser->getRoll().c_str());
-						label2->Visible = true;
-						label2->Text = "Students Can't Visit Teachers Portal";
-						label1->Visible = false;
-						comboBox1->Text = "";
-					}
-
-					MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				}
-				else {
-					MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				}
-
-
-				// Clear input fields
-				loginTextboxUsername->Clear();
-				loginTextboxPassword->Clear();
-				DataManager dm(currentUser->getUsername());
-				dm.DisplayCourses(tableLayoutPanel1);
-				gpa->Text = dm.CalculateGPA().ToString();
-				
 			}
+
+			if (currentUser == nullptr) {
+				currentUser = new AuthUser(username, password);
+			}
+			else {
+				currentUser->IsLoggedIn = true;
+			}
+			currentUser->setRole(role);
+
+			// Show appropriate dashboard
+			if (role == "Teacher") {
+				tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
+				ItemsOnTeacherDashBoard(true);
+				label2->Visible = false;
+				label1->Text = "Teachers Can't Visit Student Portal";
+				label1->Visible = true;
+				comboBox1->Visible = true;
+			}
+			else {
+				tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
+				ItemsOnStudentDashBoard(true);
+				// Set username to name label
+				studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
+				// Displaying the roll number
+				roll->Text = gcnew String(currentUser->getRoll().c_str());
+				label2->Visible = true;
+				label2->Text = "Students Can't Visit Teachers Portal";
+				label1->Visible = false;
+				comboBox1->Text = "";
+			}
+
+			MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			MessageBox::Show("Invalid username, password, or role.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+		// Clear input fields
+		loginTextboxUsername->Clear();
+		loginTextboxPassword->Clear();
+		DataManager dm(currentUser->getUsername());
+		dm.DisplayCourses(tableLayoutPanel1);
+		gpa->Text = dm.CalculateGPA().ToString();
+	}
 
 						
 
@@ -1604,7 +1686,8 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 			//styling buttons
 			loginButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
 			signupButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
-		
+			adminLoginButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
+
 		}
 		catch (System::IO::FileNotFoundException^ e) {
 			MessageBox::Show("File Not Found." + e, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1839,6 +1922,7 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		addTeacherForm->ShowDialog();
 
 	}
+
 };
 }
 

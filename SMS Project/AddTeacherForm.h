@@ -1,5 +1,7 @@
 #pragma once
-
+#include<fstream>
+#include<sstream>
+#include<string>
 namespace SMS_Project {
 
 	using namespace System;
@@ -8,6 +10,7 @@ namespace SMS_Project {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Runtime::InteropServices;
 
 	/// <summary>
 	/// Summary for AddTeacherForm
@@ -83,6 +86,7 @@ namespace SMS_Project {
 			this->txtPassword->PasswordChar = '*';
 			this->txtPassword->Size = System::Drawing::Size(200, 25);
 			this->txtPassword->TabIndex = 1;
+			this->txtPassword->UseSystemPasswordChar = true;
 			// 
 			// txtSubject
 			// 
@@ -190,8 +194,6 @@ namespace SMS_Project {
 
 		}
 #pragma endregion
-
-		// Handle the Add Teacher button click event
 		void btnAddTeacher_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			// Get the teacher's information from the TextBoxes
@@ -199,10 +201,40 @@ namespace SMS_Project {
 			String^ password = txtPassword->Text;
 			String^ subject = txtSubject->Text;
 
-			// Display a message with the teacher's information (for now)
-			MessageBox::Show("Teacher Added:\nName: " + name + "\nSubject: " + subject);
+			// Validate input: Check if any field is empty
+			if (String::IsNullOrEmpty(name) || String::IsNullOrEmpty(password) || String::IsNullOrEmpty(subject)) {
+				// Display an error message if any field is empty
+				MessageBox::Show("All fields are required. Please fill in the name, password, and subject.", "Input Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return; // Exit the function without saving data
+			}
 
-			// You can add logic here to save the data (e.g., to a CSV or database)
+			// Convert System::String to const char* using Marshal
+			const char* nameStr = (const char*)Marshal::StringToHGlobalAnsi(name).ToPointer();
+			const char* passwordStr = (const char*)Marshal::StringToHGlobalAnsi(password).ToPointer();
+			const char* subjectStr = (const char*)Marshal::StringToHGlobalAnsi(subject).ToPointer();
+
+			// Open the file (create if not exists, append if exists)
+			std::ofstream outFile("users.csv", std::ios::app); // Open in append mode
+
+			if (outFile.is_open()) {
+				// Write data to the CSV file
+				outFile << nameStr << "," << passwordStr << "," << "Teacher," << subjectStr << std::endl;
+				//outFile << nameStr << "," << passwordStr << "," <<"Teacher"<< std::endl;
+
+				// Display success message
+				MessageBox::Show("Teacher Added:\nName: " + name + "\nSubject: " + subject);
+
+				outFile.close(); // Close the file after writing
+			}
+			else {
+				// Display error message if file can't be opened
+				MessageBox::Show("Error: Unable to open the file.");
+			}
+
+			// Free unmanaged memory after usage
+			Marshal::FreeHGlobal(IntPtr((void*)nameStr));
+			Marshal::FreeHGlobal(IntPtr((void*)passwordStr));
+			Marshal::FreeHGlobal(IntPtr((void*)subjectStr));
 		}
 
 		// Handle the Cancel button click event
