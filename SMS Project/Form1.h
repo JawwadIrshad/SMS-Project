@@ -1464,13 +1464,14 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
 		 
 	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Convert GUI input to std::string
 		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
 		std::string password = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxPassword->Text).ToPointer());
 		std::string role;
 		std::string subject = (const char*)Marshal::StringToHGlobalAnsi(comboBox1->Text).ToPointer();
 
+		// Prevent duplicate login
 		if (currentUser != nullptr) {
-			// If user is already logged in, show an error message and prevent further login attempts
 			MessageBox::Show("You are already logged in. Please log out first to log in again.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
@@ -1510,18 +1511,13 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 					std::getline(ss, savedRole, ',');
 					std::getline(ss, savedSubject, ',');
 
-					try {
-						if (savedRole == "Teacher" && savedName == username && savedSubject == subject) {
-							subjectMatch = true;
-							break;
-						}
-					}
-					catch (const std::exception& ex) {
-						// Handle specific exception (e.g., memory allocation failure)
-						MessageBox::Show("Error during subject validation: " + gcnew String(ex.what()), "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						return;
+					if (savedRole == "Teacher" && savedName == username && savedSubject == subject) {
+						subjectMatch = true;
+						break;
 					}
 				}
+
+				inFile.close();
 
 				if (!subjectMatch) {
 					MessageBox::Show("Incorrect subject selection. Please select the correct subject.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1529,15 +1525,13 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 				}
 			}
 
+			// Log in the user
 			if (currentUser == nullptr) {
-				currentUser = new AuthUser(username, password);
+				currentUser = new AuthUser(username, password, role);
 			}
-			else {
-				currentUser->IsLoggedIn = true;
-			}
-			currentUser->setRole(role);
+			currentUser->setIsLoggedIn(true);
 
-			// Show appropriate dashboard
+			// Set up the dashboard based on role
 			if (role == "Teacher") {
 				tabControl->SelectedTab = tabControl->TabPages[3]; // Teacher Dashboard
 				ItemsOnTeacherDashBoard(true);
@@ -1546,12 +1540,12 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 				label1->Visible = true;
 				comboBox1->Visible = true;
 			}
-			else {
+			else { // Student
 				tabControl->SelectedTab = tabControl->TabPages[2]; // Student Dashboard
 				ItemsOnStudentDashBoard(true);
-				// Set username to name label
+
+				// Set username and roll number
 				studDisplayNameLabel->Text = gcnew String(currentUser->getUsername().c_str());
-				// Displaying the roll number
 				roll->Text = gcnew String(currentUser->getRoll().c_str());
 				label2->Visible = true;
 				label2->Text = "Students Can't Visit Teachers Portal";
@@ -1568,9 +1562,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 		// Clear input fields
 		loginTextboxUsername->Clear();
 		loginTextboxPassword->Clear();
-		DataManager dm(currentUser->getUsername());
-		dm.DisplayCourses(tableLayoutPanel1);
-		gpa->Text = dm.CalculateGPA().ToString();
+		if (currentUser != nullptr) {
+			DataManager dm(currentUser->getUsername());
+			dm.DisplayCourses(tableLayoutPanel1);
+			gpa->Text = dm.CalculateGPA().ToString();
+		}
 	}
 
 						
