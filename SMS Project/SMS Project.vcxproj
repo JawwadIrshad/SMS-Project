@@ -127,9 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="AddTeacherForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -163,14 +160,6 @@
     </ClCompile>
     <ClCompile Include="StringConvertor.cpp" />
     <ClCompile Include="User.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="app.ico" />
-    <Image Include="Source\admin.png" />
-    <Image Include="Source\announcement.png" />
-    <Image Include="Source\bg.png" />
-    <Image Include="Source\btnBg.png" />
-    <Image Include="Source\signUp.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

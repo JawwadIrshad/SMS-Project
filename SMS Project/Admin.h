@@ -108,4 +108,36 @@ public:
         file.close();
     }
 
+    static int CountUsersByRole(const std::string& role)
+    {
+        int count = 0;  // To store the count of users matching the role
+
+        // Open the user.csv file
+        std::ifstream file("users.csv");
+        if (!file.is_open()) {
+            MessageBox::Show("Could not open user.csv file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            return -1; // Return -1 in case of an error opening the file
+        }
+
+        std::string line;
+        while (std::getline(file, line)) {
+            std::stringstream ss(line);
+            std::string name, password, userRole, subject;
+
+            // Parse the CSV line
+            std::getline(ss, name, ',');
+            std::getline(ss, password, ',');
+            std::getline(ss, userRole, ',');
+            std::getline(ss, subject, ',');
+
+            // Check if the role matches and increment the count
+            if (userRole == role) {
+                count++;
+            }
+        }
+
+        file.close();  // Close the file
+
+        return count;  // Return the final count for the specified role
+    }
 };
