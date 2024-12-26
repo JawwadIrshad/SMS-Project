@@ -6,11 +6,14 @@
 #include<iostream>
 #include <fstream>
 #include "StringConvertor.h"
+//For Custom Dialouge Boxes
 #include "AddTeacherForm.h"
+#include "DeleteRecordForm.h"
 
 namespace CppCLRWinFormsProject {
 	                                                          
 	using namespace System;
+	using namespace System::Net;
 	using namespace System::ComponentModel;
 	using namespace System::Collections::Generic;
 	using namespace System::Windows::Forms;
@@ -154,7 +157,8 @@ private: System::Windows::Forms::Label^ label11;
 private: System::Windows::Forms::Label^ label12;
 private: System::Windows::Forms::Panel^ panel3;
 private: System::Windows::Forms::Button^ button3;
-private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Button^ adminViewStudentsBtn;
+
 private: System::Windows::Forms::Button^ adminViewTeacherBtn;
 
 private: System::Windows::Forms::Panel^ panel4;
@@ -170,9 +174,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxC
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
 private: System::Windows::Forms::Label^ adminLabel;
 private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::Panel^ adminStudentGridView;
+private: System::Windows::Forms::Panel^ adminVIewStudentPanel;
+
 private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::DataGridView^ dataGridView2;
+private: System::Windows::Forms::DataGridView^ adminStudentGridView;
+
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
@@ -181,6 +187,10 @@ private: System::Windows::Forms::Button^ adminLoginButton;
 private: System::Windows::Forms::TabPage^ Annoucements;
 private: System::Windows::Forms::Label^ label15;
 private: System::Windows::Forms::PictureBox^ pictureBox4;
+private: System::Windows::Forms::Button^ deleteTeacherBtn;
+private: System::Windows::Forms::Button^ deleteStudentRecords;
+
+private: System::Windows::Forms::Label^ label16;
 
 
 
@@ -285,13 +295,15 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->adminDashBoard = (gcnew System::Windows::Forms::TabPage());
 			   this->panel4 = (gcnew System::Windows::Forms::Panel());
-			   this->adminStudentGridView = (gcnew System::Windows::Forms::Panel());
+			   this->adminVIewStudentPanel = (gcnew System::Windows::Forms::Panel());
+			   this->deleteStudentRecords = (gcnew System::Windows::Forms::Button());
 			   this->label14 = (gcnew System::Windows::Forms::Label());
-			   this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			   this->adminStudentGridView = (gcnew System::Windows::Forms::DataGridView());
 			   this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			   this->adminViewTeacherPanel = (gcnew System::Windows::Forms::Panel());
+			   this->deleteTeacherBtn = (gcnew System::Windows::Forms::Button());
 			   this->addTeacher = (gcnew System::Windows::Forms::Button());
 			   this->label13 = (gcnew System::Windows::Forms::Label());
 			   this->adminTeacherGridView = (gcnew System::Windows::Forms::DataGridView());
@@ -302,7 +314,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->adminLabel = (gcnew System::Windows::Forms::Label());
 			   this->button4 = (gcnew System::Windows::Forms::Button());
 			   this->button3 = (gcnew System::Windows::Forms::Button());
-			   this->button2 = (gcnew System::Windows::Forms::Button());
+			   this->adminViewStudentsBtn = (gcnew System::Windows::Forms::Button());
 			   this->adminViewTeacherBtn = (gcnew System::Windows::Forms::Button());
 			   this->panel2 = (gcnew System::Windows::Forms::Panel());
 			   this->adminLoginButton = (gcnew System::Windows::Forms::Button());
@@ -315,8 +327,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->adminPasswordTextBox = (gcnew System::Windows::Forms::TextBox());
 			   this->adminLoginLabel = (gcnew System::Windows::Forms::Label());
 			   this->Annoucements = (gcnew System::Windows::Forms::TabPage());
-			   this->label15 = (gcnew System::Windows::Forms::Label());
 			   this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			   this->label15 = (gcnew System::Windows::Forms::Label());
+			   this->label16 = (gcnew System::Windows::Forms::Label());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -329,8 +342,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			   this->adminDashBoard->SuspendLayout();
 			   this->panel4->SuspendLayout();
-			   this->adminStudentGridView->SuspendLayout();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			   this->adminVIewStudentPanel->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->adminStudentGridView))->BeginInit();
 			   this->adminViewTeacherPanel->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->adminTeacherGridView))->BeginInit();
 			   this->panel3->SuspendLayout();
@@ -1045,22 +1058,39 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   // 
 			   this->panel4->BackColor = System::Drawing::SystemColors::MenuBar;
 			   this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			   this->panel4->Controls->Add(this->adminStudentGridView);
+			   this->panel4->Controls->Add(this->label16);
+			   this->panel4->Controls->Add(this->adminVIewStudentPanel);
 			   this->panel4->Controls->Add(this->adminViewTeacherPanel);
 			   this->panel4->Location = System::Drawing::Point(152, 3);
 			   this->panel4->Name = L"panel4";
 			   this->panel4->Size = System::Drawing::Size(733, 531);
 			   this->panel4->TabIndex = 35;
 			   // 
-			   // adminStudentGridView
+			   // adminVIewStudentPanel
 			   // 
-			   this->adminStudentGridView->AutoScroll = true;
-			   this->adminStudentGridView->Controls->Add(this->label14);
-			   this->adminStudentGridView->Controls->Add(this->dataGridView2);
-			   this->adminStudentGridView->Location = System::Drawing::Point(16, 34);
-			   this->adminStudentGridView->Name = L"adminStudentGridView";
-			   this->adminStudentGridView->Size = System::Drawing::Size(380, 224);
-			   this->adminStudentGridView->TabIndex = 8;
+			   this->adminVIewStudentPanel->AutoScroll = true;
+			   this->adminVIewStudentPanel->Controls->Add(this->deleteStudentRecords);
+			   this->adminVIewStudentPanel->Controls->Add(this->label14);
+			   this->adminVIewStudentPanel->Controls->Add(this->adminStudentGridView);
+			   this->adminVIewStudentPanel->Location = System::Drawing::Point(16, 34);
+			   this->adminVIewStudentPanel->Name = L"adminVIewStudentPanel";
+			   this->adminVIewStudentPanel->Size = System::Drawing::Size(380, 224);
+			   this->adminVIewStudentPanel->TabIndex = 8;
+			   // 
+			   // deleteStudentRecords
+			   // 
+			   this->deleteStudentRecords->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->deleteStudentRecords->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->deleteStudentRecords->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->deleteStudentRecords->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->deleteStudentRecords->Location = System::Drawing::Point(293, 19);
+			   this->deleteStudentRecords->Name = L"deleteStudentRecords";
+			   this->deleteStudentRecords->Size = System::Drawing::Size(69, 31);
+			   this->deleteStudentRecords->TabIndex = 11;
+			   this->deleteStudentRecords->Text = L"Delete";
+			   this->deleteStudentRecords->UseVisualStyleBackColor = false;
+			   this->deleteStudentRecords->Click += gcnew System::EventHandler(this, &Form1::deleteStudentRecords_Click);
 			   // 
 			   // label14
 			   // 
@@ -1075,20 +1105,20 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->label14->TabIndex = 6;
 			   this->label14->Text = L"All Students";
 			   // 
-			   // dataGridView2
+			   // adminStudentGridView
 			   // 
-			   this->dataGridView2->BackgroundColor = System::Drawing::Color::MintCream;
-			   this->dataGridView2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+			   this->adminStudentGridView->BackgroundColor = System::Drawing::Color::MintCream;
+			   this->adminStudentGridView->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->adminStudentGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			   this->adminStudentGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				   this->dataGridViewTextBoxColumn7,
 					   this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9
 			   });
-			   this->dataGridView2->GridColor = System::Drawing::SystemColors::ControlText;
-			   this->dataGridView2->Location = System::Drawing::Point(8, 68);
-			   this->dataGridView2->Name = L"dataGridView2";
-			   this->dataGridView2->Size = System::Drawing::Size(360, 150);
-			   this->dataGridView2->TabIndex = 0;
+			   this->adminStudentGridView->GridColor = System::Drawing::SystemColors::ControlText;
+			   this->adminStudentGridView->Location = System::Drawing::Point(8, 68);
+			   this->adminStudentGridView->Name = L"adminStudentGridView";
+			   this->adminStudentGridView->Size = System::Drawing::Size(360, 150);
+			   this->adminStudentGridView->TabIndex = 0;
 			   // 
 			   // dataGridViewTextBoxColumn7
 			   // 
@@ -1109,6 +1139,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   // adminViewTeacherPanel
 			   // 
 			   this->adminViewTeacherPanel->AutoScroll = true;
+			   this->adminViewTeacherPanel->Controls->Add(this->deleteTeacherBtn);
 			   this->adminViewTeacherPanel->Controls->Add(this->addTeacher);
 			   this->adminViewTeacherPanel->Controls->Add(this->label13);
 			   this->adminViewTeacherPanel->Controls->Add(this->adminTeacherGridView);
@@ -1116,6 +1147,21 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->adminViewTeacherPanel->Name = L"adminViewTeacherPanel";
 			   this->adminViewTeacherPanel->Size = System::Drawing::Size(380, 224);
 			   this->adminViewTeacherPanel->TabIndex = 6;
+			   // 
+			   // deleteTeacherBtn
+			   // 
+			   this->deleteTeacherBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->deleteTeacherBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->deleteTeacherBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->deleteTeacherBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->deleteTeacherBtn->Location = System::Drawing::Point(219, 24);
+			   this->deleteTeacherBtn->Name = L"deleteTeacherBtn";
+			   this->deleteTeacherBtn->Size = System::Drawing::Size(69, 31);
+			   this->deleteTeacherBtn->TabIndex = 10;
+			   this->deleteTeacherBtn->Text = L"Delete";
+			   this->deleteTeacherBtn->UseVisualStyleBackColor = false;
+			   this->deleteTeacherBtn->Click += gcnew System::EventHandler(this, &Form1::deleteTeacherBtn_Click);
 			   // 
 			   // addTeacher
 			   // 
@@ -1182,7 +1228,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->panel3->Controls->Add(this->adminLabel);
 			   this->panel3->Controls->Add(this->button4);
 			   this->panel3->Controls->Add(this->button3);
-			   this->panel3->Controls->Add(this->button2);
+			   this->panel3->Controls->Add(this->adminViewStudentsBtn);
 			   this->panel3->Controls->Add(this->adminViewTeacherBtn);
 			   this->panel3->Location = System::Drawing::Point(3, 4);
 			   this->panel3->Name = L"panel3";
@@ -1231,19 +1277,20 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->button3->Text = L"Home";
 			   this->button3->UseVisualStyleBackColor = false;
 			   // 
-			   // button2
+			   // adminViewStudentsBtn
 			   // 
-			   this->button2->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			   this->adminViewStudentsBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->adminViewStudentsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->adminViewStudentsBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->button2->Location = System::Drawing::Point(6, 107);
-			   this->button2->Name = L"button2";
-			   this->button2->Size = System::Drawing::Size(136, 38);
-			   this->button2->TabIndex = 1;
-			   this->button2->Text = L"View Students";
-			   this->button2->UseVisualStyleBackColor = false;
+			   this->adminViewStudentsBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->adminViewStudentsBtn->Location = System::Drawing::Point(6, 107);
+			   this->adminViewStudentsBtn->Name = L"adminViewStudentsBtn";
+			   this->adminViewStudentsBtn->Size = System::Drawing::Size(136, 38);
+			   this->adminViewStudentsBtn->TabIndex = 1;
+			   this->adminViewStudentsBtn->Text = L"View Students";
+			   this->adminViewStudentsBtn->UseVisualStyleBackColor = false;
+			   this->adminViewStudentsBtn->Click += gcnew System::EventHandler(this, &Form1::adminViewStudentsBtn_Click);
 			   // 
 			   // adminViewTeacherBtn
 			   // 
@@ -1393,6 +1440,14 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->Annoucements->Text = L"Annoucements";
 			   this->Annoucements->UseVisualStyleBackColor = true;
 			   // 
+			   // pictureBox4
+			   // 
+			   this->pictureBox4->Location = System::Drawing::Point(305, 27);
+			   this->pictureBox4->Name = L"pictureBox4";
+			   this->pictureBox4->Size = System::Drawing::Size(127, 81);
+			   this->pictureBox4->TabIndex = 13;
+			   this->pictureBox4->TabStop = false;
+			   // 
 			   // label15
 			   // 
 			   this->label15->AutoSize = true;
@@ -1404,13 +1459,17 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   this->label15->TabIndex = 12;
 			   this->label15->Text = L"Announcements";
 			   // 
-			   // pictureBox4
+			   // label16
 			   // 
-			   this->pictureBox4->Location = System::Drawing::Point(305, 27);
-			   this->pictureBox4->Name = L"pictureBox4";
-			   this->pictureBox4->Size = System::Drawing::Size(127, 81);
-			   this->pictureBox4->TabIndex = 13;
-			   this->pictureBox4->TabStop = false;
+			   this->label16->AutoSize = true;
+			   this->label16->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label16->Location = System::Drawing::Point(21, 500);
+			   this->label16->Name = L"label16";
+			   this->label16->Size = System::Drawing::Size(572, 13);
+			   this->label16->TabIndex = 9;
+			   this->label16->Text = L"Note : After Adding or deleteing records you have to reload the data by clicking "
+				   L"on the respective View buttons";
 			   // 
 			   // Form1
 			   // 
@@ -1440,9 +1499,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox4;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			   this->adminDashBoard->ResumeLayout(false);
 			   this->panel4->ResumeLayout(false);
-			   this->adminStudentGridView->ResumeLayout(false);
-			   this->adminStudentGridView->PerformLayout();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			   this->panel4->PerformLayout();
+			   this->adminVIewStudentPanel->ResumeLayout(false);
+			   this->adminVIewStudentPanel->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->adminStudentGridView))->EndInit();
 			   this->adminViewTeacherPanel->ResumeLayout(false);
 			   this->adminViewTeacherPanel->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->adminTeacherGridView))->EndInit();
@@ -1646,6 +1706,7 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 	//funciton to disable things on panel 4(part of admin dashboard)
 	void ItemsOnAdminPanel4(bool a) {
 		adminViewTeacherPanel->Visible = a;
+		adminVIewStudentPanel->Visible = a;
 		adminStudentGridView->Visible = a;
 	}
 	//function to disable and enable the Login Panel of admin dashboard
@@ -1676,14 +1737,15 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		
 		try {
 			//Images For Login Sign Up and Admin 
-			pictureBox1->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\bg.png");
-			pictureBox2->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\admin.png");
-			pictureBox3->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\signUp.png");
-			//styling buttons
-			loginButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
-			signupButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
-			adminLoginButton->Image = System::Drawing::Image::FromFile("C:\\Users\\Jawwad\\Desktop\\btnBg.png");
+			//Images Setted From google drive
+			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0"; 
+			pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
+			pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
 
+			//styling buttons
+			SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 		}
 		catch (System::IO::FileNotFoundException^ e) {
 			MessageBox::Show("File Not Found." + e, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1719,6 +1781,27 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		label1->Text = "Log In Again To Visit Dashboards";
 		label2->Text = "Log In Again To Visit Dashboards";
 	}
+
+		   void SetButtonImageFromURL(System::Windows::Forms::Button^ button, String^ imageUrl)
+		   {
+			   try
+			   {
+				   // Create a WebClient to download the image
+				   WebClient^ webClient = gcnew WebClient();
+				   array<Byte>^ data = webClient->DownloadData(imageUrl);
+
+				   // Create a MemoryStream from the downloaded data
+				   System::IO::MemoryStream^ memoryStream = gcnew System::IO::MemoryStream(data);
+
+				   // Set the downloaded image as the button's background image
+				   button->BackgroundImage = Image::FromStream(memoryStream);
+				   button->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch; // Optional: Adjust layout
+			   }
+			   catch (Exception^ ex)
+			   {
+				   MessageBox::Show("Error loading image: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			   }
+		   }
 	
 	//Teacher load Marks Button in the data grid view for marks
 	private: System::Void teacherLoadMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1911,6 +1994,14 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		adminViewTeacherPanel->Visible = true;
 
 	}
+	//Admin panel4 view teacher button on click
+	private: System::Void adminViewStudentsBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		Admin::DisplayStudentsOnGridView(adminStudentGridView);
+		//Enable the student view grid view
+		ItemsOnAdminPanel4(false);
+		adminStudentGridView->Visible = true;
+		adminVIewStudentPanel->Visible = true;
+	}
 	//Add Teacher from admin panel4
 	private: System::Void addTeacher_Click(System::Object^ sender, System::EventArgs^ e) {
 		//MessageBox::Show("Add Teacher");
@@ -1918,7 +2009,18 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		addTeacherForm->ShowDialog();
 
 	}
+	//Delete Teacher BTn from admin panel4
+	private: System::Void deleteTeacherBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		DeleteRecordForm^ deleteRecordForm = gcnew DeleteRecordForm("Teacher");
+		deleteRecordForm->ShowDialog();
+	
+	}
+	//Delete Student Record BTN from admin panel 4
+	private: System::Void deleteStudentRecords_Click(System::Object^ sender, System::EventArgs^ e) {
+		DeleteRecordForm^ deleteRecordForm = gcnew DeleteRecordForm("Student");
+		deleteRecordForm->ShowDialog();
 
+	}
 };
 }
 
