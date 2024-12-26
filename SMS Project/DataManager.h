@@ -160,7 +160,7 @@ public:
             }
             catch (Exception^)
             {
-                MessageBox::Show("Invalid data detected. Skipping...");
+                MessageBox::Show("Invalid data detected . Skipping...");
             }
         }
 
@@ -177,4 +177,31 @@ public:
         if (marks >= 45) return 2.0f; // C
         return 0.0f; // F
     }
+    static std::string ConvertToStdString(String^ managedString)
+    {
+        const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(managedString)).ToPointer();
+        std::string convertedString(chars);
+        System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)chars));
+        return convertedString;
+    }
+
+    // Saving the Feedbacks into feedback.csv
+    static void SaveFeedBacksIntoFile(TextBox^ username, TextBox^ email, TextBox^ comments) {
+        // Open the file in append mode
+        std::ofstream file("feedback.csv", std::ios::app);
+
+        if (!file.is_open()) {
+            MessageBox::Show("File not opened. An error occurred.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        else {
+            // Write the feedback data to the file
+            file << ConvertToStdString(username->Text) << ","
+                << ConvertToStdString(email->Text) << ","
+                << ConvertToStdString(comments->Text) << "\n";
+
+            MessageBox::Show("Feedback Submitted Successfully.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+            file.close();
+        }
+    }
+
 };

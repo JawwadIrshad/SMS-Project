@@ -71,19 +71,19 @@ namespace CppCLRWinFormsProject {
 		System::Windows::Forms::TextBox^ signupTextboxConfirmPassword;
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
 
-	private: System::Windows::Forms::Label^ courseslabel;
+
+
 
 	private: System::Windows::Forms::Label^ gpaLabel;
 
-	private: System::Windows::Forms::Label^ InfoLabel;
-	private: System::Windows::Forms::Label^ gpa;
-	private: System::Windows::Forms::Button^ logoutBtn;
-	private: System::Windows::Forms::Label^ studDisplayNameLabel;
 
-	private: System::Windows::Forms::Label^ namelabel;
+	private: System::Windows::Forms::Label^ gpa;
+
+
+
+
 
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Label^ label2;
@@ -98,10 +98,10 @@ namespace CppCLRWinFormsProject {
 
 
 
-	private: System::Windows::Forms::Label^ roll;
-	private: System::Windows::Forms::Label^ rolllabel;
+
+
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Button^ TeacherLogoutBtn;
+
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
@@ -128,14 +128,14 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ loadMarksButton;
 
 
-	private: System::Windows::Forms::Label^ attendanceLabel;
-	private: System::Windows::Forms::DataGridView^ attendanceDataGridView;
 
 
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-private: System::Windows::Forms::Label^ assignMarksLabel;
+
+
+
+
+
+
 private: System::Windows::Forms::TabPage^ adminDashBoard;
 private: System::Windows::Forms::Panel^ panel2;
 private: System::Windows::Forms::PictureBox^ pictureBox2;
@@ -212,6 +212,53 @@ private: System::Windows::Forms::Button^ button3;
 private: System::Windows::Forms::Button^ totalTeacherBtn;
 
 private: System::Windows::Forms::Button^ totalStudentsBtn;
+private: System::Windows::Forms::PictureBox^ pictureBox5;
+private: System::Windows::Forms::Label^ label22;
+private: System::Windows::Forms::Label^ label23;
+private: System::Windows::Forms::TextBox^ feedBackUserNameTextBox;
+
+private: System::Windows::Forms::Label^ label24;
+private: System::Windows::Forms::TextBox^ feedBackEmailTextBox;
+
+private: System::Windows::Forms::Label^ label25;
+private: System::Windows::Forms::TextBox^ feedBackCommentsTextBox;
+
+private: System::Windows::Forms::Button^ feedBackSubmitBtn;
+private: System::Windows::Forms::Panel^ panel6;
+private: System::Windows::Forms::Label^ label26;
+private: System::Windows::Forms::Button^ button1;
+
+
+
+private: System::Windows::Forms::Label^ assignMarksLabel;
+private: System::Windows::Forms::Panel^ panel8;
+private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+private: System::Windows::Forms::Label^ label28;
+private: System::Windows::Forms::Panel^ panel7;
+private: System::Windows::Forms::Label^ label27;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Panel^ panel9;
+private: System::Windows::Forms::Label^ roll;
+private: System::Windows::Forms::Label^ rolllabel;
+private: System::Windows::Forms::Label^ studDisplayNameLabel;
+private: System::Windows::Forms::Label^ namelabel;
+private: System::Windows::Forms::Label^ label29;
+private: System::Windows::Forms::Panel^ panel10;
+private: System::Windows::Forms::Button^ stdToDoListAddTaskBtn;
+
+
+private: System::Windows::Forms::Label^ label35;
+
+
+
+private: System::Windows::Forms::RichTextBox^ RichTextBox1;
+private: System::Windows::Forms::FlowLayoutPanel^ todoFlowPanel;
+private: System::Windows::Forms::RichTextBox^ richTextBox2;
+
+
+
+
+
 
 
 
@@ -295,27 +342,32 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->signupTextboxConfirmPassword = (gcnew System::Windows::Forms::TextBox());
 			   this->signupButton = (gcnew System::Windows::Forms::Button());
 			   this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			   this->label1 = (gcnew System::Windows::Forms::Label());
+			   this->panel10 = (gcnew System::Windows::Forms::Panel());
+			   this->RichTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			   this->stdToDoListAddTaskBtn = (gcnew System::Windows::Forms::Button());
+			   this->label35 = (gcnew System::Windows::Forms::Label());
+			   this->panel9 = (gcnew System::Windows::Forms::Panel());
 			   this->roll = (gcnew System::Windows::Forms::Label());
 			   this->rolllabel = (gcnew System::Windows::Forms::Label());
 			   this->studDisplayNameLabel = (gcnew System::Windows::Forms::Label());
 			   this->namelabel = (gcnew System::Windows::Forms::Label());
-			   this->logoutBtn = (gcnew System::Windows::Forms::Button());
-			   this->InfoLabel = (gcnew System::Windows::Forms::Label());
 			   this->gpa = (gcnew System::Windows::Forms::Label());
+			   this->label29 = (gcnew System::Windows::Forms::Label());
 			   this->gpaLabel = (gcnew System::Windows::Forms::Label());
-			   this->courseslabel = (gcnew System::Windows::Forms::Label());
+			   this->panel8 = (gcnew System::Windows::Forms::Panel());
 			   this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			   this->label28 = (gcnew System::Windows::Forms::Label());
+			   this->panel7 = (gcnew System::Windows::Forms::Panel());
+			   this->label27 = (gcnew System::Windows::Forms::Label());
+			   this->button2 = (gcnew System::Windows::Forms::Button());
+			   this->label1 = (gcnew System::Windows::Forms::Label());
 			   this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			   this->assignMarksLabel = (gcnew System::Windows::Forms::Label());
-			   this->TeacherLogoutBtn = (gcnew System::Windows::Forms::Button());
-			   this->attendanceDataGridView = (gcnew System::Windows::Forms::DataGridView());
-			   this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			   this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			   this->panel6 = (gcnew System::Windows::Forms::Panel());
+			   this->label26 = (gcnew System::Windows::Forms::Label());
+			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
-			   this->attendanceLabel = (gcnew System::Windows::Forms::Label());
 			   this->panel1 = (gcnew System::Windows::Forms::Panel());
+			   this->assignMarksLabel = (gcnew System::Windows::Forms::Label());
 			   this->teacherSaveMarksBtn = (gcnew System::Windows::Forms::Button());
 			   this->loadMarksButton = (gcnew System::Windows::Forms::Button());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -374,14 +426,29 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			   this->label15 = (gcnew System::Windows::Forms::Label());
 			   this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			   this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			   this->label22 = (gcnew System::Windows::Forms::Label());
+			   this->label23 = (gcnew System::Windows::Forms::Label());
+			   this->feedBackUserNameTextBox = (gcnew System::Windows::Forms::TextBox());
+			   this->label24 = (gcnew System::Windows::Forms::Label());
+			   this->feedBackEmailTextBox = (gcnew System::Windows::Forms::TextBox());
+			   this->label25 = (gcnew System::Windows::Forms::Label());
+			   this->feedBackCommentsTextBox = (gcnew System::Windows::Forms::TextBox());
+			   this->feedBackSubmitBtn = (gcnew System::Windows::Forms::Button());
+			   this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			   this->todoFlowPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->signupTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			   this->tabPage1->SuspendLayout();
+			   this->panel10->SuspendLayout();
+			   this->panel9->SuspendLayout();
+			   this->panel8->SuspendLayout();
+			   this->panel7->SuspendLayout();
 			   this->tabPage2->SuspendLayout();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->attendanceDataGridView))->BeginInit();
+			   this->panel6->SuspendLayout();
 			   this->panel1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			   this->adminDashBoard->SuspendLayout();
@@ -397,6 +464,8 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   this->Annoucements->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			   this->tabPage3->SuspendLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // headingLabel
@@ -497,10 +566,10 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   // 
 			   // pictureBox1
 			   // 
-			   this->pictureBox1->Location = System::Drawing::Point(401, 122);
+			   this->pictureBox1->Location = System::Drawing::Point(374, 122);
 			   this->pictureBox1->Name = L"pictureBox1";
 			   this->pictureBox1->Padding = System::Windows::Forms::Padding(100);
-			   this->pictureBox1->Size = System::Drawing::Size(382, 264);
+			   this->pictureBox1->Size = System::Drawing::Size(409, 264);
 			   this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			   this->pictureBox1->TabIndex = 22;
 			   this->pictureBox1->TabStop = false;
@@ -785,17 +854,11 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   // 
 			   // tabPage1
 			   // 
+			   this->tabPage1->Controls->Add(this->panel10);
+			   this->tabPage1->Controls->Add(this->panel9);
+			   this->tabPage1->Controls->Add(this->panel8);
+			   this->tabPage1->Controls->Add(this->panel7);
 			   this->tabPage1->Controls->Add(this->label1);
-			   this->tabPage1->Controls->Add(this->roll);
-			   this->tabPage1->Controls->Add(this->rolllabel);
-			   this->tabPage1->Controls->Add(this->studDisplayNameLabel);
-			   this->tabPage1->Controls->Add(this->namelabel);
-			   this->tabPage1->Controls->Add(this->logoutBtn);
-			   this->tabPage1->Controls->Add(this->InfoLabel);
-			   this->tabPage1->Controls->Add(this->gpa);
-			   this->tabPage1->Controls->Add(this->gpaLabel);
-			   this->tabPage1->Controls->Add(this->courseslabel);
-			   this->tabPage1->Controls->Add(this->tableLayoutPanel1);
 			   this->tabPage1->Location = System::Drawing::Point(4, 25);
 			   this->tabPage1->Name = L"tabPage1";
 			   this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -804,38 +867,96 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->tabPage1->Text = L"Student Dashboard";
 			   this->tabPage1->UseVisualStyleBackColor = true;
 			   // 
-			   // label1
+			   // panel10
 			   // 
-			   this->label1->AutoSize = true;
-			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			   this->panel10->AutoScroll = true;
+			   this->panel10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			   this->panel10->Controls->Add(this->todoFlowPanel);
+			   this->panel10->Controls->Add(this->richTextBox2);
+			   this->panel10->Controls->Add(this->RichTextBox1);
+			   this->panel10->Controls->Add(this->stdToDoListAddTaskBtn);
+			   this->panel10->Controls->Add(this->label35);
+			   this->panel10->Location = System::Drawing::Point(595, 17);
+			   this->panel10->Name = L"panel10";
+			   this->panel10->Size = System::Drawing::Size(291, 292);
+			   this->panel10->TabIndex = 38;
+			   // 
+			   // RichTextBox1
+			   // 
+			   this->RichTextBox1->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->RichTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->RichTextBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			   this->RichTextBox1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->RichTextBox1->Location = System::Drawing::Point(23, 70);
+			   this->RichTextBox1->MaxLength = 100;
+			   this->RichTextBox1->Name = L"RichTextBox1";
+			   this->RichTextBox1->Size = System::Drawing::Size(252, 37);
+			   this->RichTextBox1->TabIndex = 22;
+			   this->RichTextBox1->Text = L"";
+			   // 
+			   // stdToDoListAddTaskBtn
+			   // 
+			   this->stdToDoListAddTaskBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->stdToDoListAddTaskBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->stdToDoListAddTaskBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->label1->ForeColor = System::Drawing::Color::Red;
-			   this->label1->Location = System::Drawing::Point(380, 240);
-			   this->label1->Name = L"label1";
-			   this->label1->Size = System::Drawing::Size(159, 19);
-			   this->label1->TabIndex = 12;
-			   this->label1->Text = L"Log In Or Sign Up First";
+			   this->stdToDoListAddTaskBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->stdToDoListAddTaskBtn->Location = System::Drawing::Point(22, 247);
+			   this->stdToDoListAddTaskBtn->Name = L"stdToDoListAddTaskBtn";
+			   this->stdToDoListAddTaskBtn->Size = System::Drawing::Size(84, 31);
+			   this->stdToDoListAddTaskBtn->TabIndex = 17;
+			   this->stdToDoListAddTaskBtn->Text = L"Add Task";
+			   this->stdToDoListAddTaskBtn->UseVisualStyleBackColor = false;
+			   this->stdToDoListAddTaskBtn->Click += gcnew System::EventHandler(this, &Form1::stdToDoListAddTaskBtn_Click);
+			   // 
+			   // label35
+			   // 
+			   this->label35->AutoSize = true;
+			   this->label35->BackColor = System::Drawing::Color::Transparent;
+			   this->label35->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label35->Location = System::Drawing::Point(17, 26);
+			   this->label35->Name = L"label35";
+			   this->label35->Size = System::Drawing::Size(110, 30);
+			   this->label35->TabIndex = 13;
+			   this->label35->Text = L"To Do List";
+			   // 
+			   // panel9
+			   // 
+			   this->panel9->AutoScroll = true;
+			   this->panel9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			   this->panel9->Controls->Add(this->roll);
+			   this->panel9->Controls->Add(this->rolllabel);
+			   this->panel9->Controls->Add(this->studDisplayNameLabel);
+			   this->panel9->Controls->Add(this->namelabel);
+			   this->panel9->Controls->Add(this->gpa);
+			   this->panel9->Controls->Add(this->label29);
+			   this->panel9->Controls->Add(this->gpaLabel);
+			   this->panel9->Location = System::Drawing::Point(181, 17);
+			   this->panel9->Name = L"panel9";
+			   this->panel9->Size = System::Drawing::Size(402, 234);
+			   this->panel9->TabIndex = 37;
 			   // 
 			   // roll
 			   // 
 			   this->roll->AutoSize = true;
 			   this->roll->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->roll->Location = System::Drawing::Point(133, 51);
+			   this->roll->Location = System::Drawing::Point(253, 92);
 			   this->roll->Name = L"roll";
 			   this->roll->Size = System::Drawing::Size(33, 19);
-			   this->roll->TabIndex = 11;
+			   this->roll->TabIndex = 17;
 			   this->roll->Text = L"----";
 			   // 
 			   // rolllabel
 			   // 
 			   this->rolllabel->AutoSize = true;
-			   this->rolllabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->rolllabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			   this->rolllabel->Location = System::Drawing::Point(129, 34);
+			   this->rolllabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
+			   this->rolllabel->ForeColor = System::Drawing::SystemColors::MenuText;
+			   this->rolllabel->Location = System::Drawing::Point(249, 75);
 			   this->rolllabel->Name = L"rolllabel";
-			   this->rolllabel->Size = System::Drawing::Size(28, 16);
-			   this->rolllabel->TabIndex = 10;
+			   this->rolllabel->Size = System::Drawing::Size(36, 19);
+			   this->rolllabel->TabIndex = 16;
 			   this->rolllabel->Text = L"Roll";
 			   // 
 			   // studDisplayNameLabel
@@ -843,77 +964,66 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->studDisplayNameLabel->AutoSize = true;
 			   this->studDisplayNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->studDisplayNameLabel->Location = System::Drawing::Point(10, 51);
+			   this->studDisplayNameLabel->Location = System::Drawing::Point(29, 100);
 			   this->studDisplayNameLabel->Name = L"studDisplayNameLabel";
 			   this->studDisplayNameLabel->Size = System::Drawing::Size(33, 19);
-			   this->studDisplayNameLabel->TabIndex = 9;
+			   this->studDisplayNameLabel->TabIndex = 15;
 			   this->studDisplayNameLabel->Text = L"----";
 			   // 
 			   // namelabel
 			   // 
 			   this->namelabel->AutoSize = true;
-			   this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->namelabel->ForeColor = System::Drawing::SystemColors::WindowFrame;
-			   this->namelabel->Location = System::Drawing::Point(6, 34);
+			   this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold));
+			   this->namelabel->ForeColor = System::Drawing::SystemColors::MenuText;
+			   this->namelabel->Location = System::Drawing::Point(23, 75);
 			   this->namelabel->Name = L"namelabel";
-			   this->namelabel->Size = System::Drawing::Size(39, 16);
-			   this->namelabel->TabIndex = 8;
+			   this->namelabel->Size = System::Drawing::Size(51, 19);
+			   this->namelabel->TabIndex = 14;
 			   this->namelabel->Text = L"Name";
-			   // 
-			   // logoutBtn
-			   // 
-			   this->logoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->logoutBtn->Location = System::Drawing::Point(294, 6);
-			   this->logoutBtn->Name = L"logoutBtn";
-			   this->logoutBtn->Size = System::Drawing::Size(84, 27);
-			   this->logoutBtn->TabIndex = 7;
-			   this->logoutBtn->Text = L"Log out";
-			   this->logoutBtn->UseVisualStyleBackColor = true;
-			   this->logoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
-			   // 
-			   // InfoLabel
-			   // 
-			   this->InfoLabel->AutoSize = true;
-			   this->InfoLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->InfoLabel->Location = System::Drawing::Point(6, 12);
-			   this->InfoLabel->Name = L"InfoLabel";
-			   this->InfoLabel->Size = System::Drawing::Size(35, 19);
-			   this->InfoLabel->TabIndex = 6;
-			   this->InfoLabel->Text = L"Info";
 			   // 
 			   // gpa
 			   // 
 			   this->gpa->AutoSize = true;
 			   this->gpa->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 15.75F, System::Drawing::FontStyle::Bold));
 			   this->gpa->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->gpa->Location = System::Drawing::Point(212, 44);
+			   this->gpa->Location = System::Drawing::Point(28, 166);
 			   this->gpa->Name = L"gpa";
 			   this->gpa->Size = System::Drawing::Size(57, 28);
 			   this->gpa->TabIndex = 5;
 			   this->gpa->Text = L"0.00";
 			   // 
+			   // label29
+			   // 
+			   this->label29->AutoSize = true;
+			   this->label29->BackColor = System::Drawing::Color::Transparent;
+			   this->label29->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label29->Location = System::Drawing::Point(18, 29);
+			   this->label29->Name = L"label29";
+			   this->label29->Size = System::Drawing::Size(137, 30);
+			   this->label29->TabIndex = 13;
+			   this->label29->Text = L"Student Info";
+			   // 
 			   // gpaLabel
 			   // 
 			   this->gpaLabel->AutoSize = true;
-			   this->gpaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->gpaLabel->Location = System::Drawing::Point(213, 14);
+			   this->gpaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold));
+			   this->gpaLabel->Location = System::Drawing::Point(24, 144);
 			   this->gpaLabel->Name = L"gpaLabel";
-			   this->gpaLabel->Size = System::Drawing::Size(42, 19);
+			   this->gpaLabel->Size = System::Drawing::Size(50, 22);
 			   this->gpaLabel->TabIndex = 4;
 			   this->gpaLabel->Text = L"GPA:";
 			   // 
-			   // courseslabel
+			   // panel8
 			   // 
-			   this->courseslabel->AutoSize = true;
-			   this->courseslabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->courseslabel->Location = System::Drawing::Point(5, 74);
-			   this->courseslabel->Name = L"courseslabel";
-			   this->courseslabel->Size = System::Drawing::Size(61, 19);
-			   this->courseslabel->TabIndex = 3;
-			   this->courseslabel->Text = L"Courses";
+			   this->panel8->AutoScroll = true;
+			   this->panel8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			   this->panel8->Controls->Add(this->tableLayoutPanel1);
+			   this->panel8->Controls->Add(this->label28);
+			   this->panel8->Location = System::Drawing::Point(181, 265);
+			   this->panel8->Name = L"panel8";
+			   this->panel8->Size = System::Drawing::Size(402, 234);
+			   this->panel8->TabIndex = 36;
 			   // 
 			   // tableLayoutPanel1
 			   // 
@@ -929,7 +1039,8 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 				   33.33334F)));
 			   this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				   33.33334F)));
-			   this->tableLayoutPanel1->Location = System::Drawing::Point(6, 101);
+			   this->tableLayoutPanel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			   this->tableLayoutPanel1->Location = System::Drawing::Point(17, 75);
 			   this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			   this->tableLayoutPanel1->RowCount = 5;
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25.2768F)));
@@ -937,16 +1048,75 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
-			   this->tableLayoutPanel1->Size = System::Drawing::Size(354, 120);
-			   this->tableLayoutPanel1->TabIndex = 0;
+			   this->tableLayoutPanel1->Size = System::Drawing::Size(367, 127);
+			   this->tableLayoutPanel1->TabIndex = 14;
+			   // 
+			   // label28
+			   // 
+			   this->label28->AutoSize = true;
+			   this->label28->BackColor = System::Drawing::Color::Transparent;
+			   this->label28->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label28->Location = System::Drawing::Point(18, 29);
+			   this->label28->Name = L"label28";
+			   this->label28->Size = System::Drawing::Size(117, 30);
+			   this->label28->TabIndex = 13;
+			   this->label28->Text = L"Academics";
+			   // 
+			   // panel7
+			   // 
+			   this->panel7->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->panel7->Controls->Add(this->label27);
+			   this->panel7->Controls->Add(this->button2);
+			   this->panel7->Location = System::Drawing::Point(1, 1);
+			   this->panel7->Name = L"panel7";
+			   this->panel7->Size = System::Drawing::Size(150, 530);
+			   this->panel7->TabIndex = 35;
+			   // 
+			   // label27
+			   // 
+			   this->label27->AutoSize = true;
+			   this->label27->BackColor = System::Drawing::Color::Transparent;
+			   this->label27->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label27->ForeColor = System::Drawing::Color::Cornsilk;
+			   this->label27->Location = System::Drawing::Point(29, 16);
+			   this->label27->Name = L"label27";
+			   this->label27->Size = System::Drawing::Size(90, 30);
+			   this->label27->TabIndex = 5;
+			   this->label27->Text = L"Student";
+			   // 
+			   // button2
+			   // 
+			   this->button2->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button2->Location = System::Drawing::Point(18, 460);
+			   this->button2->Name = L"button2";
+			   this->button2->Size = System::Drawing::Size(104, 38);
+			   this->button2->TabIndex = 4;
+			   this->button2->Text = L"LogOut";
+			   this->button2->UseVisualStyleBackColor = false;
+			   this->button2->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
+			   // 
+			   // label1
+			   // 
+			   this->label1->AutoSize = true;
+			   this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label1->ForeColor = System::Drawing::Color::Red;
+			   this->label1->Location = System::Drawing::Point(412, 194);
+			   this->label1->Name = L"label1";
+			   this->label1->Size = System::Drawing::Size(159, 19);
+			   this->label1->TabIndex = 12;
+			   this->label1->Text = L"Log In Or Sign Up First";
 			   // 
 			   // tabPage2
 			   // 
-			   this->tabPage2->Controls->Add(this->assignMarksLabel);
-			   this->tabPage2->Controls->Add(this->TeacherLogoutBtn);
-			   this->tabPage2->Controls->Add(this->attendanceDataGridView);
+			   this->tabPage2->Controls->Add(this->panel6);
 			   this->tabPage2->Controls->Add(this->label2);
-			   this->tabPage2->Controls->Add(this->attendanceLabel);
 			   this->tabPage2->Controls->Add(this->panel1);
 			   this->tabPage2->Location = System::Drawing::Point(4, 25);
 			   this->tabPage2->Name = L"tabPage2";
@@ -956,56 +1126,43 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->tabPage2->Text = L"Teacher Dashboard";
 			   this->tabPage2->UseVisualStyleBackColor = true;
 			   // 
-			   // assignMarksLabel
+			   // panel6
 			   // 
-			   this->assignMarksLabel->AutoSize = true;
-			   this->assignMarksLabel->BackColor = System::Drawing::Color::Transparent;
-			   this->assignMarksLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			   this->panel6->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->panel6->Controls->Add(this->label26);
+			   this->panel6->Controls->Add(this->button1);
+			   this->panel6->Location = System::Drawing::Point(1, 0);
+			   this->panel6->Name = L"panel6";
+			   this->panel6->Size = System::Drawing::Size(150, 530);
+			   this->panel6->TabIndex = 34;
+			   // 
+			   // label26
+			   // 
+			   this->label26->AutoSize = true;
+			   this->label26->BackColor = System::Drawing::Color::Transparent;
+			   this->label26->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->assignMarksLabel->Location = System::Drawing::Point(6, 14);
-			   this->assignMarksLabel->Name = L"assignMarksLabel";
-			   this->assignMarksLabel->Size = System::Drawing::Size(144, 30);
-			   this->assignMarksLabel->TabIndex = 11;
-			   this->assignMarksLabel->Text = L"Assign Marks";
+			   this->label26->ForeColor = System::Drawing::Color::Cornsilk;
+			   this->label26->Location = System::Drawing::Point(29, 16);
+			   this->label26->Name = L"label26";
+			   this->label26->Size = System::Drawing::Size(87, 30);
+			   this->label26->TabIndex = 5;
+			   this->label26->Text = L"Teacher";
 			   // 
-			   // TeacherLogoutBtn
+			   // button1
 			   // 
-			   this->TeacherLogoutBtn->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Bold));
-			   this->TeacherLogoutBtn->Location = System::Drawing::Point(277, 11);
-			   this->TeacherLogoutBtn->Name = L"TeacherLogoutBtn";
-			   this->TeacherLogoutBtn->Size = System::Drawing::Size(89, 33);
-			   this->TeacherLogoutBtn->TabIndex = 8;
-			   this->TeacherLogoutBtn->Text = L"Log out";
-			   this->TeacherLogoutBtn->UseVisualStyleBackColor = true;
-			   this->TeacherLogoutBtn->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
-			   // 
-			   // attendanceDataGridView
-			   // 
-			   this->attendanceDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->attendanceDataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				   this->dataGridViewTextBoxColumn1,
-					   this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3
-			   });
-			   this->attendanceDataGridView->Location = System::Drawing::Point(536, 58);
-			   this->attendanceDataGridView->Name = L"attendanceDataGridView";
-			   this->attendanceDataGridView->Size = System::Drawing::Size(350, 220);
-			   this->attendanceDataGridView->TabIndex = 10;
-			   // 
-			   // dataGridViewTextBoxColumn1
-			   // 
-			   this->dataGridViewTextBoxColumn1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			   this->dataGridViewTextBoxColumn1->HeaderText = L"Column1";
-			   this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			   // 
-			   // dataGridViewTextBoxColumn2
-			   // 
-			   this->dataGridViewTextBoxColumn2->HeaderText = L"Column2";
-			   this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
-			   // 
-			   // dataGridViewTextBoxColumn3
-			   // 
-			   this->dataGridViewTextBoxColumn3->HeaderText = L"Column3";
-			   this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			   this->button1->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->button1->Location = System::Drawing::Point(18, 460);
+			   this->button1->Name = L"button1";
+			   this->button1->Size = System::Drawing::Size(104, 38);
+			   this->button1->TabIndex = 4;
+			   this->button1->Text = L"LogOut";
+			   this->button1->UseVisualStyleBackColor = false;
+			   this->button1->Click += gcnew System::EventHandler(this, &Form1::logoutBtn_Click);
 			   // 
 			   // label2
 			   // 
@@ -1019,53 +1176,56 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->label2->TabIndex = 3;
 			   this->label2->Text = L"Log In Or Sign Up First";
 			   // 
-			   // attendanceLabel
-			   // 
-			   this->attendanceLabel->AutoSize = true;
-			   this->attendanceLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->attendanceLabel->Location = System::Drawing::Point(536, 14);
-			   this->attendanceLabel->Name = L"attendanceLabel";
-			   this->attendanceLabel->Size = System::Drawing::Size(132, 30);
-			   this->attendanceLabel->TabIndex = 6;
-			   this->attendanceLabel->Text = L"Attendance ";
-			   // 
 			   // panel1
 			   // 
 			   this->panel1->AutoScroll = true;
+			   this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			   this->panel1->Controls->Add(this->assignMarksLabel);
 			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
 			   this->panel1->Controls->Add(this->loadMarksButton);
 			   this->panel1->Controls->Add(this->dataGridView1);
-			   this->panel1->Location = System::Drawing::Point(0, 55);
+			   this->panel1->Location = System::Drawing::Point(177, 69);
 			   this->panel1->Name = L"panel1";
 			   this->panel1->Size = System::Drawing::Size(366, 224);
 			   this->panel1->TabIndex = 5;
 			   // 
+			   // assignMarksLabel
+			   // 
+			   this->assignMarksLabel->AutoSize = true;
+			   this->assignMarksLabel->BackColor = System::Drawing::Color::Transparent;
+			   this->assignMarksLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->assignMarksLabel->Location = System::Drawing::Point(14, 17);
+			   this->assignMarksLabel->Name = L"assignMarksLabel";
+			   this->assignMarksLabel->Size = System::Drawing::Size(144, 30);
+			   this->assignMarksLabel->TabIndex = 12;
+			   this->assignMarksLabel->Text = L"Assign Marks";
+			   // 
 			   // teacherSaveMarksBtn
 			   // 
 			   this->teacherSaveMarksBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->teacherSaveMarksBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->teacherSaveMarksBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->teacherSaveMarksBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
 			   this->teacherSaveMarksBtn->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->teacherSaveMarksBtn->Location = System::Drawing::Point(150, 23);
+			   this->teacherSaveMarksBtn->Location = System::Drawing::Point(284, 16);
 			   this->teacherSaveMarksBtn->Name = L"teacherSaveMarksBtn";
-			   this->teacherSaveMarksBtn->Size = System::Drawing::Size(116, 30);
+			   this->teacherSaveMarksBtn->Size = System::Drawing::Size(62, 30);
 			   this->teacherSaveMarksBtn->TabIndex = 9;
-			   this->teacherSaveMarksBtn->Text = L"Save Marks";
+			   this->teacherSaveMarksBtn->Text = L"Save";
 			   this->teacherSaveMarksBtn->UseVisualStyleBackColor = false;
 			   this->teacherSaveMarksBtn->Click += gcnew System::EventHandler(this, &Form1::teacherSaveMarksBtn_Click);
 			   // 
 			   // loadMarksButton
 			   // 
 			   this->loadMarksButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->loadMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->loadMarksButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->loadMarksButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
 			   this->loadMarksButton->ForeColor = System::Drawing::SystemColors::MenuBar;
-			   this->loadMarksButton->Location = System::Drawing::Point(7, 24);
+			   this->loadMarksButton->Location = System::Drawing::Point(212, 17);
 			   this->loadMarksButton->Name = L"loadMarksButton";
-			   this->loadMarksButton->Size = System::Drawing::Size(116, 30);
+			   this->loadMarksButton->Size = System::Drawing::Size(61, 30);
 			   this->loadMarksButton->TabIndex = 5;
-			   this->loadMarksButton->Text = L"Load Marks";
+			   this->loadMarksButton->Text = L"Load";
 			   this->loadMarksButton->UseVisualStyleBackColor = false;
 			   this->loadMarksButton->Click += gcnew System::EventHandler(this, &Form1::teacherLoadMarksBtn_Click);
 			   // 
@@ -1077,9 +1237,9 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 				   this->Column1,
 					   this->Column2, this->Column3
 			   });
-			   this->dataGridView1->Location = System::Drawing::Point(3, 68);
+			   this->dataGridView1->Location = System::Drawing::Point(18, 64);
 			   this->dataGridView1->Name = L"dataGridView1";
-			   this->dataGridView1->Size = System::Drawing::Size(350, 150);
+			   this->dataGridView1->Size = System::Drawing::Size(331, 150);
 			   this->dataGridView1->TabIndex = 0;
 			   // 
 			   // Column1
@@ -1129,6 +1289,7 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   // adminStatsPanel
 			   // 
 			   this->adminStatsPanel->AutoScroll = true;
+			   this->adminStatsPanel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			   this->adminStatsPanel->Controls->Add(this->label21);
 			   this->adminStatsPanel->Controls->Add(this->label20);
 			   this->adminStatsPanel->Controls->Add(this->label19);
@@ -1230,6 +1391,7 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   // panel5
 			   // 
 			   this->panel5->AutoScroll = true;
+			   this->panel5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			   this->panel5->Controls->Add(this->announcementTextBox);
 			   this->panel5->Controls->Add(this->createAnnouncementsBtn);
 			   this->panel5->Controls->Add(this->announcementsLabel);
@@ -1711,13 +1873,140 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   // 
 			   // tabPage3
 			   // 
+			   this->tabPage3->Controls->Add(this->pictureBox5);
+			   this->tabPage3->Controls->Add(this->label22);
+			   this->tabPage3->Controls->Add(this->label23);
+			   this->tabPage3->Controls->Add(this->feedBackUserNameTextBox);
+			   this->tabPage3->Controls->Add(this->label24);
+			   this->tabPage3->Controls->Add(this->feedBackEmailTextBox);
+			   this->tabPage3->Controls->Add(this->label25);
+			   this->tabPage3->Controls->Add(this->feedBackCommentsTextBox);
+			   this->tabPage3->Controls->Add(this->feedBackSubmitBtn);
 			   this->tabPage3->Location = System::Drawing::Point(4, 25);
 			   this->tabPage3->Name = L"tabPage3";
 			   this->tabPage3->Padding = System::Windows::Forms::Padding(3);
 			   this->tabPage3->Size = System::Drawing::Size(894, 534);
 			   this->tabPage3->TabIndex = 6;
-			   this->tabPage3->Text = L"tabPage3";
+			   this->tabPage3->Text = L"FeedBack";
 			   this->tabPage3->UseVisualStyleBackColor = true;
+			   // 
+			   // pictureBox5
+			   // 
+			   this->pictureBox5->Location = System::Drawing::Point(343, 78);
+			   this->pictureBox5->Name = L"pictureBox5";
+			   this->pictureBox5->Padding = System::Windows::Forms::Padding(100);
+			   this->pictureBox5->Size = System::Drawing::Size(516, 389);
+			   this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			   this->pictureBox5->TabIndex = 32;
+			   this->pictureBox5->TabStop = false;
+			   // 
+			   // label22
+			   // 
+			   this->label22->AutoSize = true;
+			   this->label22->Font = (gcnew System::Drawing::Font(L"Segoe UI", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label22->Location = System::Drawing::Point(36, 68);
+			   this->label22->Name = L"label22";
+			   this->label22->Size = System::Drawing::Size(235, 47);
+			   this->label22->TabIndex = 31;
+			   this->label22->Text = L"FeedBack 🐔";
+			   // 
+			   // label23
+			   // 
+			   this->label23->AutoSize = true;
+			   this->label23->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label23->Location = System::Drawing::Point(40, 131);
+			   this->label23->Name = L"label23";
+			   this->label23->Size = System::Drawing::Size(80, 19);
+			   this->label23->TabIndex = 24;
+			   this->label23->Text = L"Username:";
+			   // 
+			   // feedBackUserNameTextBox
+			   // 
+			   this->feedBackUserNameTextBox->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->feedBackUserNameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->feedBackUserNameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->feedBackUserNameTextBox->Location = System::Drawing::Point(43, 155);
+			   this->feedBackUserNameTextBox->Name = L"feedBackUserNameTextBox";
+			   this->feedBackUserNameTextBox->Size = System::Drawing::Size(226, 28);
+			   this->feedBackUserNameTextBox->TabIndex = 25;
+			   // 
+			   // label24
+			   // 
+			   this->label24->AutoSize = true;
+			   this->label24->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label24->Location = System::Drawing::Point(40, 195);
+			   this->label24->Name = L"label24";
+			   this->label24->Size = System::Drawing::Size(49, 19);
+			   this->label24->TabIndex = 26;
+			   this->label24->Text = L"Email:";
+			   // 
+			   // feedBackEmailTextBox
+			   // 
+			   this->feedBackEmailTextBox->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->feedBackEmailTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->feedBackEmailTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->feedBackEmailTextBox->Location = System::Drawing::Point(43, 220);
+			   this->feedBackEmailTextBox->Name = L"feedBackEmailTextBox";
+			   this->feedBackEmailTextBox->Size = System::Drawing::Size(226, 28);
+			   this->feedBackEmailTextBox->TabIndex = 27;
+			   // 
+			   // label25
+			   // 
+			   this->label25->AutoSize = true;
+			   this->label25->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F, System::Drawing::FontStyle::Bold));
+			   this->label25->Location = System::Drawing::Point(40, 264);
+			   this->label25->Name = L"label25";
+			   this->label25->Size = System::Drawing::Size(80, 19);
+			   this->label25->TabIndex = 28;
+			   this->label25->Text = L"Comments";
+			   // 
+			   // feedBackCommentsTextBox
+			   // 
+			   this->feedBackCommentsTextBox->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->feedBackCommentsTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->feedBackCommentsTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			   this->feedBackCommentsTextBox->Location = System::Drawing::Point(43, 289);
+			   this->feedBackCommentsTextBox->Multiline = true;
+			   this->feedBackCommentsTextBox->Name = L"feedBackCommentsTextBox";
+			   this->feedBackCommentsTextBox->Size = System::Drawing::Size(226, 71);
+			   this->feedBackCommentsTextBox->TabIndex = 29;
+			   // 
+			   // feedBackSubmitBtn
+			   // 
+			   this->feedBackSubmitBtn->BackColor = System::Drawing::Color::Transparent;
+			   this->feedBackSubmitBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->feedBackSubmitBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->feedBackSubmitBtn->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->feedBackSubmitBtn->Location = System::Drawing::Point(76, 383);
+			   this->feedBackSubmitBtn->Name = L"feedBackSubmitBtn";
+			   this->feedBackSubmitBtn->Size = System::Drawing::Size(157, 52);
+			   this->feedBackSubmitBtn->TabIndex = 30;
+			   this->feedBackSubmitBtn->Text = L"Submit";
+			   this->feedBackSubmitBtn->UseVisualStyleBackColor = false;
+			   this->feedBackSubmitBtn->Click += gcnew System::EventHandler(this, &Form1::feedBackSubmitBtn_Click);
+			   // 
+			   // richTextBox2
+			   // 
+			   this->richTextBox2->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->richTextBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->richTextBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			   this->richTextBox2->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->richTextBox2->Location = System::Drawing::Point(22, 113);
+			   this->richTextBox2->MaxLength = 100;
+			   this->richTextBox2->Name = L"richTextBox2";
+			   this->richTextBox2->ReadOnly = true;
+			   this->richTextBox2->Size = System::Drawing::Size(252, 128);
+			   this->richTextBox2->TabIndex = 23;
+			   this->richTextBox2->Text = L"";
+			   // 
+			   // todoFlowPanel
+			   // 
+			   this->todoFlowPanel->Location = System::Drawing::Point(23, 113);
+			   this->todoFlowPanel->Name = L"todoFlowPanel";
+			   this->todoFlowPanel->Size = System::Drawing::Size(248, 128);
+			   this->todoFlowPanel->TabIndex = 25;
 			   // 
 			   // Form1
 			   // 
@@ -1740,10 +2029,20 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			   this->tabPage1->ResumeLayout(false);
 			   this->tabPage1->PerformLayout();
+			   this->panel10->ResumeLayout(false);
+			   this->panel10->PerformLayout();
+			   this->panel9->ResumeLayout(false);
+			   this->panel9->PerformLayout();
+			   this->panel8->ResumeLayout(false);
+			   this->panel8->PerformLayout();
+			   this->panel7->ResumeLayout(false);
+			   this->panel7->PerformLayout();
 			   this->tabPage2->ResumeLayout(false);
 			   this->tabPage2->PerformLayout();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->attendanceDataGridView))->EndInit();
+			   this->panel6->ResumeLayout(false);
+			   this->panel6->PerformLayout();
 			   this->panel1->ResumeLayout(false);
+			   this->panel1->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			   this->adminDashBoard->ResumeLayout(false);
 			   this->panel4->ResumeLayout(false);
@@ -1766,6 +2065,9 @@ private: System::Windows::Forms::Button^ totalStudentsBtn;
 			   this->Annoucements->ResumeLayout(false);
 			   this->Annoucements->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			   this->tabPage3->ResumeLayout(false);
+			   this->tabPage3->PerformLayout();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
@@ -1934,26 +2236,20 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 
 	//function to disable and enable the things of dashboard
 	void ItemsOnStudentDashBoard(bool a) {
-		InfoLabel->Visible = a;
-		namelabel->Visible = a;
-		studDisplayNameLabel->Visible = a;
 		gpaLabel->Visible = a;
 		gpa->Visible = a;
-		courseslabel->Visible = a;
-		tableLayoutPanel1->Visible = a;
-		logoutBtn->Visible = a;
-		roll->Visible = a;
-		rolllabel->Visible = a;
+		panel7->Visible = a;
+		panel8->Visible = a;
+		panel9->Visible = a;
+		panel10->Visible = a;
 	}
 	//function to disable and enable the things of dashboard
 	void ItemsOnTeacherDashBoard(bool a) {
 		loadMarksButton->Visible = a;
 		dataGridView1->Visible = a;
-		TeacherLogoutBtn->Visible = a;
 		teacherSaveMarksBtn->Visible = a;
-		attendanceDataGridView->Visible = a;
-		attendanceLabel->Visible = a;
 		assignMarksLabel->Visible = a;
+		panel6->Visible = a;
 	}
 	//funciton to disable things on panel 4(part of admin dashboard)
 	void ItemsOnAdminPanel4(bool a) {
@@ -1991,15 +2287,17 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		try {
 			//Images For Login Sign Up and Admin 
 			////Images Setted From google drive
-			//pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0"; 
-			//pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
-			//pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
-			//pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
-			//
+			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0"; 
+			pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
+			pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
+			pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
+			pictureBox5->ImageLocation = "https://drive.google.com/uc?export=download&id=1Mt4YJhb9YeHwzf0gA4Ybo3qSvXb0P2bC";
 			//styling buttons
 			SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 			SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 			SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+		
 		}
 		catch (System::IO::FileNotFoundException^ e) {
 			MessageBox::Show("File Not Found." + e, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -2376,6 +2674,76 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 	private: System::Void announcementsRefreshBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		LoadAnnouncements();
 	}
+
+	//Feed back submit btn Click
+	private: System::Void feedBackSubmitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+		//Save the feed back into a feedback.csv
+		DataManager::SaveFeedBacksIntoFile(feedBackUserNameTextBox, feedBackEmailTextBox, feedBackCommentsTextBox);
+		
+		//Clear Existing data in the feilds
+		feedBackUserNameTextBox->Clear();
+		feedBackEmailTextBox->Clear();
+		feedBackCommentsTextBox->Clear();
+
+	
+	}
+	private: System::Void stdToDoListAddTaskBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (String::IsNullOrWhiteSpace(RichTextBox1->Text)) {
+			MessageBox::Show("Please enter a task.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		String^ taskText = RichTextBox1->Text;
+
+		// Create a new panel to hold the task and its button
+		Panel^ taskPanel = gcnew Panel();
+		taskPanel->Height = 40; // Adjust height as needed
+		taskPanel->Dock = DockStyle::None;
+		//taskPanel->BackColor = System::Drawing::Color::LightGray; // Optional styling
+
+		// Create a label for the task text
+		Label^ taskLabel = gcnew Label();
+		taskLabel->Text = taskText;
+		taskLabel->AutoSize = true;
+		taskLabel->Dock = DockStyle::Left;
+
+		// Create a button to remove the task
+		Button^ removeButton = gcnew Button();
+		removeButton->Text = "X";
+		removeButton->Width = 20; // Adjust width as needed
+		removeButton->Height = 10; // Adjust width as needed
+		removeButton->Dock = DockStyle::Right;
+
+
+		removeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+		
+
+		// Add click event to remove the task
+		removeButton->Click += gcnew EventHandler(this, &Form1::RemoveTaskButton_Click);
+
+		// Add the label and button to the panel
+		taskPanel->Controls->Add(taskLabel);
+		taskPanel->Controls->Add(removeButton);
+
+		// Add the panel to the FlowLayoutPanel
+		todoFlowPanel->Controls->Add(taskPanel);
+
+		// Store a reference to the task panel in the button's Tag property (used for removal)
+		removeButton->Tag = taskPanel;
+
+		// Clear the input box
+		RichTextBox1->Clear();
+	}
+
+		   // Event handler to remove the task
+private: System::Void RemoveTaskButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Button^ removeButton = safe_cast<Button^>(sender);
+	Panel^ taskPanel = safe_cast<Panel^>(removeButton->Tag);
+
+	// Remove the task panel from the FlowLayoutPanel
+	todoFlowPanel->Controls->Remove(taskPanel);
+}
 
 };
 }
