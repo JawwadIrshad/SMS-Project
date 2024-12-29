@@ -141,6 +141,58 @@ public:
             tableLayoutPanel->RowCount++;
         }
     }
+    //Did a Function overloadin here to apply polymorphisism 
+    void DisplayCourses(TableLayoutPanel^ tableLayoutPanel , bool a)
+    {
+        if(a){
+            tableLayoutPanel->Controls->Clear();
+            tableLayoutPanel->RowCount = 0;
+            tableLayoutPanel->ColumnCount = 3;
+        }
+
+        // Add headers
+        Label^ courseHeader = gcnew Label();
+        courseHeader->Text = "Course";
+        courseHeader->AutoSize = true;
+        tableLayoutPanel->Controls->Add(courseHeader, 0, 0);
+
+        Label^ creditHeader = gcnew Label();
+        creditHeader->Text = "Credit Hours";
+        creditHeader->AutoSize = true;
+        tableLayoutPanel->Controls->Add(creditHeader, 1, 0);
+
+        Label^ marksHeader = gcnew Label();
+        marksHeader->Text = "Marks";
+        marksHeader->AutoSize = true;
+        tableLayoutPanel->Controls->Add(marksHeader, 2, 0);
+
+        tableLayoutPanel->RowCount++;
+
+        // Add rows for each course
+        for (int i = 0; i < courses->Length; ++i)
+        {
+            // Add course name
+            Label^ courseLabel = gcnew Label();
+            courseLabel->Text = courses[i];
+            courseLabel->AutoSize = true;
+            tableLayoutPanel->Controls->Add(courseLabel, 0, tableLayoutPanel->RowCount);
+
+            // Add credit hours
+            Label^ creditLabel = gcnew Label();
+            creditLabel->Text = creditHours[i];
+            creditLabel->AutoSize = true;
+            tableLayoutPanel->Controls->Add(creditLabel, 1, tableLayoutPanel->RowCount);
+
+            // Add marks
+            String^ marks = (i < marksOFCourses->Length) ? marksOFCourses[i] : "N/A";
+            Label^ marksLabel = gcnew Label();
+            marksLabel->Text = marks;
+            marksLabel->AutoSize = true;
+            tableLayoutPanel->Controls->Add(marksLabel, 2, tableLayoutPanel->RowCount);
+
+            tableLayoutPanel->RowCount++;
+        }
+    }
 
     // Calculate GPA based on marks and credit hours
     float CalculateGPA()

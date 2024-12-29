@@ -2,6 +2,8 @@
 #include "AuthUser.h"
 #include "DataManager.h"
 #include "Admin.h"
+#include "Student.h"
+#include "Teacher.h"
 #include<string>
 #include<iostream>
 #include <fstream>
@@ -58,10 +60,6 @@ namespace CppCLRWinFormsProject {
 		// Controls for login form
 
 
-
-
-
-
 		// Controls for sign-up form
 		System::Windows::Forms::Label^ signupLabelUsername;
 		System::Windows::Forms::TextBox^ signupTextboxUsername;
@@ -69,46 +67,16 @@ namespace CppCLRWinFormsProject {
 		System::Windows::Forms::TextBox^ signupTextboxPassword;
 		System::Windows::Forms::Label^ signupLabelConfirmPassword;
 		System::Windows::Forms::TextBox^ signupTextboxConfirmPassword;
+
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
-
-
-
-
-
 	private: System::Windows::Forms::Label^ gpaLabel;
-
-
 	private: System::Windows::Forms::Label^ gpa;
-
-
-
-
-
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::Label^ label2;
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^ panel1;
-
-
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
-
-
 	private: System::Windows::Forms::Label^ label1;
-
 	private: System::Windows::Forms::RadioButton^ loginstudentradioButton1;
 	private: System::Windows::Forms::RadioButton^ isTeacher;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
@@ -256,55 +224,6 @@ private: System::Windows::Forms::FlowLayoutPanel^ todoFlowPanel;
 private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		   System::Windows::Forms::Button^ signupButton;
 
 #pragma region Windows Form Designer generated code
@@ -343,6 +262,8 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->signupButton = (gcnew System::Windows::Forms::Button());
 			   this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			   this->panel10 = (gcnew System::Windows::Forms::Panel());
+			   this->todoFlowPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			   this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			   this->RichTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			   this->stdToDoListAddTaskBtn = (gcnew System::Windows::Forms::Button());
 			   this->label35 = (gcnew System::Windows::Forms::Label());
@@ -435,8 +356,6 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->label25 = (gcnew System::Windows::Forms::Label());
 			   this->feedBackCommentsTextBox = (gcnew System::Windows::Forms::TextBox());
 			   this->feedBackSubmitBtn = (gcnew System::Windows::Forms::Button());
-			   this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
-			   this->todoFlowPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			   this->tabControl->SuspendLayout();
 			   this->loginTab->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -881,6 +800,27 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->panel10->Size = System::Drawing::Size(291, 292);
 			   this->panel10->TabIndex = 38;
 			   // 
+			   // todoFlowPanel
+			   // 
+			   this->todoFlowPanel->Location = System::Drawing::Point(23, 113);
+			   this->todoFlowPanel->Name = L"todoFlowPanel";
+			   this->todoFlowPanel->Size = System::Drawing::Size(248, 128);
+			   this->todoFlowPanel->TabIndex = 25;
+			   // 
+			   // richTextBox2
+			   // 
+			   this->richTextBox2->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			   this->richTextBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			   this->richTextBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
+			   this->richTextBox2->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->richTextBox2->Location = System::Drawing::Point(22, 113);
+			   this->richTextBox2->MaxLength = 100;
+			   this->richTextBox2->Name = L"richTextBox2";
+			   this->richTextBox2->ReadOnly = true;
+			   this->richTextBox2->Size = System::Drawing::Size(252, 128);
+			   this->richTextBox2->TabIndex = 23;
+			   this->richTextBox2->Text = L"";
+			   // 
 			   // RichTextBox1
 			   // 
 			   this->RichTextBox1->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
@@ -1022,7 +962,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->panel8->Controls->Add(this->label28);
 			   this->panel8->Location = System::Drawing::Point(181, 265);
 			   this->panel8->Name = L"panel8";
-			   this->panel8->Size = System::Drawing::Size(402, 234);
+			   this->panel8->Size = System::Drawing::Size(402, 261);
 			   this->panel8->TabIndex = 36;
 			   // 
 			   // tableLayoutPanel1
@@ -1040,15 +980,17 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				   33.33334F)));
 			   this->tableLayoutPanel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			   this->tableLayoutPanel1->Location = System::Drawing::Point(17, 75);
+			   this->tableLayoutPanel1->Location = System::Drawing::Point(17, 73);
 			   this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			   this->tableLayoutPanel1->RowCount = 5;
+			   this->tableLayoutPanel1->RowCount = 7;
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 25.2768F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
 			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 18.6808F)));
-			   this->tableLayoutPanel1->Size = System::Drawing::Size(367, 127);
+			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
+			   this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
+			   this->tableLayoutPanel1->Size = System::Drawing::Size(367, 169);
 			   this->tableLayoutPanel1->TabIndex = 14;
 			   // 
 			   // label28
@@ -1184,7 +1126,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->panel1->Controls->Add(this->teacherSaveMarksBtn);
 			   this->panel1->Controls->Add(this->loadMarksButton);
 			   this->panel1->Controls->Add(this->dataGridView1);
-			   this->panel1->Location = System::Drawing::Point(177, 69);
+			   this->panel1->Location = System::Drawing::Point(177, 58);
 			   this->panel1->Name = L"panel1";
 			   this->panel1->Size = System::Drawing::Size(366, 224);
 			   this->panel1->TabIndex = 5;
@@ -1987,27 +1929,6 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->feedBackSubmitBtn->UseVisualStyleBackColor = false;
 			   this->feedBackSubmitBtn->Click += gcnew System::EventHandler(this, &Form1::feedBackSubmitBtn_Click);
 			   // 
-			   // richTextBox2
-			   // 
-			   this->richTextBox2->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
-			   this->richTextBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			   this->richTextBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Bold));
-			   this->richTextBox2->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->richTextBox2->Location = System::Drawing::Point(22, 113);
-			   this->richTextBox2->MaxLength = 100;
-			   this->richTextBox2->Name = L"richTextBox2";
-			   this->richTextBox2->ReadOnly = true;
-			   this->richTextBox2->Size = System::Drawing::Size(252, 128);
-			   this->richTextBox2->TabIndex = 23;
-			   this->richTextBox2->Text = L"";
-			   // 
-			   // todoFlowPanel
-			   // 
-			   this->todoFlowPanel->Location = System::Drawing::Point(23, 113);
-			   this->todoFlowPanel->Name = L"todoFlowPanel";
-			   this->todoFlowPanel->Size = System::Drawing::Size(248, 128);
-			   this->todoFlowPanel->TabIndex = 25;
-			   // 
 			   // Form1
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2108,6 +2029,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			return;
 		}
 
+		//Login Teacher
 		// Validate user credentials and role
 		if (AuthUser::userExists(username, password, role)) {
 			// For Teacher role, validate subject match
@@ -2139,7 +2061,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 				}
 			}
 
-			// Log in the user
+			// Log in the student
 			if (currentUser == nullptr) {
 				currentUser = new AuthUser(username, password, role);
 			}
@@ -2177,6 +2099,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 		loginTextboxUsername->Clear();
 		loginTextboxPassword->Clear();
 		if (currentUser != nullptr) {
+			//Data Manager instance for student statics
 			DataManager dm(currentUser->getUsername());
 			dm.DisplayCourses(tableLayoutPanel1);
 			gpa->Text = dm.CalculateGPA().ToString();
@@ -2187,20 +2110,11 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 				   // In the signup button click handler
 private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	// Convert System::String^ to std::string
-	IntPtr usernamePtr = Marshal::StringToHGlobalAnsi(signupTextboxUsername->Text);
-	IntPtr passwordPtr = Marshal::StringToHGlobalAnsi(signupTextboxPassword->Text);
-	IntPtr confirmPasswordPtr = Marshal::StringToHGlobalAnsi(signupTextboxConfirmPassword->Text);
+	// Convert System::String^ to std::string to skip marshal_as
 	
-
-	std::string username = static_cast<char*>(usernamePtr.ToPointer());
-	std::string password = static_cast<char*>(passwordPtr.ToPointer());
-	std::string confirmPassword = static_cast<char*>(confirmPasswordPtr.ToPointer());
-
-	// Free memory allocated by Marshal::StringToHGlobalAnsi
-	Marshal::FreeHGlobal(usernamePtr);
-	Marshal::FreeHGlobal(passwordPtr);
-	Marshal::FreeHGlobal(confirmPasswordPtr);
+	std::string username = ConvertToStdString(signupTextboxUsername->Text);
+	std::string password = ConvertToStdString(signupTextboxPassword->Text);
+	std::string confirmPassword = ConvertToStdString(signupTextboxConfirmPassword->Text);
 
 	// Check if passwords match
 	if (password != confirmPassword) {
@@ -2250,6 +2164,7 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		teacherSaveMarksBtn->Visible = a;
 		assignMarksLabel->Visible = a;
 		panel6->Visible = a;
+		panel1->Visible = a;
 	}
 	//funciton to disable things on panel 4(part of admin dashboard)
 	void ItemsOnAdminPanel4(bool a) {
@@ -2577,10 +2492,9 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 
 	}
 	private: System::Void createAnnouncementsBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		// Get the multiline text from the TextBox
 		String^ announcementText = announcementTextBox->Text;
 
-		// Replace newline characters with a placeholder (e.g., space or specific character)
+		// Replace newline characters with a placeholder
 		String^ formattedText = announcementText->Replace("\r\n", " "); // Replace newlines with spaces
 
 		// Check if the formatted text is not null or empty
