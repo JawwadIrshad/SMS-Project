@@ -15,7 +15,7 @@
 
 
 namespace CppCLRWinFormsProject {
-	                                                          
+
 	using namespace System;
 	using namespace System::Net;
 	using namespace System::ComponentModel;
@@ -27,7 +27,7 @@ namespace CppCLRWinFormsProject {
 	using namespace System::Runtime::InteropServices;
 	using namespace SMS_Project; //Custom dialogue box ka hai yeh 
 
-	
+
 
 	/// <summary>
 	/// Summary for Form1
@@ -104,124 +104,124 @@ namespace CppCLRWinFormsProject {
 
 
 
-private: System::Windows::Forms::TabPage^ adminDashBoard;
-private: System::Windows::Forms::Panel^ panel2;
-private: System::Windows::Forms::PictureBox^ pictureBox2;
-private: System::Windows::Forms::Label^ label6;
-private: System::Windows::Forms::Label^ label7;
-private: System::Windows::Forms::Label^ adminNameLabel;
+	private: System::Windows::Forms::TabPage^ adminDashBoard;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ adminNameLabel;
 
-private: System::Windows::Forms::TextBox^ adminNameTextBox;
-
-
-private: System::Windows::Forms::Label^ label9;
-private: System::Windows::Forms::TextBox^ adminPasswordTextBox;
-
-private: System::Windows::Forms::Label^ adminLoginLabel;
-
-private: System::Windows::Forms::Label^ label8;
-private: System::Windows::Forms::PictureBox^ pictureBox3;
-private: System::Windows::Forms::Label^ label10;
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::Label^ label11;
-private: System::Windows::Forms::Label^ label12;
-private: System::Windows::Forms::Panel^ panel3;
-private: System::Windows::Forms::Button^ adminHomeBtn;
-
-private: System::Windows::Forms::Button^ adminViewStudentsBtn;
-
-private: System::Windows::Forms::Button^ adminViewTeacherBtn;
-
-private: System::Windows::Forms::Panel^ panel4;
-private: System::Windows::Forms::Button^ button4;
-private: System::Windows::Forms::Panel^ adminViewTeacherPanel;
+	private: System::Windows::Forms::TextBox^ adminNameTextBox;
 
 
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::TextBox^ adminPasswordTextBox;
 
-private: System::Windows::Forms::DataGridView^ adminTeacherGridView;
+	private: System::Windows::Forms::Label^ adminLoginLabel;
 
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
-private: System::Windows::Forms::Label^ adminLabel;
-private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::Panel^ adminVIewStudentPanel;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Button^ adminHomeBtn;
 
-private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::DataGridView^ adminStudentGridView;
+	private: System::Windows::Forms::Button^ adminViewStudentsBtn;
 
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
-private: System::Windows::Forms::Button^ addTeacher;
-private: System::Windows::Forms::Button^ adminLoginButton;
-private: System::Windows::Forms::TabPage^ Annoucements;
-private: System::Windows::Forms::Label^ label15;
-private: System::Windows::Forms::PictureBox^ pictureBox4;
-private: System::Windows::Forms::Button^ deleteTeacherBtn;
-private: System::Windows::Forms::Button^ deleteStudentRecords;
+	private: System::Windows::Forms::Button^ adminViewTeacherBtn;
 
-private: System::Windows::Forms::Label^ label16;
-private: System::Windows::Forms::Panel^ panel5;
-private: System::Windows::Forms::Label^ announcementsLabel;
-private: System::Windows::Forms::Button^ createAnnouncementsBtn;
-private: System::Windows::Forms::TextBox^ announcementTextBox;
-private: System::Windows::Forms::RichTextBox^ announcementsRichTextBox;
-private: System::Windows::Forms::Button^ announcementsRefreshBtn;
-private: System::Windows::Forms::Label^ label17;
-private: System::Windows::Forms::TabPage^ tabPage3;
-private: System::Windows::Forms::Panel^ adminStatsPanel;
-
-private: System::Windows::Forms::Label^ label21;
-private: System::Windows::Forms::Label^ label20;
-private: System::Windows::Forms::Label^ label19;
-private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::Button^ button3;
-private: System::Windows::Forms::Button^ totalTeacherBtn;
-
-private: System::Windows::Forms::Button^ totalStudentsBtn;
-private: System::Windows::Forms::PictureBox^ pictureBox5;
-private: System::Windows::Forms::Label^ label22;
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ feedBackUserNameTextBox;
-
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::TextBox^ feedBackEmailTextBox;
-
-private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::TextBox^ feedBackCommentsTextBox;
-
-private: System::Windows::Forms::Button^ feedBackSubmitBtn;
-private: System::Windows::Forms::Panel^ panel6;
-private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Panel^ adminViewTeacherPanel;
 
 
 
-private: System::Windows::Forms::Label^ assignMarksLabel;
-private: System::Windows::Forms::Panel^ panel8;
-private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-private: System::Windows::Forms::Label^ label28;
-private: System::Windows::Forms::Panel^ panel7;
-private: System::Windows::Forms::Label^ label27;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Panel^ panel9;
-private: System::Windows::Forms::Label^ roll;
-private: System::Windows::Forms::Label^ rolllabel;
-private: System::Windows::Forms::Label^ studDisplayNameLabel;
-private: System::Windows::Forms::Label^ namelabel;
-private: System::Windows::Forms::Label^ label29;
-private: System::Windows::Forms::Panel^ panel10;
-private: System::Windows::Forms::Button^ stdToDoListAddTaskBtn;
+	private: System::Windows::Forms::DataGridView^ adminTeacherGridView;
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
+	private: System::Windows::Forms::Label^ adminLabel;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Panel^ adminVIewStudentPanel;
+
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::DataGridView^ adminStudentGridView;
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
+	private: System::Windows::Forms::Button^ addTeacher;
+	private: System::Windows::Forms::Button^ adminLoginButton;
+	private: System::Windows::Forms::TabPage^ Annoucements;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::Button^ deleteTeacherBtn;
+	private: System::Windows::Forms::Button^ deleteStudentRecords;
+
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Label^ announcementsLabel;
+	private: System::Windows::Forms::Button^ createAnnouncementsBtn;
+	private: System::Windows::Forms::TextBox^ announcementTextBox;
+	private: System::Windows::Forms::RichTextBox^ announcementsRichTextBox;
+	private: System::Windows::Forms::Button^ announcementsRefreshBtn;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: System::Windows::Forms::Panel^ adminStatsPanel;
+
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ totalTeacherBtn;
+
+	private: System::Windows::Forms::Button^ totalStudentsBtn;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::TextBox^ feedBackUserNameTextBox;
+
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::TextBox^ feedBackEmailTextBox;
+
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::TextBox^ feedBackCommentsTextBox;
+
+	private: System::Windows::Forms::Button^ feedBackSubmitBtn;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Button^ button1;
 
 
-private: System::Windows::Forms::Label^ label35;
+
+	private: System::Windows::Forms::Label^ assignMarksLabel;
+	private: System::Windows::Forms::Panel^ panel8;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Panel^ panel7;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Panel^ panel9;
+	private: System::Windows::Forms::Label^ roll;
+	private: System::Windows::Forms::Label^ rolllabel;
+	private: System::Windows::Forms::Label^ studDisplayNameLabel;
+	private: System::Windows::Forms::Label^ namelabel;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::Panel^ panel10;
+	private: System::Windows::Forms::Button^ stdToDoListAddTaskBtn;
+
+
+	private: System::Windows::Forms::Label^ label35;
 
 
 
-private: System::Windows::Forms::RichTextBox^ RichTextBox1;
-private: System::Windows::Forms::FlowLayoutPanel^ todoFlowPanel;
-private: System::Windows::Forms::RichTextBox^ richTextBox2;
+	private: System::Windows::Forms::RichTextBox^ RichTextBox1;
+	private: System::Windows::Forms::FlowLayoutPanel^ todoFlowPanel;
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 
 		   System::Windows::Forms::Button^ signupButton;
@@ -438,6 +438,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->loginTab->Size = System::Drawing::Size(894, 534);
 			   this->loginTab->TabIndex = 0;
 			   this->loginTab->Text = L"Login";
+			   this->loginTab->Click += gcnew System::EventHandler(this, &Form1::loginTab_Click);
 			   // 
 			   // label17
 			   // 
@@ -566,6 +567,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 			   this->loginTextboxUsername->Name = L"loginTextboxUsername";
 			   this->loginTextboxUsername->Size = System::Drawing::Size(248, 28);
 			   this->loginTextboxUsername->TabIndex = 13;
+			   this->loginTextboxUsername->TextChanged += gcnew System::EventHandler(this, &Form1::loginTextboxUsername_TextChanged);
 			   // 
 			   // loginLabelPassword
 			   // 
@@ -1997,7 +1999,7 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
-		 
+
 	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Convert GUI input to std::string
 		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
@@ -2099,110 +2101,111 @@ private: System::Windows::Forms::RichTextBox^ richTextBox2;
 		loginTextboxUsername->Clear();
 		loginTextboxPassword->Clear();
 		if (currentUser != nullptr) {
-			//Data Manager instance for student statics
-			DataManager dm(currentUser->getUsername());
-			dm.DisplayCourses(tableLayoutPanel1);
-			gpa->Text = dm.CalculateGPA().ToString();
+	
+			//Applied Abstraction Here From Abstract Class FileHelper
+			FileHelper^ fileHelper = gcnew DataManager(currentUser->getUsername());
+			fileHelper->DisplayCourses(tableLayoutPanel1);
+			gpa->Text = fileHelper->CalculateGPA().ToString();
 		}
 	}
 
-						
 
-				   // In the signup button click handler
-private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	// Convert System::String^ to std::string to skip marshal_as
-	
-	std::string username = ConvertToStdString(signupTextboxUsername->Text);
-	std::string password = ConvertToStdString(signupTextboxPassword->Text);
-	std::string confirmPassword = ConvertToStdString(signupTextboxConfirmPassword->Text);
 
-	// Check if passwords match
-	if (password != confirmPassword) {
-		MessageBox::Show("Passwords do not match.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return;
+		   // In the signup button click handler
+	private: System::Void signupButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Convert System::String^ to std::string to skip marshal_as
+
+		std::string username = ConvertToStdString(signupTextboxUsername->Text);
+		std::string password = ConvertToStdString(signupTextboxPassword->Text);
+		std::string confirmPassword = ConvertToStdString(signupTextboxConfirmPassword->Text);
+
+		// Check if passwords match
+		if (password != confirmPassword) {
+			MessageBox::Show("Passwords do not match.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Check if username or password fields are empty
+		if (username.empty() || password.empty()) {
+			MessageBox::Show("Please fill in both the username and password fields.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Check if the user already exists
+		if (User::userExists(username, password, "Student")) {
+			MessageBox::Show("User already exists.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// Create a new User object and set the username, password, and role
+		User newUser(username, password, "Student");
+
+		// Save the new user to the file
+		newUser.saveToFile();
+
+		MessageBox::Show("Sign-up successful! Please log in now.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+		// Redirect to the login tab
+		tabControl->SelectedTab = tabControl->TabPages[0];
 	}
 
-	// Check if username or password fields are empty
-	if (username.empty() || password.empty()) {
-		MessageBox::Show("Please fill in both the username and password fields.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return;
-	}
-
-	// Check if the user already exists
-	if (User::userExists(username, password, "Student")) {
-		MessageBox::Show("User already exists.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return;
-	}
-
-	// Create a new User object and set the username, password, and role
-	User newUser(username, password, "Student");
-
-	// Save the new user to the file
-	newUser.saveToFile();
-
-	MessageBox::Show("Sign-up successful! Please log in now.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
-
-	// Redirect to the login tab
-	tabControl->SelectedTab = tabControl->TabPages[0];
-}
 
 
+		   //function to disable and enable the things of dashboard
+		   void ItemsOnStudentDashBoard(bool a) {
+			   gpaLabel->Visible = a;
+			   gpa->Visible = a;
+			   panel7->Visible = a;
+			   panel8->Visible = a;
+			   panel9->Visible = a;
+			   panel10->Visible = a;
+		   }
+		   //function to disable and enable the things of dashboard
+		   void ItemsOnTeacherDashBoard(bool a) {
+			   loadMarksButton->Visible = a;
+			   dataGridView1->Visible = a;
+			   teacherSaveMarksBtn->Visible = a;
+			   assignMarksLabel->Visible = a;
+			   panel6->Visible = a;
+			   panel1->Visible = a;
+		   }
+		   //funciton to disable things on panel 4(part of admin dashboard)
+		   void ItemsOnAdminPanel4(bool a) {
+			   adminViewTeacherPanel->Visible = a;
+			   adminVIewStudentPanel->Visible = a;
+			   adminStudentGridView->Visible = a;
+			   adminStatsPanel->Visible = a;
+		   }
+		   //function to disable and enable the Login Panel of admin dashboard
+		   void DisplayAdminLoginPanelDashBoard(bool a) {
+			   panel2->Visible = a;
+			   adminLoginLabel->Visible = a;
+			   adminNameLabel->Visible = a;
 
-	//function to disable and enable the things of dashboard
-	void ItemsOnStudentDashBoard(bool a) {
-		gpaLabel->Visible = a;
-		gpa->Visible = a;
-		panel7->Visible = a;
-		panel8->Visible = a;
-		panel9->Visible = a;
-		panel10->Visible = a;
-	}
-	//function to disable and enable the things of dashboard
-	void ItemsOnTeacherDashBoard(bool a) {
-		loadMarksButton->Visible = a;
-		dataGridView1->Visible = a;
-		teacherSaveMarksBtn->Visible = a;
-		assignMarksLabel->Visible = a;
-		panel6->Visible = a;
-		panel1->Visible = a;
-	}
-	//funciton to disable things on panel 4(part of admin dashboard)
-	void ItemsOnAdminPanel4(bool a) {
-		adminViewTeacherPanel->Visible = a;
-		adminVIewStudentPanel->Visible = a;
-		adminStudentGridView->Visible = a;
-		adminStatsPanel->Visible = a;
-	}
-	//function to disable and enable the Login Panel of admin dashboard
-	void DisplayAdminLoginPanelDashBoard(bool a) {
-		panel2->Visible = a;
-		adminLoginLabel->Visible = a;
-		adminNameLabel->Visible = a;
 
-
-	}
-	//Link label2 to goto from login to sign up page
+		   }
+		   //Link label2 to goto from login to sign up page
 	private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		tabControl->SelectedTab = tabControl->TabPages[1];
 	}
-	//Link label1 to goto from sign up to login
+		   //Link label1 to goto from sign up to login
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		tabControl->SelectedTab = tabControl->TabPages[0];
 
 	}
-	
-	//On FOrm load 
+
+		   //On FOrm load 
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 		// Hide all components on the Student Dashboard tab if the user is not logged in
 		label1->Visible = true;  // Show the "Login or Signup first" placeholder
 		//disable all items on student and teacher dashboard ON FORM LOAD
 		ItemsOnStudentDashBoard(false);
 		ItemsOnTeacherDashBoard(false);
-		
+
 		try {
 			//Images For Login Sign Up and Admin 
 			////Images Setted From google drive
-			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0"; 
+			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0";
 			pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
 			pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
 			pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
@@ -2212,7 +2215,7 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 			SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 			SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 			SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-		
+
 		}
 		catch (System::IO::FileNotFoundException^ e) {
 			MessageBox::Show("File Not Found." + e, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -2226,7 +2229,7 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		panel4->Visible = false;
 
 
-		
+
 		//Disabling the admin Teacher View Panel
 		adminViewTeacherPanel->Visible = false;
 		ItemsOnAdminPanel4(false);
@@ -2234,10 +2237,10 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		//Load Announcements
 		LoadAnnouncements();
 
-	
+
 	}
-	
-	//Logout button for teacher and student dashboards
+
+		   //Logout button for teacher and student dashboards
 	private: System::Void logoutBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		//assing null to poitner
 		delete currentUser;
@@ -2272,8 +2275,8 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 				   MessageBox::Show("Error loading image: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			   }
 		   }
-	
-	//Teacher load Marks Button in the data grid view for marks
+
+		   //Teacher load Marks Button in the data grid view for marks
 	private: System::Void teacherLoadMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ subjectName = comboBox1->Text;
 		String^ fileName = "marks.csv"; // The path to your CSV file
@@ -2334,92 +2337,92 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 		}
 	}
 
-		private: System::Void teacherSaveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-			String^ subjectName = comboBox1->Text;  // Selected subject from ComboBox
-			String^ fileName = "marks.csv";        // Path to the CSV file
+	private: System::Void teacherSaveMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ subjectName = comboBox1->Text;  // Selected subject from ComboBox
+		String^ fileName = "marks.csv";        // Path to the CSV file
 
-			if (String::IsNullOrEmpty(subjectName)) {
-				MessageBox::Show("Please select a subject before saving.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		if (String::IsNullOrEmpty(subjectName)) {
+			MessageBox::Show("Please select a subject before saving.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		try {
+			// Read the CSV file content
+			StreamReader^ reader = gcnew StreamReader(fileName);
+			List<String^>^ lines = gcnew List<String^>();
+
+			// Read the header row
+			String^ headerLine = reader->ReadLine();
+			if (String::IsNullOrEmpty(headerLine)) {
+				MessageBox::Show("The CSV file is empty or invalid.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				reader->Close();
+				return;
+			}
+			lines->Add(headerLine); // Add header line to the updated content
+
+			// Split header to get column names
+			array<String^>^ subjects = headerLine->Split(',');
+
+			// Find the index of the selected subject in the header row
+			int subjectIndex = Array::IndexOf(subjects, subjectName);
+			if (subjectIndex == -1) {
+				MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				reader->Close();
 				return;
 			}
 
-			try {
-				// Read the CSV file content
-				StreamReader^ reader = gcnew StreamReader(fileName);
-				List<String^>^ lines = gcnew List<String^>();
+			// Process the remaining rows in the CSV
+			String^ line;
+			int rowIndex = 0; // To keep track of DataGridView rows
+			while ((line = reader->ReadLine()) != nullptr) {
+				array<String^>^ rowArray = line->Split(',');
 
-				// Read the header row
-				String^ headerLine = reader->ReadLine();
-				if (String::IsNullOrEmpty(headerLine)) {
-					MessageBox::Show("The CSV file is empty or invalid.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					reader->Close();
-					return;
-				}
-				lines->Add(headerLine); // Add header line to the updated content
-
-				// Split header to get column names
-				array<String^>^ subjects = headerLine->Split(',');
-
-				// Find the index of the selected subject in the header row
-				int subjectIndex = Array::IndexOf(subjects, subjectName);
-				if (subjectIndex == -1) {
-					MessageBox::Show("Subject not found in the CSV file.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					reader->Close();
-					return;
-				}
-
-				// Process the remaining rows in the CSV
-				String^ line;
-				int rowIndex = 0; // To keep track of DataGridView rows
-				while ((line = reader->ReadLine()) != nullptr) {
-					array<String^>^ rowArray = line->Split(',');
-
-					// Ensure the row has enough columns to match the header
-					if (rowArray->Length < subjects->Length) {
-						array<String^>^ updatedRowArray = gcnew array<String^>(subjects->Length);
-						for (int i = 0; i < updatedRowArray->Length; i++) {
-							if (i < rowArray->Length) {
-								updatedRowArray[i] = rowArray[i];
-							}
-							else {
-								updatedRowArray[i] = ""; // Default value for missing columns
-							}
+				// Ensure the row has enough columns to match the header
+				if (rowArray->Length < subjects->Length) {
+					array<String^>^ updatedRowArray = gcnew array<String^>(subjects->Length);
+					for (int i = 0; i < updatedRowArray->Length; i++) {
+						if (i < rowArray->Length) {
+							updatedRowArray[i] = rowArray[i];
 						}
-						rowArray = updatedRowArray;
-					}
-
-					// Check if we still have corresponding rows in the DataGridView
-					if (rowIndex < dataGridView1->Rows->Count - 1) { // Skip the "new row" in DataGridView
-						// Update the relevant column for the subject with the value from the DataGridView
-						DataGridViewRow^ gridRow = dataGridView1->Rows[rowIndex];
-						if (gridRow->Cells[1]->Value != nullptr) { // Assuming column 1 holds the marks
-							rowArray[subjectIndex] = gridRow->Cells[1]->Value->ToString();
+						else {
+							updatedRowArray[i] = ""; // Default value for missing columns
 						}
 					}
-
-					lines->Add(String::Join(",", rowArray)); // Add the updated row to the list
-					rowIndex++;
+					rowArray = updatedRowArray;
 				}
 
-				reader->Close();
-
-				// Write the updated content back to the file
-				StreamWriter^ writer = gcnew StreamWriter(fileName);
-				for each (String ^ updatedLine in lines) {
-					writer->WriteLine(updatedLine);
+				// Check if we still have corresponding rows in the DataGridView
+				if (rowIndex < dataGridView1->Rows->Count - 1) { // Skip the "new row" in DataGridView
+					// Update the relevant column for the subject with the value from the DataGridView
+					DataGridViewRow^ gridRow = dataGridView1->Rows[rowIndex];
+					if (gridRow->Cells[1]->Value != nullptr) { // Assuming column 1 holds the marks
+						rowArray[subjectIndex] = gridRow->Cells[1]->Value->ToString();
+					}
 				}
-				writer->Close();
 
-				MessageBox::Show("Marks saved successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				lines->Add(String::Join(",", rowArray)); // Add the updated row to the list
+				rowIndex++;
 			}
-			catch (Exception^ ex) {
-				MessageBox::Show("Error saving marks: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+			reader->Close();
+
+			// Write the updated content back to the file
+			StreamWriter^ writer = gcnew StreamWriter(fileName);
+			for each (String ^ updatedLine in lines) {
+				writer->WriteLine(updatedLine);
 			}
+			writer->Close();
+
+			MessageBox::Show("Marks saved successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Error saving marks: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
 
 	private: System::Void adminLoginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		Admin admin("hayyan", "123");
-		
+
 		if (admin.ValidateAdminLogin(adminNameTextBox, adminPasswordTextBox)) {
 			panel3->Visible = true;
 			panel4->Visible = true;
@@ -2430,20 +2433,20 @@ private: System::Void signupButton_Click(System::Object^ sender, System::EventAr
 			//clear the input boxes after btn is clicked
 			adminNameTextBox->Clear();
 			adminPasswordTextBox->Clear();
-			
-		
+
+
 		}
 		else {
 			MessageBox::Show("Invalid Password or Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 		}
 	}
-private: System::Void adminDashBoard_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void adminDashBoard_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 
 
 
-	//Admin Logout Btn Click
+		   //Admin Logout Btn Click
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		panel3->Visible = false;
 		panel4->Visible = false;
@@ -2453,10 +2456,10 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		ItemsOnAdminPanel4(false);
 
 	}
-	
-	//Method From Admin Class by scope resolution operators
+
+		   //Method From Admin Class by scope resolution operators
 	private: System::Void adminViewTeacherBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		Admin::DisplayTeachersOnGridView(adminTeacherGridView);
 		//Enabling the admin Teacher View Panel
 		ItemsOnAdminPanel4(false);
@@ -2464,7 +2467,7 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		adminViewTeacherPanel->Visible = true;
 
 	}
-	//Admin panel4 view teacher button on click
+		   //Admin panel4 view teacher button on click
 	private: System::Void adminViewStudentsBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		Admin::DisplayStudentsOnGridView(adminStudentGridView);
 		//Enable the student view grid view
@@ -2472,20 +2475,20 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		adminStudentGridView->Visible = true;
 		adminVIewStudentPanel->Visible = true;
 	}
-	//Add Teacher from admin panel4
+		   //Add Teacher from admin panel4
 	private: System::Void addTeacher_Click(System::Object^ sender, System::EventArgs^ e) {
 		//MessageBox::Show("Add Teacher");
 		AddTeacherForm^ addTeacherForm = gcnew AddTeacherForm();
 		addTeacherForm->ShowDialog();
 
 	}
-	//Delete Teacher BTn from admin panel4
+		   //Delete Teacher BTn from admin panel4
 	private: System::Void deleteTeacherBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		DeleteRecordForm^ deleteRecordForm = gcnew DeleteRecordForm("Teacher");
 		deleteRecordForm->ShowDialog();
-	
+
 	}
-	//Delete Student Record BTN from admin panel 4
+		   //Delete Student Record BTN from admin panel 4
 	private: System::Void deleteStudentRecords_Click(System::Object^ sender, System::EventArgs^ e) {
 		DeleteRecordForm^ deleteRecordForm = gcnew DeleteRecordForm("Student");
 		deleteRecordForm->ShowDialog();
@@ -2515,7 +2518,7 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 			DateTime currentDate = DateTime::Now;
 			//create a std::string to save the date and time to save it inot file
 			std::string date = ConvertToStdString(currentDate.ToString("yyyy-MM-dd"));
-			file <<"[" << date << "] : " << textToWrite << std::endl;
+			file << "[" << date << "] : " << textToWrite << std::endl;
 
 
 			file.close();
@@ -2527,7 +2530,7 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 			MessageBox::Show("Announcement text cannot be empty.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	
+
 	private: System::Void adminHomeBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		ItemsOnAdminPanel4(false);
 		adminStatsPanel->Visible = true;
@@ -2535,23 +2538,23 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		totalTeacherBtn->Text = Admin::CountUsersByRole("Teacher").ToString();
 	}
 
-	//Helper method to convert string 
-	static std::string ConvertToStdString(String^ managedString)
-	{
-		const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(managedString)).ToPointer();
-		std::string convertedString(chars);
-		System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)chars));
-		return convertedString;
-	}
+		   //Helper method to convert string 
+		   static std::string ConvertToStdString(String^ managedString)
+		   {
+			   const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(managedString)).ToPointer();
+			   std::string convertedString(chars);
+			   System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)chars));
+			   return convertedString;
+		   }
 
-	// Helper method to convert std::string to String^
-	static String^ ConvertToString(const std::string& stdString)
-	{
-		int length = stdString.length();
-		pin_ptr<const wchar_t> wch = PtrToStringChars(gcnew String(stdString.c_str()));
-		String^ managedString = gcnew String(wch);
-		return managedString;
-	}
+		   // Helper method to convert std::string to String^
+		   static String^ ConvertToString(const std::string& stdString)
+		   {
+			   int length = stdString.length();
+			   pin_ptr<const wchar_t> wch = PtrToStringChars(gcnew String(stdString.c_str()));
+			   String^ managedString = gcnew String(wch);
+			   return managedString;
+		   }
 
 	private: System::Void LoadAnnouncements()
 	{
@@ -2589,18 +2592,18 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 		LoadAnnouncements();
 	}
 
-	//Feed back submit btn Click
+		   //Feed back submit btn Click
 	private: System::Void feedBackSubmitBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+
 		//Save the feed back into a feedback.csv
 		DataManager::SaveFeedBacksIntoFile(feedBackUserNameTextBox, feedBackEmailTextBox, feedBackCommentsTextBox);
-		
+
 		//Clear Existing data in the feilds
 		feedBackUserNameTextBox->Clear();
 		feedBackEmailTextBox->Clear();
 		feedBackCommentsTextBox->Clear();
 
-	
+
 	}
 	private: System::Void stdToDoListAddTaskBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (String::IsNullOrWhiteSpace(RichTextBox1->Text)) {
@@ -2631,7 +2634,7 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 
 
 		removeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-		
+
 
 		// Add click event to remove the task
 		removeButton->Click += gcnew EventHandler(this, &Form1::RemoveTaskButton_Click);
@@ -2651,16 +2654,19 @@ private: System::Void adminDashBoard_Click(System::Object^ sender, System::Event
 	}
 
 		   // Event handler to remove the task
-private: System::Void RemoveTaskButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	Button^ removeButton = safe_cast<Button^>(sender);
-	Panel^ taskPanel = safe_cast<Panel^>(removeButton->Tag);
+	private: System::Void RemoveTaskButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Button^ removeButton = safe_cast<Button^>(sender);
+		Panel^ taskPanel = safe_cast<Panel^>(removeButton->Tag);
 
-	// Remove the task panel from the FlowLayoutPanel
-	todoFlowPanel->Controls->Remove(taskPanel);
+		// Remove the task panel from the FlowLayoutPanel
+		todoFlowPanel->Controls->Remove(taskPanel);
+	}
+
+	private: System::Void loginTab_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void loginTextboxUsername_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-
 };
 }
-
 
 

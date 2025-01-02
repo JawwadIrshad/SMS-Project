@@ -132,7 +132,7 @@
     </ClInclude>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AuthUser.h" />
-    <ClInclude Include="ConcreteFileManager.h" />
+    <ClInclude Include="FileHelper.h" />
     <ClInclude Include="DataManager.h" />
     <ClInclude Include="DeleteRecordForm.h">
       <FileType>CppForm</FileType>
@@ -156,6 +156,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="DeleteTeacherForm.cpp" />
+    <ClCompile Include="FileHelper.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="pch.cpp">

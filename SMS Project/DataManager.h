@@ -4,12 +4,12 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
-//#include <msclr/marshal_cppstd.h>
+#include "FileHelper.h"
 using namespace System;
 using namespace System::Windows::Forms;
 using namespace System::Runtime::InteropServices;
 
-ref class DataManager
+ref class DataManager : FileHelper
 {
 private:
     array<String^>^ courses;
@@ -24,7 +24,7 @@ public:
     }
 
     // Load data from CSV file for a specific user
-    void LoadDataFromCSV(std::string username)
+    void LoadDataFromCSV(std::string username) override
     {
         std::ifstream file("marks.csv");
         if (!file.is_open())
@@ -71,28 +71,28 @@ public:
         file.close();
 
         // Convert data to managed arrays
-        courses = gcnew array<String^>(headers.size() - 1); // Exclude the username column
-        creditHours = gcnew array<String^>(creditHoursVector.size());
-        marksOFCourses = gcnew array<String^>(marksVector.size());
+        courses = gcnew array<String^>(static_cast<int>(headers.size() - 1)); // Exclude the username column
+        creditHours = gcnew array<String^>(static_cast<int>(creditHoursVector.size()));
+        marksOFCourses = gcnew array<String^>(static_cast<int>(marksVector.size()));
 
         for (size_t i = 1; i < headers.size(); ++i) // Skip the username column
         {
-            courses[i - 1] = gcnew String(headers[i].c_str());
+            courses[static_cast<int>(i) - 1] = gcnew String(headers[i].c_str());
         }
 
         for (size_t i = 0; i < creditHoursVector.size(); ++i)
         {
-            creditHours[i] = gcnew String(creditHoursVector[i].c_str());
+            creditHours[static_cast<int>(i)] = gcnew String(creditHoursVector[i].c_str());
         }
 
         for (size_t i = 0; i < marksVector.size(); ++i)
         {
-            marksOFCourses[i] = gcnew String(marksVector[i].c_str());
+            marksOFCourses[static_cast<int>(i)] = gcnew String(marksVector[i].c_str());
         }
     }
 
     // Display courses, credit hours, and marks in a TableLayoutPanel
-    void DisplayCourses(TableLayoutPanel^ tableLayoutPanel)
+    void DisplayCourses(TableLayoutPanel^ tableLayoutPanel)  override
     {
         tableLayoutPanel->Controls->Clear();
         tableLayoutPanel->RowCount = 0;
@@ -141,61 +141,9 @@ public:
             tableLayoutPanel->RowCount++;
         }
     }
-    //Did a Function overloadin here to apply polymorphisism 
-    void DisplayCourses(TableLayoutPanel^ tableLayoutPanel , bool a)
-    {
-        if(a){
-            tableLayoutPanel->Controls->Clear();
-            tableLayoutPanel->RowCount = 0;
-            tableLayoutPanel->ColumnCount = 3;
-        }
-
-        // Add headers
-        Label^ courseHeader = gcnew Label();
-        courseHeader->Text = "Course";
-        courseHeader->AutoSize = true;
-        tableLayoutPanel->Controls->Add(courseHeader, 0, 0);
-
-        Label^ creditHeader = gcnew Label();
-        creditHeader->Text = "Credit Hours";
-        creditHeader->AutoSize = true;
-        tableLayoutPanel->Controls->Add(creditHeader, 1, 0);
-
-        Label^ marksHeader = gcnew Label();
-        marksHeader->Text = "Marks";
-        marksHeader->AutoSize = true;
-        tableLayoutPanel->Controls->Add(marksHeader, 2, 0);
-
-        tableLayoutPanel->RowCount++;
-
-        // Add rows for each course
-        for (int i = 0; i < courses->Length; ++i)
-        {
-            // Add course name
-            Label^ courseLabel = gcnew Label();
-            courseLabel->Text = courses[i];
-            courseLabel->AutoSize = true;
-            tableLayoutPanel->Controls->Add(courseLabel, 0, tableLayoutPanel->RowCount);
-
-            // Add credit hours
-            Label^ creditLabel = gcnew Label();
-            creditLabel->Text = creditHours[i];
-            creditLabel->AutoSize = true;
-            tableLayoutPanel->Controls->Add(creditLabel, 1, tableLayoutPanel->RowCount);
-
-            // Add marks
-            String^ marks = (i < marksOFCourses->Length) ? marksOFCourses[i] : "N/A";
-            Label^ marksLabel = gcnew Label();
-            marksLabel->Text = marks;
-            marksLabel->AutoSize = true;
-            tableLayoutPanel->Controls->Add(marksLabel, 2, tableLayoutPanel->RowCount);
-
-            tableLayoutPanel->RowCount++;
-        }
-    }
 
     // Calculate GPA based on marks and credit hours
-    float CalculateGPA()
+    float CalculateGPA() override
     {
         float totalWeightedPoints = 0.0f;
         int totalCreditHours = 0;
@@ -212,7 +160,7 @@ public:
             }
             catch (Exception^)
             {
-                MessageBox::Show("Invalid data detected . Skipping...");
+                MessageBox::Show("Invalid data detected. Skipping...");
             }
         }
 
@@ -229,24 +177,26 @@ public:
         if (marks >= 45) return 2.0f; // C
         return 0.0f; // F
     }
+
     static std::string ConvertToStdString(String^ managedString)
     {
-        const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(managedString)).ToPointer();
+        const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(managedString)).ToPointer();
         std::string convertedString(chars);
-        System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)chars));
+        Marshal::FreeHGlobal(IntPtr((void*)chars));
         return convertedString;
     }
 
-    // Saving the Feedbacks into feedback.csv
-    static void SaveFeedBacksIntoFile(TextBox^ username, TextBox^ email, TextBox^ comments) {
-        // Open the file in append mode
+    // Save feedback into feedback.csv
+    static void SaveFeedBacksIntoFile(TextBox^ username, TextBox^ email, TextBox^ comments)
+    {
         std::ofstream file("feedback.csv", std::ios::app);
 
-        if (!file.is_open()) {
+        if (!file.is_open())
+        {
             MessageBox::Show("File not opened. An error occurred.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
-        else {
-            // Write the feedback data to the file
+        else
+        {
             file << ConvertToStdString(username->Text) << ","
                 << ConvertToStdString(email->Text) << ","
                 << ConvertToStdString(comments->Text) << "\n";
@@ -255,5 +205,4 @@ public:
             file.close();
         }
     }
-
 };
