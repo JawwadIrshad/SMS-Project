@@ -1999,7 +1999,6 @@ namespace CppCLRWinFormsProject {
 
 		   //Creating a global user pointer instance or whatever this is 
 		   AuthUser* currentUser = nullptr; // Global pointer to store the logged-in user
-
 	private: System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Convert GUI input to std::string
 		std::string username = (const char*)(Marshal::StringToHGlobalAnsi(loginTextboxUsername->Text).ToPointer());
@@ -2066,6 +2065,7 @@ namespace CppCLRWinFormsProject {
 			// Log in the student
 			if (currentUser == nullptr) {
 				currentUser = new AuthUser(username, password, role);
+				
 			}
 			currentUser->setIsLoggedIn(true);
 
@@ -2205,16 +2205,16 @@ namespace CppCLRWinFormsProject {
 		try {
 			//Images For Login Sign Up and Admin 
 			////Images Setted From google drive
-			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0";
-			pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
-			pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
-			pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
-			pictureBox5->ImageLocation = "https://drive.google.com/uc?export=download&id=1Mt4YJhb9YeHwzf0gA4Ybo3qSvXb0P2bC";
-			//styling buttons
-			SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			//pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0";
+			//pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
+			//pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
+			//pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
+			//pictureBox5->ImageLocation = "https://drive.google.com/uc?export=download&id=1Mt4YJhb9YeHwzf0gA4Ybo3qSvXb0P2bC";
+			////styling buttons
+			//SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			//SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			//SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			//SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 
 		}
 		catch (System::IO::FileNotFoundException^ e) {
