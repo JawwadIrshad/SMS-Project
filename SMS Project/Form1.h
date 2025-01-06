@@ -7,7 +7,7 @@
 #include<string>
 #include<iostream>
 #include <fstream>
-#include "StringConvertor.h"
+#include "StringConvertor.h" //not used
 //For Custom Dialouge Boxes
 #include "AddTeacherForm.h"
 #include "DeleteRecordForm.h"
@@ -455,11 +455,11 @@ namespace CppCLRWinFormsProject {
 			   this->label4->AutoSize = true;
 			   this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
 			   this->label4->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->label4->Location = System::Drawing::Point(752, 495);
+			   this->label4->Location = System::Drawing::Point(727, 495);
 			   this->label4->Name = L"label4";
-			   this->label4->Size = System::Drawing::Size(125, 23);
+			   this->label4->Size = System::Drawing::Size(143, 23);
 			   this->label4->TabIndex = 24;
-			   this->label4->Text = L"HJ Developers";
+			   this->label4->Text = L"HAJI Developers";
 			   // 
 			   // label10
 			   // 
@@ -467,7 +467,7 @@ namespace CppCLRWinFormsProject {
 			   this->label10->BackColor = System::Drawing::Color::Transparent;
 			   this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
 			   this->label10->ForeColor = System::Drawing::Color::Black;
-			   this->label10->Location = System::Drawing::Point(597, 498);
+			   this->label10->Location = System::Drawing::Point(568, 498);
 			   this->label10->Name = L"label10";
 			   this->label10->Size = System::Drawing::Size(164, 17);
 			   this->label10->TabIndex = 25;
@@ -545,6 +545,7 @@ namespace CppCLRWinFormsProject {
 			   this->linkLabel2->TabStop = true;
 			   this->linkLabel2->Text = L"Don\'t have Account";
 			   this->linkLabel2->VisitedLinkColor = System::Drawing::SystemColors::MenuHighlight;
+			   this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Form1::linkLabel2_LinkClicked);
 			   // 
 			   // loginLabelUsername
 			   // 
@@ -647,11 +648,11 @@ namespace CppCLRWinFormsProject {
 			   this->label11->AutoSize = true;
 			   this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F, System::Drawing::FontStyle::Bold));
 			   this->label11->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			   this->label11->Location = System::Drawing::Point(753, 497);
+			   this->label11->Location = System::Drawing::Point(736, 497);
 			   this->label11->Name = L"label11";
-			   this->label11->Size = System::Drawing::Size(125, 23);
+			   this->label11->Size = System::Drawing::Size(143, 23);
 			   this->label11->TabIndex = 26;
-			   this->label11->Text = L"HJ Developers";
+			   this->label11->Text = L"HAJI Developers";
 			   // 
 			   // label12
 			   // 
@@ -659,7 +660,7 @@ namespace CppCLRWinFormsProject {
 			   this->label12->BackColor = System::Drawing::Color::Transparent;
 			   this->label12->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.25F, System::Drawing::FontStyle::Bold));
 			   this->label12->ForeColor = System::Drawing::Color::Black;
-			   this->label12->Location = System::Drawing::Point(598, 500);
+			   this->label12->Location = System::Drawing::Point(578, 500);
 			   this->label12->Name = L"label12";
 			   this->label12->Size = System::Drawing::Size(164, 17);
 			   this->label12->TabIndex = 27;
@@ -757,6 +758,7 @@ namespace CppCLRWinFormsProject {
 			   this->signupTextboxConfirmPassword->Name = L"signupTextboxConfirmPassword";
 			   this->signupTextboxConfirmPassword->Size = System::Drawing::Size(226, 28);
 			   this->signupTextboxConfirmPassword->TabIndex = 5;
+			   this->signupTextboxConfirmPassword->TextChanged += gcnew System::EventHandler(this, &Form1::signupTextboxConfirmPassword_TextChanged);
 			   // 
 			   // signupButton
 			   // 
@@ -1219,7 +1221,6 @@ namespace CppCLRWinFormsProject {
 			   // panel4
 			   // 
 			   this->panel4->BackColor = System::Drawing::SystemColors::MenuBar;
-			   this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			   this->panel4->Controls->Add(this->adminStatsPanel);
 			   this->panel4->Controls->Add(this->panel5);
 			   this->panel4->Controls->Add(this->label16);
@@ -1241,7 +1242,7 @@ namespace CppCLRWinFormsProject {
 			   this->adminStatsPanel->Controls->Add(this->button3);
 			   this->adminStatsPanel->Controls->Add(this->totalTeacherBtn);
 			   this->adminStatsPanel->Controls->Add(this->totalStudentsBtn);
-			   this->adminStatsPanel->Location = System::Drawing::Point(16, 32);
+			   this->adminStatsPanel->Location = System::Drawing::Point(16, 34);
 			   this->adminStatsPanel->Name = L"adminStatsPanel";
 			   this->adminStatsPanel->Size = System::Drawing::Size(701, 224);
 			   this->adminStatsPanel->TabIndex = 11;
@@ -1556,7 +1557,7 @@ namespace CppCLRWinFormsProject {
 			   this->panel3->Controls->Add(this->adminHomeBtn);
 			   this->panel3->Controls->Add(this->adminViewStudentsBtn);
 			   this->panel3->Controls->Add(this->adminViewTeacherBtn);
-			   this->panel3->Location = System::Drawing::Point(3, 4);
+			   this->panel3->Location = System::Drawing::Point(3, 3);
 			   this->panel3->Name = L"panel3";
 			   this->panel3->Size = System::Drawing::Size(150, 530);
 			   this->panel3->TabIndex = 33;
@@ -1695,9 +1696,9 @@ namespace CppCLRWinFormsProject {
 			   this->label7->ForeColor = System::Drawing::SystemColors::MenuHighlight;
 			   this->label7->Location = System::Drawing::Point(54, 41);
 			   this->label7->Name = L"label7";
-			   this->label7->Size = System::Drawing::Size(125, 23);
+			   this->label7->Size = System::Drawing::Size(143, 23);
 			   this->label7->TabIndex = 29;
-			   this->label7->Text = L"HJ Developers";
+			   this->label7->Text = L"HAJI Developers";
 			   // 
 			   // adminNameLabel
 			   // 
@@ -2147,6 +2148,11 @@ namespace CppCLRWinFormsProject {
 
 		// Redirect to the login tab
 		tabControl->SelectedTab = tabControl->TabPages[0];
+
+
+		signupTextboxUsername->Clear();
+		signupTextboxPassword->Clear();
+		signupTextboxConfirmPassword->Clear();
 	}
 
 
@@ -2205,16 +2211,16 @@ namespace CppCLRWinFormsProject {
 		try {
 			//Images For Login Sign Up and Admin 
 			////Images Setted From google drive
-			//pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0";
-			//pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
-			//pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
-			//pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
-			//pictureBox5->ImageLocation = "https://drive.google.com/uc?export=download&id=1Mt4YJhb9YeHwzf0gA4Ybo3qSvXb0P2bC";
-			////styling buttons
-			//SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			//SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			//SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
-			//SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			pictureBox1->ImageLocation = "https://drive.google.com/uc?export=download&id=1qWkzlOMcFYcmyWNs3n3YmU-aGyHUSOE0";
+			pictureBox2->ImageLocation = "https://drive.google.com/uc?export=download&id=16zJHjnluQXMDS1X79VyziEqyf2yoIzp1";
+			pictureBox3->ImageLocation = "https://drive.google.com/uc?export=download&id=1Ca5e0BT4kQygKvQUQTompl_07u4H2JTg";
+			pictureBox4->ImageLocation = "https://drive.google.com/uc?export=download&id=1-JRfrpeOt9Rwn8R5_iGnT6u0mW1RFoSC";
+			pictureBox5->ImageLocation = "https://drive.google.com/uc?export=download&id=1Mt4YJhb9YeHwzf0gA4Ybo3qSvXb0P2bC";
+			//styling buttons
+			SetButtonImageFromURL(loginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(signupButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(adminLoginButton, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
+			SetButtonImageFromURL(feedBackSubmitBtn, "https://drive.google.com/uc?export=download&id=19RNP-Giin5FSZcfi3JfBn3UhrUN8ov4f");
 
 		}
 		catch (System::IO::FileNotFoundException^ e) {
@@ -2279,6 +2285,7 @@ namespace CppCLRWinFormsProject {
 		   //Teacher load Marks Button in the data grid view for marks
 	private: System::Void teacherLoadMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ subjectName = comboBox1->Text;
+		comboBox1->Text = "";
 		String^ fileName = "marks.csv"; // The path to your CSV file
 
 		if (!File::Exists(fileName)) {
@@ -2666,6 +2673,9 @@ namespace CppCLRWinFormsProject {
 	}
 private: System::Void loginTextboxUsername_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void signupTextboxConfirmPassword_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
 
