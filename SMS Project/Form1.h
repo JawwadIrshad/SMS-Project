@@ -2285,7 +2285,6 @@ namespace CppCLRWinFormsProject {
 		   //Teacher load Marks Button in the data grid view for marks
 	private: System::Void teacherLoadMarksBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ subjectName = comboBox1->Text;
-		comboBox1->Text = "";
 		String^ fileName = "marks.csv"; // The path to your CSV file
 
 		if (!File::Exists(fileName)) {
