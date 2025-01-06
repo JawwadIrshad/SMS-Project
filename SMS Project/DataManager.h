@@ -160,7 +160,7 @@ public:
             }
             catch (Exception^)
             {
-                MessageBox::Show("Invalid data detected. Skipping...");
+                //MessageBox::Show("Invalid data detected. Skipping...");
             }
         }
 
